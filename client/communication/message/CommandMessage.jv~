@@ -1,9 +1,0 @@
-package client.communication.message;
-
-public class CommandMessage  extends MessageCombine implements Message{
-	public CommandMessage(String s[]){
-		this.s=s;
-		this.type=3;
-	}
-
-}

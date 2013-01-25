@@ -1,8 +1,0 @@
-package client.communication.message;
-
-public class UserInformation extends MessageCombine implements Message {
-	public UserInformation(String s[]){
-		this.s=s;
-		this.type=2;
-	}
-}

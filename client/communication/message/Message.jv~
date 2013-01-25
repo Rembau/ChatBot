@@ -1,5 +1,0 @@
-package client.communication.message;
-
-public interface Message {
-	public String getMessageContent();
-}
