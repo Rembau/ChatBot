@@ -13,6 +13,10 @@ public class ReceiveMessage {
 		this.message=str;
 		handle();
 	}
+	/**
+	 * 
+	 * @return message µÄÕıÎÄ¡£
+	 */
 	public String[] getContents(){
 		return this.content;
 	}

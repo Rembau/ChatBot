@@ -93,7 +93,7 @@ public class Conn
 		System.out.println(e.getMessage());
 	}
   }
-  public Statement getNewStmt(){
+  public Statement getNewStmt() throws SQLException{
 	  Statement stmt=null;
     try {
     	stmt = con.createStatement();
@@ -102,7 +102,7 @@ public class Conn
 		try {
 			stmt = con.createStatement();
 		} catch (SQLException e1) {
-			e1.printStackTrace();
+			throw e1;
 		}
 	}
 	return stmt;

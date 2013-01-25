@@ -15,7 +15,7 @@ import client.gui.ChatFrame;
 
 public class Communication extends Thread 
 {
-   private String host = "192.168.21.132";
+   private String host = "127.0.0.1";
    private int port = 406;
    private boolean isTrainNow = false;
    
@@ -149,6 +149,7 @@ private boolean isWaitRec = false;
    {
 		cf.addChatContent(message);
 		message=message.trim();
+//		System.out.println(message);
 		if(isTrainNow && !message.equals(Command.endTrain)){
 			sendCommandMessage(message);
 		} else if(message.equals(Command.enterTrain) && cf.getPeople().getId()==1){
@@ -187,7 +188,8 @@ private boolean isWaitRec = false;
     */
    public boolean sendMessage(MessageCombine message) 
    {
-    return true;
+	   sendMessage(message.getMessageContent());
+	   return true;
    }
    
    /**
