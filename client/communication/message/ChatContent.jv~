@@ -1,0 +1,8 @@
+package client.communication.message;
+
+public class ChatContent extends MessageCombine implements Message{
+	public ChatContent(String s[]){
+		this.s=s;
+		this.type=1;
+	}
+}

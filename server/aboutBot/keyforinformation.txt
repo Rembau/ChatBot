@@ -1,0 +1,61 @@
+名字 name
+姓名 name
+名称 name
+称呼 name
+大名 name
+小名 name
+昵称 name
+叫什么 name
+
+长相 appearance
+外貌 appearance
+相貌 appearance
+品相 appearance
+样子 appearance
+长的 appearance
+
+介绍 describe
+描述自己 describe
+描述下你 describe
+描述你 describe
+是什么 describe
+
+性别 sex
+男的 sex
+女的 sex
+男 sex
+女 sex
+雌 sex
+雄 sex
+雌的 sex
+雄的 sex
+公的 sex
+母的 sex
+
+喜欢 like
+喜爱 like
+兴趣 like
+会高兴 like
+会兴奋 like
+喜 like
+爱 like
+乐于 like
+
+出生 born
+身世 born
+来自 born
+
+擅长 goodWork
+特长 goodWork
+善长 goodWork
+善于 gookWork
+擅于 gookWork
+擅 gookWork
+
+吃饭 hunger
+吃过 hunger
+吃 hunger
+饿 hunger
+
+多少岁 age
+多大 age
