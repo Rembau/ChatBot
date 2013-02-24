@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PackageAnalysis>
+    <Package name="client" x="80" y="43"/>
+    <Package name="client.communication" x="170" y="30">
+        <DependencyLink destination="client.gui"/>
+    </Package>
+    <Package name="client.event" x="320" y="77">
+        <DependencyLink destination="client.people"/>
+        <DependencyLink destination="client.gui"/>
+    </Package>
+    <Package name="client.gui" x="209" y="135">
+        <DependencyLink destination="client.people"/>
+        <DependencyLink destination="client.communication"/>
+        <DependencyLink destination="client.event"/>
+    </Package>
+    <Package name="client.people" x="509" y="103"/>
+    <Package name="server.aboutBot" x="420" y="222">
+        <DependencyLink destination="server.botException"/>
+        <DependencyLink destination="server.handle"/>
+        <DependencyLink destination="server.conn"/>
+        <DependencyLink destination="server.tools"/>
+    </Package>
+    <Package name="server.botException" x="296" y="264"/>
+    <Package name="server.conn" x="378" y="138">
+        <DependencyLink destination="server.tools"/>
+    </Package>
+    <Package name="server.handle" x="798" y="315">
+        <DependencyLink destination="server.conn"/>
+        <DependencyLink destination="server.tools"/>
+        <DependencyLink destination="server.aboutBot"/>
+    </Package>
+    <Package name="server.tools" x="83" y="268"/>
+</PackageAnalysis>
