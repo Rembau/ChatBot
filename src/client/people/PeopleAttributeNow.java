@@ -4,13 +4,16 @@ package client.people;
 
 import java.util.Calendar;
 
+import org.apache.log4j.Logger;
+
+
 /**
  * 记录当前输入时的输入属性
  * @author Administrator
  */
 public class PeopleAttributeNow 
 {
-   
+	private static final Logger logger = Logger.getLogger(PeopleAttributeNow.class);
    /**
     * 鼠标使用次数限制
     */
@@ -90,7 +93,7 @@ public class PeopleAttributeNow
     */
    public void setStartTime() 
    {
-		System.out.println("计时开始。");
+		logger.info("计时开始。");
 		Calendar calendar=Calendar.getInstance();
 		this.startTime=calendar.getTimeInMillis()/1000;    
    }
@@ -100,7 +103,7 @@ public class PeopleAttributeNow
     */
    public void setSecond() 
    {
-		System.out.println("计时结束。");
+		logger.info("计时结束。");
 		Calendar calendar=Calendar.getInstance();
 		this.second=calendar.getTimeInMillis()/1000-this.startTime;    
    }
@@ -231,7 +234,7 @@ public class PeopleAttributeNow
 			if(backKeyUseNum>PeopleAttributeNow.limitIrascible){
 				this.irascible=1;
 			}
-			System.out.println("速度"+second/wordsNum+"鼠标使用次数"+mouseUseNum+"回车使用次数"+backKeyUseNum);
+			logger.info("速度"+second/wordsNum+"鼠标使用次数"+mouseUseNum+"回车使用次数"+backKeyUseNum);
 			if(wordsNum!=0){
 				float r = second/wordsNum;
 				if(r<PeopleAttributeNow.limitProficient1 || second<1){
@@ -243,7 +246,7 @@ public class PeopleAttributeNow
 					this.proficient=2;
 				}
 			}
-			System.out.println("属性：平和"+this.irascible+"熟练"+this.proficient);       
+			logger.info("属性：平和"+this.irascible+"熟练"+this.proficient);       
       }
    }
 }

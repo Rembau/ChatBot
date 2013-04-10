@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 /**
  * 判断两个字符串是否是 “重复的问题”
- * @author linmap
+ * @author linmao
  *
  */
 public class RepeatCompare {
