@@ -206,6 +206,7 @@ public class Bot {
 	public void handle(String content,String sign){
 
 		TreeSet<String> wordList_more= Fenci.IKAnalysis(content,false);
+		logger.info("分词结果:"+wordList_more);
 		/*
 		 * 最高绝对优先级，准确度100%
 		 */

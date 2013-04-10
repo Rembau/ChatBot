@@ -8,6 +8,8 @@ import java.util.LinkedList;
 import java.util.Random;
 import java.util.TreeSet;
 
+import org.apache.log4j.Logger;
+
 
 import server.botException.InitException;
 import server.conn.DBoperate;
@@ -16,6 +18,7 @@ import server.tools.ReadFile;
 
 
 public class Specialty {
+	private static final Logger logger = Logger.getLogger(Specialty.class);
 	/**
 	 * 遇到不理解的话时，回答的回复
 	 */
@@ -38,9 +41,9 @@ public class Specialty {
 	public Specialty(){
 		try{
 			init();
-			System.out.println("机器人属性初始化完成！");
+			logger.info("机器人属性初始化完成！");
 		} catch (Exception e){
-			System.out.println(e.getMessage());
+			logger.info(e.getMessage());
 			Throwable e1=e.getCause();
 			e1.printStackTrace();
 		}
@@ -52,7 +55,7 @@ public class Specialty {
 	 * @return 要打印的回复
 	 */
 	public String findSpReply(String key,int rank){
-		System.out.println("findSpReply"+specifics.get(rank).get(key)+" "+rank);
+		logger.info("findSpReply:"+specifics.get(rank).get(key)+" "+rank);
 		if(specifics.size()==0){
 			return "none";
 		}
@@ -71,7 +74,7 @@ public class Specialty {
 		while(keys.hasMoreElements()){
 			String key=keys.nextElement();
 			if(wordList.contains(key)){
-				System.out.println("findSpKey"+keyForSpecific.get(key));
+				logger.info("findSpKey"+keyForSpecific.get(key));
 				return keyForSpecific.get(key);
 			}
 		}
@@ -160,7 +163,7 @@ public class Specialty {
 			for(String str:keyList){
 				String str_[]=str.split(" ");
 				keyForSpecific.put(str_[0].trim(), str_[1].trim());
-				System.out.println("specialty.init()"+str_[0]+" "+str_[1]);
+				logger.info("specialty.init()"+str_[0]+" "+str_[1]);
 			}
 		} catch(Exception e){
 			Exception e1=new InitException(e.getMessage()+":bot属性常用问题关键字");
@@ -174,7 +177,7 @@ public class Specialty {
 			for(String str:list){
 				String str_[]=str.split(" ");
 				unknowReplyList.add(str_[0].trim());
-				//System.out.println("specialty.init()"+str_[0]+" "+str_[1]);
+				//logger.info("specialty.init()"+str_[0]+" "+str_[1]);
 			}
 		} catch(Exception e){
 			Exception e1=new InitException(e.getMessage()+":对于无法理解的话的回答");
@@ -189,7 +192,7 @@ public class Specialty {
 			for(String str:list){
 				keyForStop.add(str.trim());
 				//t.add(str.trim());
-				//System.out.println("specialty.init()"+str_[0]+" "+str_[1]);
+				//logger.info("specialty.init()"+str_[0]+" "+str_[1]);
 			}
 			/*
 			  汉字根据拼音排序
@@ -197,12 +200,12 @@ public class Specialty {
 			int i=0;
 			for(String str:t){
 				s[i++]=str;
-				System.out.println(str);
+				logger.info(str);
 			}
 			Comparator cmp = Collator.getInstance(java.util.Locale.CHINA);  
 			Arrays.sort(s, cmp);
 			for(int j=0;j<s.length;j++)
-			System.out.println(s[j]);*/
+			logger.info(s[j]);*/
 		} catch(Exception e){
 			Exception e1=new InitException(e.getMessage()+":停用词1");
 			e1.initCause(e);
@@ -221,12 +224,12 @@ public class Specialty {
 			int i=0;
 			for(String str:t){
 				s[i++]=str;
-				System.out.println(str);
+				logger.info(str);
 			}
 			Comparator cmp = Collator.getInstance(java.util.Locale.CHINA);  
 			Arrays.sort(s, cmp);
 			for(int j=0;j<s.length;j++)
-			System.out.println(s[j]);*/
+			logger.info(s[j]);*/
 		} catch(Exception e){
 			Exception e1=new InitException(e.getMessage()+":停用词2");
 			e1.initCause(e);
