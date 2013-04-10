@@ -15,7 +15,7 @@ import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
 import org.wltea.analyzer.lucene.IKAnalyzer;
 
-import server.conn.DBoperate_;
+import server.conn.DBoperate;
 
 public class Index {
 	private static String indexPath="conf"+File.separator+"fenciFile";
@@ -37,7 +37,7 @@ public class Index {
 		        e.printStackTrace();  
 		    } 
 		String sql="select * from b_teacherQuestion";
-		ResultSet rs = DBoperate_.select(sql);
+		ResultSet rs = DBoperate.select(sql);
 		try {
 			while(rs.next()){
 				Document doc=new Document(); 
@@ -69,7 +69,7 @@ public class Index {
 				e.printStackTrace();
 			}
 			sql="update b_teacherQuestion set t_mark=1";
-			DBoperate_.update(sql);
+			DBoperate.update(sql);
 		}
 	}
 	public void appendIndex(){
@@ -83,7 +83,7 @@ public class Index {
 		        e.printStackTrace();  
 		    } 
 		String sql="select * from b_teacherQuestion where t_mark=0";
-		ResultSet rs = DBoperate_.select(sql);
+		ResultSet rs = DBoperate.select(sql);
 		try {
 			while(rs.next()){
 				Document doc=new Document(); 
@@ -117,7 +117,7 @@ public class Index {
 				e.printStackTrace();
 			}
 			sql="updata  b_teacherQuestion set t_mark=1";
-			DBoperate_.update(sql);
+			DBoperate.update(sql);
 		}
 	}
 	public static void main(String[] args) {

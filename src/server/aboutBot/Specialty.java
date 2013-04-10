@@ -10,7 +10,7 @@ import java.util.TreeSet;
 
 
 import server.botException.InitException;
-import server.conn.DBoperate_;
+import server.conn.DBoperate;
 import server.tools.Ck;
 import server.tools.ReadFile;
 
@@ -240,6 +240,6 @@ public class Specialty {
 	}
 	public static void main(String args[]){
 		new Specialty();
-		DBoperate_.close();
+		DBoperate.close();
 	}
 }

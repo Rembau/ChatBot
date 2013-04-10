@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import server.aboutBot.Bot;
-import server.conn.DBoperate_;
+import server.conn.DBoperate;
 
 public class LoginCheck {
 	private Bot bot;
@@ -16,7 +16,7 @@ public class LoginCheck {
 		String user = infor[0];
 		String password = infor[1];
 		String sql="select * from b_users where user_id='"+user+"' and user_password='"+password+"'";
-		ResultSet rs=DBoperate_.select(sql);
+		ResultSet rs=DBoperate.select(sql);
 		try {
 			if(rs.next()){
 				reply[0]=rs.getString("user_weight");

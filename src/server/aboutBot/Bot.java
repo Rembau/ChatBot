@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 import org.apache.log4j.Logger;
 
 import server.aboutBot.analyzer.Fenci;
-import server.conn.DBoperate_;
+import server.conn.DBoperate;
 import server.handle.Record;
 import server.tools.RepeatCompare;
 
@@ -413,7 +413,7 @@ public class Bot {
 		while(min>0 && count<Bot.findTime){
 			String sql="select * from b_teacherquestion where t_question2 regexp "+reg1+""+min+""+reg2+"'";
 			logger.info(sql);
-			ResultSet rs = DBoperate_.select(sql);
+			ResultSet rs = DBoperate.select(sql);
 			try {
 				if(!rs.next()){
 					min--;

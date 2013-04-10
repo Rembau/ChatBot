@@ -5,9 +5,9 @@ import java.sql.SQLException;
 
 import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 
-public class DBoperate_ {
+public class DBoperate {
 	private static Conn conn;
-	public DBoperate_(){
+	public DBoperate(){
 		//System.out.println("DBoperate_");
 	}
 	static {
@@ -85,28 +85,28 @@ public class DBoperate_ {
 		}
 	}
 	public static void main(String[] args) {
-		new DBoperate_();
+		new DBoperate();
 		new Thread(){
 			public void run(){
-				new DBoperate_();
+				new DBoperate();
 			}
 		}.start();
 		new Thread(){
 			public void run(){
-				new DBoperate_();
+				new DBoperate();
 			}
 		}.start();
 		new Thread(){
 			public void run(){
-				new DBoperate_();
+				new DBoperate();
 			}
 		}.start();
 		new Thread(){
 			public void run(){
-				new DBoperate_();
+				new DBoperate();
 			}
 		}.start();
 		System.out.println("½áÊø");
-		DBoperate_.close();
+		DBoperate.close();
 	}
 }

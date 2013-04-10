@@ -7,7 +7,7 @@ import java.util.TreeSet;
 
 import server.aboutBot.Bot;
 import server.aboutBot.analyzer.Fenci;
-import server.conn.DBoperate_;
+import server.conn.DBoperate;
 import server.tools.CheckQuestion;
 
 public class Record {
@@ -15,7 +15,7 @@ public class Record {
 	public static Hashtable<String,Integer> userWeight= new Hashtable<String,Integer>();
 	public Record(){}
 	 static {
-		ResultSet rs = DBoperate_.select("select * from b_users");
+		ResultSet rs = DBoperate.select("select * from b_users");
 		try {
 			while(rs.next()){
 				userWeight.put(rs.getString("user_id"), rs.getInt("user_weight"));
@@ -82,7 +82,7 @@ public class Record {
 				"values('"+question+"','"+handledQuestion+"','"+question2+"','"+question2KeyNum+"','"+answer+"','"+userNum+"'," +
 						"'"+assess+"','"+y+"','"+m+"','"+h+"','"+length+"','"+n+"','"+q+"','"+ip+"')";
 		System.out.println(sql);
-		DBoperate_.insert(sql);
+		DBoperate.insert(sql);
 	}
 	public static int weightHandle(String content){
 		int weight=content.length();
@@ -105,11 +105,11 @@ public class Record {
 		String sql = "insert into b_teacherQuestion_notAnswer(t_question,t_length,t_ipAddr) " +
 				"values('"+question+"','"+question.length()+"','"+ip+"')";
 		System.out.println(sql);
-		DBoperate_.insert(sql);
+		DBoperate.insert(sql);
 	}
 	public static void main(String args[]){
 		String sql= "select * from b_teacherquestion";
-		ResultSet rs = DBoperate_.select(sql);
+		ResultSet rs = DBoperate.select(sql);
 		new Record();
 		try {
 			while(rs.next()){
@@ -127,7 +127,7 @@ public class Record {
 				assess+=weightHandle(answer);
 				sql = "update b_teacherquestion set " +
 						"t_assess='"+assess+"' where t_questionId = '"+rs.getString("t_questionId")+"'";
-				DBoperate_.update(sql);
+				DBoperate.update(sql);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
