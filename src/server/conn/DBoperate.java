@@ -6,21 +6,11 @@ import java.sql.SQLException;
 import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 
 public class DBoperate {
-	private static Conn conn;
 	public DBoperate(){
 		//System.out.println("DBoperate_");
 	}
-	static {
-		//System.out.println("static");
-		conn=new Conn();
-	}
-	public static void close(){
-		conn.close();
-	}
 	public static boolean delete(String sql){
-		if(conn==null){
-			conn=new Conn();
-		}
+		Conn conn = ConnPool.getConn();
 		try {
 			conn.getOldStmt().executeUpdate(sql);
 			return true;
@@ -29,13 +19,13 @@ public class DBoperate {
 		} catch (SQLException e) {
 			//System.out.println(sql+"³ö´í");
 			e.printStackTrace();
+		} finally{
+			ConnPool.setConn(conn);
 		}
 		return true;
 	}
 	public static boolean insert(String sql){
-		if(conn==null){
-			conn=new Conn();
-		}
+		Conn conn = ConnPool.getConn();
 		try {
 			conn.getOldStmt().executeUpdate(sql);
 			return true;
@@ -48,13 +38,13 @@ public class DBoperate {
 			} catch (SQLException e1) {
 				e1.printStackTrace();
 			}
+		} finally{
+			ConnPool.setConn(conn);
 		}
 		return true;
 	}
 	public static void update(String sql){
-		if(conn==null){
-			conn=new Conn();
-		}
+		Conn conn = ConnPool.getConn();
 		try {
 			conn.getOldStmt().executeUpdate(sql);
 		} catch(MySQLIntegrityConstraintViolationException e1){
@@ -66,12 +56,12 @@ public class DBoperate {
 			} catch (SQLException e1) {
 				e1.printStackTrace();
 			}
+		} finally{
+			ConnPool.setConn(conn);
 		}
 	}
 	public static ResultSet select(String sql){
-		if(conn==null){
-			conn=new Conn();
-		}
+		Conn conn = ConnPool.getConn();
 		try {
 			return conn.getNewStmt().executeQuery(sql);
 		} catch (SQLException e) {
@@ -82,6 +72,8 @@ public class DBoperate {
 				e1.printStackTrace();
 			}
 			return null;
+		} finally{
+			ConnPool.setConn(conn);
 		}
 	}
 	public static void main(String[] args) {
@@ -107,6 +99,5 @@ public class DBoperate {
 			}
 		}.start();
 		System.out.println("½áÊø");
-		DBoperate.close();
 	}
 }

@@ -12,7 +12,6 @@ import org.apache.log4j.Logger;
 
 
 import server.botException.InitException;
-import server.conn.DBoperate;
 import server.tools.Ck;
 import server.tools.ReadFile;
 
@@ -243,6 +242,5 @@ public class Specialty {
 	}
 	public static void main(String args[]){
 		new Specialty();
-		DBoperate.close();
 	}
 }
