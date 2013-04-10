@@ -4,6 +4,8 @@ import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.TreeSet;
 
+import org.apache.log4j.Logger;
+
 import server.aboutBot.RepeatEntity;
 import server.aboutBot.NowQuestionAnswers.NowMemory;
 import server.tools.Ck;
@@ -11,6 +13,7 @@ import server.tools.RepeatCompare;
 
 
 public class Memory {
+	private static final Logger logger = Logger.getLogger(Memory.class);
 	private People talker=new People();
 	private LinkedList<String> allListForPeo=new LinkedList<String>(); 	//记录聊天记录
 	private LinkedList<String> allListForBot=new LinkedList<String>(); 	//记录聊天记录
@@ -175,7 +178,7 @@ public class Memory {
 		Calendar calendar=Calendar.getInstance();
 		long l=calendar.getTimeInMillis()/1000;
 		this.peopleState.useTime = l-this.replyTime;
-		System.out.println(str[0]+" "+str[1]+" "+str[2]+" "+this.peopleState.useTime);
+		logger.info(str[0]+" "+str[1]+" "+str[2]+" "+this.peopleState.useTime);
 	}
 	public boolean isEnableRecord(){
 		if(this.peopleState.irascible == 0 && 

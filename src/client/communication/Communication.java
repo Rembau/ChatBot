@@ -6,6 +6,9 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+
+import org.apache.log4j.Logger;
+
 import client.communication.message.ChatContent;
 import client.communication.message.CommandMessage;
 import client.communication.message.MessageCombine;
@@ -15,6 +18,7 @@ import client.gui.ChatFrame;
 
 public class Communication extends Thread 
 {
+	private static final Logger logger = Logger.getLogger(Communication.class);
    private String host = "127.0.0.1";
    private int port = 406;
    private boolean isTrainNow = false;
@@ -62,7 +66,7 @@ private boolean isWaitRec = false;
 			try {
 				if(socket.isConnected()){
 					message = receive();
-					System.out.println("Communication.run()"+message);
+					logger.info("Communication.run()"+message);
 					handleMessage(message);
 				} else {
 					break;
@@ -149,7 +153,7 @@ private boolean isWaitRec = false;
    {
 		cf.addChatContent(message);
 		message=message.trim();
-//		System.out.println(message);
+//		logger.info(message);
 		if(isTrainNow && !message.equals(Command.endTrain)){
 			sendCommandMessage(message);
 		} else if(message.equals(Command.enterTrain) && cf.getPeople().getId()==1){
@@ -227,7 +231,7 @@ private boolean isWaitRec = false;
 //			isWaitRec = true;
 //			cf.getSendButton().setEnabled(false);
 //		}
-//		System.out.println(message.getMessageContent());
+//		logger.info(message.getMessageContent());
 //		sendMessage(message.getMessageContent());
 //		return true;
 //	}

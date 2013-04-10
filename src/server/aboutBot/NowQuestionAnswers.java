@@ -3,9 +3,12 @@ package server.aboutBot;
 import java.util.Random;
 import java.util.TreeMap;
 
+import org.apache.log4j.Logger;
+
 import server.tools.CheckQuestion;
 
 public class NowQuestionAnswers {
+	private static final Logger logger = Logger.getLogger(NowQuestionAnswers.class);
 	private TreeMap<Integer,QuestionAnswer> answers;
 	private NowMemory nowMemory = new NowMemory();   //当前问题的一些信息
 	public NowQuestionAnswers(){
@@ -26,12 +29,12 @@ public class NowQuestionAnswers {
 			int haveNo,
 			int keyNum){
 		QuestionAnswer qa = new QuestionAnswer(ans,wei,id,y,h,m,l,question,isQ,haveNo,keyNum);
-		//System.out.println("========="+qa.answer);
+		//logger.info("========="+qa.answer);
 		int point=qa.amountWeight();
 		while(answers.containsKey(point)){
 			point--;
 		}
-		System.out.println(point);
+		logger.info(point);
 		answers.put(point,qa);
 	}
 	public String getRandomAnswer(){
@@ -43,7 +46,7 @@ public class NowQuestionAnswers {
 		}
 		Random rd = new Random();
 		int index = rd.nextInt(answers.size()-1);
-		//System.out.println("NowQuestionAnswers.getRandowAnswer(),随机数："+index+" 共"+answers.size());
+		//logger.info("NowQuestionAnswers.getRandowAnswer(),随机数："+index+" 共"+answers.size());
 		return getAnswer(index);
 	}
 	public String getAnswer(int r){

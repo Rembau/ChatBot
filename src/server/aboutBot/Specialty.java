@@ -1,8 +1,6 @@
 package server.aboutBot;
 
 import java.io.File;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Hashtable;
@@ -235,13 +233,9 @@ public class Specialty {
 			throw e1;
 		}
 	};
-	public URI getURI(String fileName){
-		URI uri=null;
-		try {
-			uri=this.getClass().getResource(fileName).toURI();
-		} catch (URISyntaxException e) {
-			e.printStackTrace();
-		}
+	public String getURI(String fileName){
+		String uri=null;
+		uri="conf"+File.separator+""+fileName;
 		return uri;
 	}
 	public static void main(String args[]){

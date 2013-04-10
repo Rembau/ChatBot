@@ -18,7 +18,7 @@ import org.wltea.analyzer.lucene.IKAnalyzer;
 import server.conn.DBoperate_;
 
 public class Index {
-	private static String indexPath="server/aboutBot/analyzer/file";
+	private static String indexPath="conf"+File.separator+"fenciFile";
 	private IndexWriter indexWriter;
 	private static Version version = Version.LUCENE_35; 
 	static private IKAnalyzer ik = new IKAnalyzer(true);

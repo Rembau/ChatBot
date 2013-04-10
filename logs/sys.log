@@ -1,0 +1,402 @@
+[2013-04-10 16:23:43]INFO  server.aboutBot.Bot(line:46) -============
+[2013-04-10 16:27:09]INFO  server.aboutBot.Bot(line:282) -0 false
+[2013-04-10 16:27:09]INFO  server.aboutBot.Bot(line:410) -select * from b_teacherquestion where t_question2 regexp '(-=你好=-){1}'
+[2013-04-10 16:27:09]INFO  server.aboutBot.Bot(line:234) -aboutUnknow
+[2013-04-10 16:27:09]INFO  server.aboutBot.Answers(line:25) -答案集：[我不知道你想让我说什么呢。]
+[2013-04-10 16:29:10]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:57867receive:1_你好::::1::::1::::1
+[2013-04-10 16:29:11]INFO  server.aboutBot.Bot(line:282) -0 false
+[2013-04-10 16:29:11]INFO  server.aboutBot.Bot(line:410) -select * from b_teacherquestion where t_question2 regexp '(-=你好=-){1}'
+[2013-04-10 16:29:11]INFO  server.aboutBot.Bot(line:234) -aboutUnknow
+[2013-04-10 16:29:11]INFO  server.aboutBot.Answers(line:25) -答案集：[我不知道你想让我说什么呢。]
+[2013-04-10 16:29:11]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::我不知道你想让我说什么呢。
+[2013-04-10 16:29:11]INFO  server.handle.Dispatcher(line:58) -使用时间为：574
+[2013-04-10 16:29:27]INFO  server.handle.Dispatcher(line:60) -Socket[addr=/127.0.0.1,port=57867,localport=406] Connection reset
+[2013-04-10 16:29:37]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:57871receive:1_你好::::1::::1::::1
+[2013-04-10 16:29:37]INFO  server.aboutBot.Bot(line:282) -0 false
+[2013-04-10 16:29:37]INFO  server.aboutBot.Bot(line:410) -select * from b_teacherquestion where t_question2 regexp '(-=你好=-){1}'
+[2013-04-10 16:29:37]INFO  server.aboutBot.Bot(line:234) -aboutUnknow
+[2013-04-10 16:29:37]INFO  server.aboutBot.Answers(line:25) -答案集：[我不知道你想让我说什么呢。]
+[2013-04-10 16:29:37]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::我不知道你想让我说什么呢。
+[2013-04-10 16:29:37]INFO  server.handle.Dispatcher(line:58) -使用时间为：564
+[2013-04-10 16:31:43]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:57871receive:1_你好::::0::::-1::::0
+[2013-04-10 16:31:43]INFO  server.aboutBot.Bot(line:214) -aboutMemory
+[2013-04-10 16:31:43]INFO  server.aboutBot.Answers(line:25) -答案集：[这么长时间才回复，跟我说老实话，你在干什么？]
+[2013-04-10 16:31:43]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::这么长时间才回复，跟我说老实话，你在干什么？
+[2013-04-10 16:31:43]INFO  server.handle.Dispatcher(line:58) -使用时间为：3
+[2013-04-10 16:31:46]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:57871receive:1_的::::0::::0::::0
+[2013-04-10 16:31:46]INFO  server.aboutBot.Bot(line:282) -0 false
+[2013-04-10 16:31:46]INFO  server.aboutBot.Bot(line:230) -aboutQuestion
+[2013-04-10 16:31:46]INFO  server.aboutBot.Answers(line:25) -答案集：[你想说什么呢？]
+[2013-04-10 16:31:46]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::你想说什么呢？
+[2013-04-10 16:31:46]INFO  server.handle.Dispatcher(line:58) -使用时间为：7
+[2013-04-10 16:31:49]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:57871receive:1_惹我::::0::::-1::::0
+[2013-04-10 16:31:49]INFO  server.aboutBot.Bot(line:282) -0 false
+[2013-04-10 16:31:49]INFO  server.aboutBot.Bot(line:410) -select * from b_teacherquestion where t_question2 regexp '(-=惹我=-){1}'
+[2013-04-10 16:31:49]INFO  server.aboutBot.Bot(line:234) -aboutUnknow
+[2013-04-10 16:31:49]INFO  server.aboutBot.Answers(line:25) -答案集：[我太笨了，竟不理解你的意思。请说的简单点吧。]
+[2013-04-10 16:31:49]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::我太笨了，竟不理解你的意思。请说的简单点吧。
+[2013-04-10 16:31:49]INFO  server.handle.Dispatcher(line:58) -使用时间为：5
+[2013-04-10 16:31:51]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:57871receive:1_个::::0::::0::::0
+[2013-04-10 16:31:51]INFO  server.aboutBot.Bot(line:282) -0 false
+[2013-04-10 16:31:51]INFO  server.aboutBot.Bot(line:230) -aboutQuestion
+[2013-04-10 16:31:51]INFO  server.aboutBot.Answers(line:25) -答案集：[你想说什么呢？]
+[2013-04-10 16:31:51]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::你想说什么呢？
+[2013-04-10 16:31:51]INFO  server.handle.Dispatcher(line:58) -使用时间为：2
+[2013-04-10 16:31:54]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:57871receive:1_问问::::0::::-1::::0
+[2013-04-10 16:31:54]INFO  server.aboutBot.Bot(line:282) -0 false
+[2013-04-10 16:31:54]INFO  server.aboutBot.Bot(line:410) -select * from b_teacherquestion where t_question2 regexp '(-=问问=-){1}'
+[2013-04-10 16:31:54]INFO  server.aboutBot.Bot(line:230) -aboutQuestion
+[2013-04-10 16:31:54]INFO  server.aboutBot.Answers(line:25) -答案集：[什么问问,说的详细点吧。]
+[2013-04-10 16:31:54]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::什么问问,说的详细点吧。
+[2013-04-10 16:31:54]INFO  server.handle.Dispatcher(line:58) -使用时间为：4
+[2013-04-10 16:31:57]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:57871receive:1_热热::::0::::-1::::0
+[2013-04-10 16:31:57]INFO  server.aboutBot.Bot(line:282) -0 false
+[2013-04-10 16:31:57]INFO  server.aboutBot.Bot(line:410) -select * from b_teacherquestion where t_question2 regexp '(-=热热=-){1}'
+[2013-04-10 16:31:57]INFO  server.aboutBot.Bot(line:230) -aboutQuestion
+[2013-04-10 16:31:57]INFO  server.aboutBot.Answers(line:25) -答案集：[什么热热,说的详细点吧。]
+[2013-04-10 16:31:57]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::什么热热,说的详细点吧。
+[2013-04-10 16:31:57]INFO  server.handle.Dispatcher(line:58) -使用时间为：3
+[2013-04-10 16:32:00]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:57871receive:1_你好::::0::::-1::::0
+[2013-04-10 16:32:00]INFO  server.aboutBot.Bot(line:282) -0 false
+[2013-04-10 16:32:00]INFO  server.aboutBot.Bot(line:410) -select * from b_teacherquestion where t_question2 regexp '(-=你好=-){1}'
+[2013-04-10 16:32:00]INFO  server.aboutBot.Bot(line:234) -aboutUnknow
+[2013-04-10 16:32:00]INFO  server.aboutBot.Answers(line:25) -答案集：[我不知道你想让我说什么呢。]
+[2013-04-10 16:32:00]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::我不知道你想让我说什么呢。
+[2013-04-10 16:32:00]INFO  server.handle.Dispatcher(line:58) -使用时间为：4
+[2013-04-10 16:32:03]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:57871receive:1_你好啊::::0::::-1::::0
+[2013-04-10 16:32:03]INFO  server.aboutBot.Bot(line:282) -1 true
+[2013-04-10 16:32:03]INFO  server.aboutBot.Bot(line:410) -select * from b_teacherquestion where t_question2 regexp '(-=你好=-){1}'
+[2013-04-10 16:32:03]INFO  server.aboutBot.Bot(line:234) -aboutUnknow
+[2013-04-10 16:32:03]INFO  server.aboutBot.Answers(line:25) -答案集：[none]
+[2013-04-10 16:32:03]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::none
+[2013-04-10 16:32:03]INFO  server.handle.Dispatcher(line:58) -使用时间为：6
+[2013-04-10 16:37:41]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:57928receive:1_你好::::1::::1::::1
+[2013-04-10 16:37:42]INFO  server.aboutBot.Bot(line:282) -0 false
+[2013-04-10 16:37:42]INFO  server.aboutBot.Bot(line:410) -select * from b_teacherquestion where t_question2 regexp '(-=你好=-){1}'
+[2013-04-10 16:37:42]INFO  server.conn.Conn(line:88) -127.0.0.1数据库连接成功!
+[2013-04-10 16:37:42]INFO  server.aboutBot.Answers(line:20) -插入Unknow回答我不知道你想让我说什么呢。
+[2013-04-10 16:37:42]INFO  server.aboutBot.Bot(line:234) -aboutUnknow
+[2013-04-10 16:37:42]INFO  server.aboutBot.Answers(line:25) -没有可回答答案，插入Unknow回答!
+[2013-04-10 16:37:42]INFO  server.aboutBot.Answers(line:28) -答案集：[我不知道你想让我说什么呢。]
+[2013-04-10 16:37:42]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::我不知道你想让我说什么呢。
+[2013-04-10 16:37:42]INFO  server.handle.Dispatcher(line:58) -使用时间为：569
+[2013-04-10 16:37:46]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:57928receive:1_你好::::0::::-1::::0
+[2013-04-10 16:37:46]INFO  server.aboutBot.Bot(line:282) -1 true
+[2013-04-10 16:37:46]INFO  server.aboutBot.Bot(line:410) -select * from b_teacherquestion where t_question2 regexp '(-=你好=-){1}'
+[2013-04-10 16:37:46]INFO  server.aboutBot.Answers(line:20) -插入Unknow回答我不知道你想让我说什么呢。
+[2013-04-10 16:37:46]INFO  server.aboutBot.Bot(line:234) -aboutUnknow
+[2013-04-10 16:37:46]INFO  server.aboutBot.Answers(line:28) -答案集：[none]
+[2013-04-10 16:37:46]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::none
+[2013-04-10 16:37:46]INFO  server.handle.Dispatcher(line:58) -使用时间为：11
+[2013-04-10 16:40:45]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:57952receive:1_你好::::1::::1::::1
+[2013-04-10 16:40:45]INFO  server.aboutBot.Bot(line:282) -0 false
+[2013-04-10 16:40:45]INFO  server.aboutBot.Bot(line:410) -select * from b_teacherquestion where t_question2 regexp '(-=你好=-){1}'
+[2013-04-10 16:40:45]INFO  server.conn.Conn(line:88) -127.0.0.1数据库连接成功!
+[2013-04-10 16:40:45]INFO  server.aboutBot.Answers(line:20) -插入Unknow回答我不知道你想让我说什么呢。
+[2013-04-10 16:40:45]INFO  server.aboutBot.Bot(line:234) -aboutUnknow
+[2013-04-10 16:40:45]INFO  server.aboutBot.Answers(line:25) -没有可回答答案，插入Unknow回答!
+[2013-04-10 16:40:45]INFO  server.aboutBot.Answers(line:28) -答案集：1 [我不知道你想让我说什么呢。]
+[2013-04-10 16:40:45]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::我不知道你想让我说什么呢。
+[2013-04-10 16:40:45]INFO  server.handle.Dispatcher(line:58) -使用时间为：562
+[2013-04-10 16:40:50]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:57952receive:1_你好::::0::::0::::0
+[2013-04-10 16:40:50]INFO  server.aboutBot.Bot(line:282) -1 true
+[2013-04-10 16:40:50]INFO  server.aboutBot.Bot(line:410) -select * from b_teacherquestion where t_question2 regexp '(-=你好=-){1}'
+[2013-04-10 16:40:50]INFO  server.aboutBot.Answers(line:20) -插入Unknow回答我不知道你想让我说什么呢。
+[2013-04-10 16:40:50]INFO  server.aboutBot.Bot(line:234) -aboutUnknow
+[2013-04-10 16:40:50]INFO  server.aboutBot.Answers(line:28) -答案集：1 [none]
+[2013-04-10 16:40:50]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::none
+[2013-04-10 16:40:50]INFO  server.handle.Dispatcher(line:58) -使用时间为：12
+[2013-04-10 16:42:55]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:57966receive:1_你好::::1::::1::::1
+[2013-04-10 16:42:56]INFO  server.aboutBot.Bot(line:282) -0 false
+[2013-04-10 16:42:56]INFO  server.aboutBot.Bot(line:410) -select * from b_teacherquestion where t_question2 regexp '(-=你好=-){1}'
+[2013-04-10 16:42:56]INFO  server.conn.Conn(line:88) -127.0.0.1数据库连接成功!
+[2013-04-10 16:42:56]INFO  server.aboutBot.Answers(line:22) -插入Unknow回答我不知道你想让我说什么呢。
+[2013-04-10 16:42:56]INFO  server.aboutBot.Bot(line:234) -aboutUnknow
+[2013-04-10 16:42:56]INFO  server.aboutBot.Answers(line:27) -没有可回答答案，插入Unknow回答!
+[2013-04-10 16:42:56]INFO  server.aboutBot.Answers(line:30) -答案集：1 [我不知道你想让我说什么呢。]
+[2013-04-10 16:42:56]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::我不知道你想让我说什么呢。
+[2013-04-10 16:42:56]INFO  server.handle.Dispatcher(line:58) -使用时间为：575
+[2013-04-10 16:43:00]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:57966receive:1_你好::::0::::-1::::0
+[2013-04-10 16:43:00]INFO  server.aboutBot.Bot(line:282) -1 true
+[2013-04-10 16:43:00]INFO  server.aboutBot.Answers(line:15) -插入可回答答案none
+[2013-04-10 16:43:00]INFO  server.aboutBot.Bot(line:410) -select * from b_teacherquestion where t_question2 regexp '(-=你好=-){1}'
+[2013-04-10 16:43:00]INFO  server.aboutBot.Answers(line:22) -插入Unknow回答我不知道你想让我说什么呢。
+[2013-04-10 16:43:00]INFO  server.aboutBot.Bot(line:234) -aboutUnknow
+[2013-04-10 16:43:00]INFO  server.aboutBot.Answers(line:30) -答案集：1 [none]
+[2013-04-10 16:43:00]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::none
+[2013-04-10 16:43:00]INFO  server.handle.Dispatcher(line:58) -使用时间为：11
+[2013-04-10 16:45:11]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:57981receive:1_你好::::1::::1::::1
+[2013-04-10 16:45:11]INFO  server.aboutBot.Bot(line:212) -start aboutMemory
+[2013-04-10 16:45:11]INFO  server.aboutBot.Bot(line:286) -0 false
+[2013-04-10 16:45:11]INFO  server.aboutBot.Bot(line:221) -start aboutMyself
+[2013-04-10 16:45:11]INFO  server.aboutBot.Bot(line:230) -start aboutQuestion
+[2013-04-10 16:45:11]INFO  server.aboutBot.Bot(line:414) -select * from b_teacherquestion where t_question2 regexp '(-=你好=-){1}'
+[2013-04-10 16:45:11]INFO  server.conn.Conn(line:88) -127.0.0.1数据库连接成功!
+[2013-04-10 16:45:11]INFO  server.aboutBot.Bot(line:236) -start aboutUnknow
+[2013-04-10 16:45:11]INFO  server.aboutBot.Answers(line:22) -插入Unknow回答我不知道你想让我说什么呢。
+[2013-04-10 16:45:11]INFO  server.aboutBot.Bot(line:238) -aboutUnknow access
+[2013-04-10 16:45:11]INFO  server.aboutBot.Answers(line:27) -没有可回答答案，插入Unknow回答!
+[2013-04-10 16:45:11]INFO  server.aboutBot.Answers(line:30) -答案集：1 [我不知道你想让我说什么呢。]
+[2013-04-10 16:45:11]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::我不知道你想让我说什么呢。
+[2013-04-10 16:45:11]INFO  server.handle.Dispatcher(line:58) -使用时间为：548
+[2013-04-10 16:45:16]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:57981receive:1_你好::::0::::-1::::0
+[2013-04-10 16:45:16]INFO  server.aboutBot.Bot(line:212) -start aboutMemory
+[2013-04-10 16:45:16]INFO  server.aboutBot.Bot(line:286) -1 true
+[2013-04-10 16:45:16]INFO  server.aboutBot.Answers(line:15) -插入可回答答案none
+[2013-04-10 16:45:16]INFO  server.aboutBot.Bot(line:221) -start aboutMyself
+[2013-04-10 16:45:16]INFO  server.aboutBot.Bot(line:230) -start aboutQuestion
+[2013-04-10 16:45:16]INFO  server.aboutBot.Bot(line:414) -select * from b_teacherquestion where t_question2 regexp '(-=你好=-){1}'
+[2013-04-10 16:45:16]INFO  server.aboutBot.Bot(line:236) -start aboutUnknow
+[2013-04-10 16:45:16]INFO  server.aboutBot.Answers(line:22) -插入Unknow回答我不知道你想让我说什么呢。
+[2013-04-10 16:45:16]INFO  server.aboutBot.Bot(line:238) -aboutUnknow access
+[2013-04-10 16:45:16]INFO  server.aboutBot.Answers(line:30) -答案集：1 [none]
+[2013-04-10 16:45:16]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::none
+[2013-04-10 16:45:16]INFO  server.handle.Dispatcher(line:58) -使用时间为：10
+[2013-04-10 16:51:17]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:58013receive:1_你好::::1::::1::::1
+[2013-04-10 16:51:17]INFO  server.aboutBot.Bot(line:212) -start aboutMemory
+[2013-04-10 16:51:17]INFO  server.aboutBot.Bot(line:286) -0 false
+[2013-04-10 16:51:17]INFO  server.aboutBot.Bot(line:221) -start aboutMyself
+[2013-04-10 16:51:17]INFO  server.aboutBot.Bot(line:230) -start aboutQuestion
+[2013-04-10 16:51:17]INFO  server.aboutBot.Bot(line:415) -select * from b_teacherquestion where t_question2 regexp '(-=你好=-){1}'
+[2013-04-10 16:51:17]INFO  server.conn.Conn(line:88) -127.0.0.1数据库连接成功!
+[2013-04-10 16:51:17]INFO  server.aboutBot.Bot(line:236) -start aboutUnknow
+[2013-04-10 16:51:17]INFO  server.aboutBot.Answers(line:22) -插入Unknow回答我不知道你想让我说什么呢。
+[2013-04-10 16:51:17]INFO  server.aboutBot.Bot(line:238) -aboutUnknow access
+[2013-04-10 16:51:17]INFO  server.aboutBot.Answers(line:27) -没有可回答答案，插入Unknow回答!
+[2013-04-10 16:51:17]INFO  server.aboutBot.Answers(line:30) -答案集：1 [我不知道你想让我说什么呢。]
+[2013-04-10 16:51:17]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::我不知道你想让我说什么呢。
+[2013-04-10 16:51:17]INFO  server.handle.Dispatcher(line:58) -使用时间为：557
+[2013-04-10 16:51:22]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:58013receive:1_你好::::0::::-1::::0
+[2013-04-10 16:51:22]INFO  server.aboutBot.Bot(line:212) -start aboutMemory
+[2013-04-10 16:51:22]INFO  server.aboutBot.Bot(line:286) -1 true
+[2013-04-10 16:51:22]INFO  server.aboutBot.Answers(line:15) -插入可回答答案none
+[2013-04-10 16:51:22]INFO  server.aboutBot.Bot(line:221) -start aboutMyself
+[2013-04-10 16:51:22]INFO  server.aboutBot.Bot(line:230) -start aboutQuestion
+[2013-04-10 16:51:22]INFO  server.aboutBot.Bot(line:415) -select * from b_teacherquestion where t_question2 regexp '(-=你好=-){1}'
+[2013-04-10 16:51:22]INFO  server.aboutBot.Bot(line:236) -start aboutUnknow
+[2013-04-10 16:51:22]INFO  server.aboutBot.Answers(line:22) -插入Unknow回答我不知道你想让我说什么呢。
+[2013-04-10 16:51:22]INFO  server.aboutBot.Bot(line:238) -aboutUnknow access
+[2013-04-10 16:51:22]INFO  server.aboutBot.Answers(line:30) -答案集：1 [none]
+[2013-04-10 16:51:22]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::none
+[2013-04-10 16:51:22]INFO  server.handle.Dispatcher(line:58) -使用时间为：17
+[2013-04-10 16:52:17]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:58018receive:1_你好::::1::::1::::1
+[2013-04-10 16:52:17]INFO  server.aboutBot.Bot(line:212) -start aboutMemory
+[2013-04-10 16:52:17]INFO  server.aboutBot.Bot(line:286) -0 false
+[2013-04-10 16:52:17]INFO  server.aboutBot.Bot(line:221) -start aboutMyself
+[2013-04-10 16:52:17]INFO  server.aboutBot.Bot(line:230) -start aboutQuestion
+[2013-04-10 16:52:17]INFO  server.aboutBot.Bot(line:415) -select * from b_teacherquestion where t_question2 regexp '(-=你好=-){1}'
+[2013-04-10 16:52:18]INFO  server.conn.Conn(line:88) -127.0.0.1数据库连接成功!
+[2013-04-10 16:52:18]INFO  server.aboutBot.Bot(line:236) -start aboutUnknow
+[2013-04-10 16:52:18]INFO  server.aboutBot.Answers(line:22) -插入Unknow回答我不知道你想让我说什么呢。
+[2013-04-10 16:52:18]INFO  server.aboutBot.Bot(line:238) -aboutUnknow access
+[2013-04-10 16:52:18]INFO  server.aboutBot.Answers(line:27) -没有可回答答案，插入Unknow回答!
+[2013-04-10 16:52:18]INFO  server.aboutBot.Answers(line:30) -答案集：1 [我不知道你想让我说什么呢。]
+[2013-04-10 16:52:18]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::我不知道你想让我说什么呢。
+[2013-04-10 16:52:18]INFO  server.handle.Dispatcher(line:58) -使用时间为：536
+[2013-04-10 16:52:22]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:58018receive:1_你好::::0::::-1::::0
+[2013-04-10 16:52:22]INFO  server.aboutBot.Bot(line:212) -start aboutMemory
+[2013-04-10 16:52:22]INFO  server.aboutBot.Bot(line:286) -1 true
+[2013-04-10 16:52:22]INFO  server.aboutBot.Bot(line:221) -start aboutMyself
+[2013-04-10 16:52:22]INFO  server.aboutBot.Bot(line:230) -start aboutQuestion
+[2013-04-10 16:52:22]INFO  server.aboutBot.Bot(line:415) -select * from b_teacherquestion where t_question2 regexp '(-=你好=-){1}'
+[2013-04-10 16:52:22]INFO  server.aboutBot.Bot(line:236) -start aboutUnknow
+[2013-04-10 16:52:22]INFO  server.aboutBot.Answers(line:22) -插入Unknow回答我不知道你想让我说什么呢。
+[2013-04-10 16:52:22]INFO  server.aboutBot.Bot(line:238) -aboutUnknow access
+[2013-04-10 16:52:22]INFO  server.aboutBot.Answers(line:27) -没有可回答答案，插入Unknow回答!
+[2013-04-10 16:52:22]INFO  server.aboutBot.Answers(line:30) -答案集：1 [我不知道你想让我说什么呢。]
+[2013-04-10 16:52:22]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::我不知道你想让我说什么呢。
+[2013-04-10 16:52:22]INFO  server.handle.Dispatcher(line:58) -使用时间为：14
+[2013-04-10 16:52:27]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:58018receive:1_ok了::::0::::-1::::0
+[2013-04-10 16:52:27]INFO  server.aboutBot.Bot(line:212) -start aboutMemory
+[2013-04-10 16:52:27]INFO  server.aboutBot.Bot(line:286) -0 false
+[2013-04-10 16:52:27]INFO  server.aboutBot.Bot(line:221) -start aboutMyself
+[2013-04-10 16:52:27]INFO  server.aboutBot.Bot(line:230) -start aboutQuestion
+[2013-04-10 16:52:27]INFO  server.aboutBot.Bot(line:415) -select * from b_teacherquestion where t_question2 regexp '(-=ok=-){1}'
+[2013-04-10 16:52:27]INFO  server.aboutBot.Answers(line:22) -插入Unknow回答什么ok了,说的详细点吧。
+[2013-04-10 16:52:27]INFO  server.aboutBot.Bot(line:233) -aboutQuestion access
+[2013-04-10 16:52:27]INFO  server.aboutBot.Answers(line:27) -没有可回答答案，插入Unknow回答!
+[2013-04-10 16:52:27]INFO  server.aboutBot.Answers(line:30) -答案集：1 [什么ok了,说的详细点吧。]
+[2013-04-10 16:52:27]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::什么ok了,说的详细点吧。
+[2013-04-10 16:52:27]INFO  server.handle.Dispatcher(line:58) -使用时间为：8
+[2013-04-10 16:55:21]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:58038receive:1_你好::::1::::1::::1
+[2013-04-10 16:55:21]INFO  server.aboutBot.Memory(line:181) -1 1 1 0
+[2013-04-10 16:55:22]INFO  server.aboutBot.Bot(line:212) -start aboutMemory
+[2013-04-10 16:55:22]INFO  server.aboutBot.Bot(line:286) -0 false
+[2013-04-10 16:55:22]INFO  server.aboutBot.Bot(line:221) -start aboutMyself
+[2013-04-10 16:55:22]INFO  server.aboutBot.Bot(line:230) -start aboutQuestion
+[2013-04-10 16:55:22]INFO  server.aboutBot.Bot(line:415) -select * from b_teacherquestion where t_question2 regexp '(-=你好=-){1}'
+[2013-04-10 16:55:22]INFO  server.conn.Conn(line:88) -127.0.0.1数据库连接成功!
+[2013-04-10 16:55:22]INFO  server.aboutBot.Bot(line:236) -start aboutUnknow
+[2013-04-10 16:55:22]INFO  server.aboutBot.Answers(line:22) -插入Unknow回答:我不知道你想让我说什么呢。
+[2013-04-10 16:55:22]INFO  server.aboutBot.Bot(line:238) -aboutUnknow access
+[2013-04-10 16:55:22]INFO  server.aboutBot.Answers(line:27) -没有可回答答案，插入Unknow回答!
+[2013-04-10 16:55:22]INFO  server.aboutBot.Answers(line:30) -答案集:1 [我不知道你想让我说什么呢。]
+[2013-04-10 16:55:22]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::我不知道你想让我说什么呢。
+[2013-04-10 16:55:22]INFO  server.handle.Dispatcher(line:58) -使用时间为：688
+[2013-04-10 16:55:28]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:58038receive:1_你好啊::::0::::-1::::0
+[2013-04-10 16:55:28]INFO  server.aboutBot.Memory(line:181) -0 -1 0 6
+[2013-04-10 16:55:28]INFO  server.aboutBot.Bot(line:212) -start aboutMemory
+[2013-04-10 16:55:28]INFO  server.aboutBot.Bot(line:286) -1 true
+[2013-04-10 16:55:28]INFO  server.aboutBot.Bot(line:221) -start aboutMyself
+[2013-04-10 16:55:28]INFO  server.aboutBot.Bot(line:230) -start aboutQuestion
+[2013-04-10 16:55:28]INFO  server.aboutBot.Bot(line:415) -select * from b_teacherquestion where t_question2 regexp '(-=你好=-){1}'
+[2013-04-10 16:55:28]INFO  server.aboutBot.Bot(line:236) -start aboutUnknow
+[2013-04-10 16:55:28]INFO  server.aboutBot.Answers(line:22) -插入Unknow回答:我不知道你想让我说什么呢。
+[2013-04-10 16:55:28]INFO  server.aboutBot.Bot(line:238) -aboutUnknow access
+[2013-04-10 16:55:28]INFO  server.aboutBot.Answers(line:27) -没有可回答答案，插入Unknow回答!
+[2013-04-10 16:55:28]INFO  server.aboutBot.Answers(line:30) -答案集:1 [我不知道你想让我说什么呢。]
+[2013-04-10 16:55:28]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::我不知道你想让我说什么呢。
+[2013-04-10 16:55:28]INFO  server.handle.Dispatcher(line:58) -使用时间为：6
+[2013-04-10 16:55:33]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:58038receive:1_你叫什么::::0::::0::::0
+[2013-04-10 16:55:33]INFO  server.aboutBot.Memory(line:181) -0 0 0 5
+[2013-04-10 16:55:33]INFO  server.aboutBot.Bot(line:212) -start aboutMemory
+[2013-04-10 16:55:33]INFO  server.aboutBot.Bot(line:286) -0 false
+[2013-04-10 16:55:33]INFO  server.aboutBot.Bot(line:221) -start aboutMyself
+[2013-04-10 16:55:33]INFO  server.aboutBot.Bot(line:336) -找到的关键字name
+[2013-04-10 16:55:33]INFO  server.aboutBot.Answers(line:15) -插入可回答答案:我叫木木！
+[2013-04-10 16:55:33]INFO  server.aboutBot.Bot(line:224) -aboutMyself access
+[2013-04-10 16:55:33]INFO  server.aboutBot.Answers(line:30) -答案集:1 [我叫木木！]
+[2013-04-10 16:55:33]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::我叫木木！
+[2013-04-10 16:55:33]INFO  server.handle.Dispatcher(line:58) -使用时间为：5
+[2013-04-10 16:55:36]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:58038receive:1_好名字::::0::::-1::::0
+[2013-04-10 16:55:36]INFO  server.aboutBot.Memory(line:181) -0 -1 0 3
+[2013-04-10 16:55:36]INFO  server.aboutBot.Bot(line:212) -start aboutMemory
+[2013-04-10 16:55:36]INFO  server.aboutBot.Bot(line:286) -0 false
+[2013-04-10 16:55:36]INFO  server.aboutBot.Bot(line:221) -start aboutMyself
+[2013-04-10 16:55:36]INFO  server.aboutBot.Bot(line:230) -start aboutQuestion
+[2013-04-10 16:55:36]INFO  server.aboutBot.Bot(line:415) -select * from b_teacherquestion where t_question2 regexp '(-=好名字=-){1}'
+[2013-04-10 16:55:36]INFO  server.aboutBot.Answers(line:22) -插入Unknow回答:什么好名字,说的详细点吧。
+[2013-04-10 16:55:36]INFO  server.aboutBot.Bot(line:233) -aboutQuestion access
+[2013-04-10 16:55:36]INFO  server.aboutBot.Answers(line:27) -没有可回答答案，插入Unknow回答!
+[2013-04-10 16:55:36]INFO  server.aboutBot.Answers(line:30) -答案集:1 [什么好名字,说的详细点吧。]
+[2013-04-10 16:55:36]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::什么好名字,说的详细点吧。
+[2013-04-10 16:55:36]INFO  server.handle.Dispatcher(line:58) -使用时间为：8
+[2013-04-10 16:56:26]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:58038receive:1_不错::::0::::-1::::0
+[2013-04-10 16:56:26]INFO  server.aboutBot.Memory(line:181) -0 -1 0 50
+[2013-04-10 16:56:26]INFO  server.aboutBot.Bot(line:212) -start aboutMemory
+[2013-04-10 16:56:26]INFO  server.aboutBot.Bot(line:286) -0 false
+[2013-04-10 16:56:26]INFO  server.aboutBot.Bot(line:221) -start aboutMyself
+[2013-04-10 16:56:26]INFO  server.aboutBot.Bot(line:230) -start aboutQuestion
+[2013-04-10 16:56:26]INFO  server.aboutBot.Bot(line:415) -select * from b_teacherquestion where t_question2 regexp '(-=不错=-){1}'
+[2013-04-10 16:56:26]INFO  server.aboutBot.Answers(line:22) -插入Unknow回答:什么不错,说的详细点吧。
+[2013-04-10 16:56:26]INFO  server.aboutBot.Bot(line:233) -aboutQuestion access
+[2013-04-10 16:56:26]INFO  server.aboutBot.Answers(line:27) -没有可回答答案，插入Unknow回答!
+[2013-04-10 16:56:26]INFO  server.aboutBot.Answers(line:30) -答案集:1 [什么不错,说的详细点吧。]
+[2013-04-10 16:56:26]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::什么不错,说的详细点吧。
+[2013-04-10 16:56:26]INFO  server.handle.Dispatcher(line:58) -使用时间为：6
+[2013-04-10 16:56:30]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:58038receive:1_你叫什么名字::::0::::-1::::0
+[2013-04-10 16:56:30]INFO  server.aboutBot.Memory(line:181) -0 -1 0 4
+[2013-04-10 16:56:30]INFO  server.aboutBot.Bot(line:212) -start aboutMemory
+[2013-04-10 16:56:30]INFO  server.aboutBot.Bot(line:286) -0 false
+[2013-04-10 16:56:30]INFO  server.aboutBot.Bot(line:221) -start aboutMyself
+[2013-04-10 16:56:30]INFO  server.aboutBot.Bot(line:336) -找到的关键字name
+[2013-04-10 16:56:30]INFO  server.aboutBot.Answers(line:15) -插入可回答答案:我叫木木！
+[2013-04-10 16:56:30]INFO  server.aboutBot.Bot(line:224) -aboutMyself access
+[2013-04-10 16:56:30]INFO  server.aboutBot.Answers(line:30) -答案集:1 [我叫木木！]
+[2013-04-10 16:56:30]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::我叫木木！
+[2013-04-10 16:56:30]INFO  server.handle.Dispatcher(line:58) -使用时间为：4
+[2013-04-10 16:56:33]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:58038receive:1_不错::::0::::-1::::0
+[2013-04-10 16:56:33]INFO  server.aboutBot.Memory(line:181) -0 -1 0 3
+[2013-04-10 16:56:33]INFO  server.aboutBot.Bot(line:212) -start aboutMemory
+[2013-04-10 16:56:33]INFO  server.aboutBot.Bot(line:286) -0 false
+[2013-04-10 16:56:33]INFO  server.aboutBot.Bot(line:221) -start aboutMyself
+[2013-04-10 16:56:33]INFO  server.aboutBot.Answers(line:15) -插入可回答答案:那是，谢谢啊。
+[2013-04-10 16:56:33]INFO  server.aboutBot.Bot(line:224) -aboutMyself access
+[2013-04-10 16:56:33]INFO  server.aboutBot.Answers(line:30) -答案集:1 [那是，谢谢啊。]
+[2013-04-10 16:56:33]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::那是，谢谢啊。
+[2013-04-10 16:56:33]INFO  server.handle.Dispatcher(line:58) -使用时间为：7
+[2013-04-10 16:56:37]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:58038receive:1_呵呵::::0::::-1::::0
+[2013-04-10 16:56:37]INFO  server.aboutBot.Memory(line:181) -0 -1 0 4
+[2013-04-10 16:56:37]INFO  server.aboutBot.Bot(line:212) -start aboutMemory
+[2013-04-10 16:56:37]INFO  server.aboutBot.Bot(line:286) -0 false
+[2013-04-10 16:56:37]INFO  server.aboutBot.Bot(line:221) -start aboutMyself
+[2013-04-10 16:56:37]INFO  server.aboutBot.Bot(line:230) -start aboutQuestion
+[2013-04-10 16:56:37]INFO  server.aboutBot.Bot(line:415) -select * from b_teacherquestion where t_question2 regexp '(-=呵呵=-){1}'
+[2013-04-10 16:56:37]INFO  server.aboutBot.Answers(line:22) -插入Unknow回答:什么呵呵,说的详细点吧。
+[2013-04-10 16:56:37]INFO  server.aboutBot.Bot(line:233) -aboutQuestion access
+[2013-04-10 16:56:37]INFO  server.aboutBot.Answers(line:27) -没有可回答答案，插入Unknow回答!
+[2013-04-10 16:56:37]INFO  server.aboutBot.Answers(line:30) -答案集:1 [什么呵呵,说的详细点吧。]
+[2013-04-10 16:56:37]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::什么呵呵,说的详细点吧。
+[2013-04-10 16:56:37]INFO  server.handle.Dispatcher(line:58) -使用时间为：7
+[2013-04-10 16:56:44]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:58038receive:1_那是开心的意思::::0::::-1::::0
+[2013-04-10 16:56:44]INFO  server.aboutBot.Memory(line:181) -0 -1 0 7
+[2013-04-10 16:56:44]INFO  server.aboutBot.Bot(line:212) -start aboutMemory
+[2013-04-10 16:56:44]INFO  server.aboutBot.Bot(line:286) -0 false
+[2013-04-10 16:56:44]INFO  server.aboutBot.Bot(line:221) -start aboutMyself
+[2013-04-10 16:56:44]INFO  server.aboutBot.Bot(line:230) -start aboutQuestion
+[2013-04-10 16:56:44]INFO  server.aboutBot.Bot(line:415) -select * from b_teacherquestion where t_question2 regexp '(-=开心=-|-=意思=-|-=那是=-){3}'
+[2013-04-10 16:56:44]INFO  server.aboutBot.Bot(line:415) -select * from b_teacherquestion where t_question2 regexp '(-=开心=-|-=意思=-|-=那是=-){2}'
+[2013-04-10 16:56:44]INFO  server.aboutBot.Bot(line:236) -start aboutUnknow
+[2013-04-10 16:56:44]INFO  server.aboutBot.Answers(line:22) -插入Unknow回答:我太笨了，竟不理解你的意思。请说的简单点吧。
+[2013-04-10 16:56:44]INFO  server.aboutBot.Bot(line:238) -aboutUnknow access
+[2013-04-10 16:56:44]INFO  server.aboutBot.Answers(line:27) -没有可回答答案，插入Unknow回答!
+[2013-04-10 16:56:44]INFO  server.aboutBot.Answers(line:30) -答案集:1 [我太笨了，竟不理解你的意思。请说的简单点吧。]
+[2013-04-10 16:56:44]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::我太笨了，竟不理解你的意思。请说的简单点吧。
+[2013-04-10 16:56:44]INFO  server.handle.Dispatcher(line:58) -使用时间为：7
+[2013-04-10 16:57:29]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:58038receive:1_的::::0::::-1::::0
+[2013-04-10 16:57:29]INFO  server.aboutBot.Memory(line:181) -0 -1 0 45
+[2013-04-10 16:57:29]INFO  server.aboutBot.Bot(line:212) -start aboutMemory
+[2013-04-10 16:57:29]INFO  server.aboutBot.Bot(line:286) -0 false
+[2013-04-10 16:57:29]INFO  server.aboutBot.Bot(line:221) -start aboutMyself
+[2013-04-10 16:57:29]INFO  server.aboutBot.Bot(line:230) -start aboutQuestion
+[2013-04-10 16:57:29]INFO  server.aboutBot.Answers(line:22) -插入Unknow回答:你想说什么呢？
+[2013-04-10 16:57:29]INFO  server.aboutBot.Bot(line:233) -aboutQuestion access
+[2013-04-10 16:57:29]INFO  server.aboutBot.Answers(line:27) -没有可回答答案，插入Unknow回答!
+[2013-04-10 16:57:29]INFO  server.aboutBot.Answers(line:30) -答案集:1 [你想说什么呢？]
+[2013-04-10 16:57:29]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::你想说什么呢？
+[2013-04-10 16:57:29]INFO  server.handle.Dispatcher(line:58) -使用时间为：5
+[2013-04-10 16:57:32]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:58038receive:1_我::::0::::0::::0
+[2013-04-10 16:57:32]INFO  server.aboutBot.Memory(line:181) -0 0 0 3
+[2013-04-10 16:57:32]INFO  server.aboutBot.Bot(line:212) -start aboutMemory
+[2013-04-10 16:57:32]INFO  server.aboutBot.Bot(line:286) -0 false
+[2013-04-10 16:57:32]INFO  server.aboutBot.Bot(line:221) -start aboutMyself
+[2013-04-10 16:57:32]INFO  server.aboutBot.Bot(line:230) -start aboutQuestion
+[2013-04-10 16:57:32]INFO  server.aboutBot.Bot(line:236) -start aboutUnknow
+[2013-04-10 16:57:32]INFO  server.aboutBot.Answers(line:22) -插入Unknow回答:我太笨了，竟不理解你的意思。请说的简单点吧。
+[2013-04-10 16:57:32]INFO  server.aboutBot.Bot(line:238) -aboutUnknow access
+[2013-04-10 16:57:32]INFO  server.aboutBot.Answers(line:27) -没有可回答答案，插入Unknow回答!
+[2013-04-10 16:57:32]INFO  server.aboutBot.Answers(line:30) -答案集:1 [我太笨了，竟不理解你的意思。请说的简单点吧。]
+[2013-04-10 16:57:32]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::我太笨了，竟不理解你的意思。请说的简单点吧。
+[2013-04-10 16:57:32]INFO  server.handle.Dispatcher(line:58) -使用时间为：8
+[2013-04-10 16:57:33]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:58038receive:1_飞::::0::::-1::::0
+[2013-04-10 16:57:33]INFO  server.aboutBot.Memory(line:181) -0 -1 0 1
+[2013-04-10 16:57:33]INFO  server.aboutBot.Bot(line:212) -start aboutMemory
+[2013-04-10 16:57:33]INFO  server.aboutBot.Bot(line:286) -0 false
+[2013-04-10 16:57:33]INFO  server.aboutBot.Bot(line:221) -start aboutMyself
+[2013-04-10 16:57:33]INFO  server.aboutBot.Bot(line:230) -start aboutQuestion
+[2013-04-10 16:57:33]INFO  server.aboutBot.Bot(line:415) -select * from b_teacherquestion where t_question2 regexp '(-=飞=-){1}'
+[2013-04-10 16:57:33]INFO  server.aboutBot.Answers(line:22) -插入Unknow回答:什么飞,说的详细点吧。
+[2013-04-10 16:57:33]INFO  server.aboutBot.Bot(line:233) -aboutQuestion access
+[2013-04-10 16:57:33]INFO  server.aboutBot.Answers(line:27) -没有可回答答案，插入Unknow回答!
+[2013-04-10 16:57:33]INFO  server.aboutBot.Answers(line:30) -答案集:1 [什么飞,说的详细点吧。]
+[2013-04-10 16:57:33]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::什么飞,说的详细点吧。
+[2013-04-10 16:57:33]INFO  server.handle.Dispatcher(line:58) -使用时间为：6
+[2013-04-10 16:57:40]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:58038receive:1_我想飞::::0::::0::::0
+[2013-04-10 16:57:40]INFO  server.aboutBot.Memory(line:181) -0 0 0 7
+[2013-04-10 16:57:40]INFO  server.aboutBot.Bot(line:212) -start aboutMemory
+[2013-04-10 16:57:40]INFO  server.aboutBot.Bot(line:286) -0 false
+[2013-04-10 16:57:40]INFO  server.aboutBot.Bot(line:221) -start aboutMyself
+[2013-04-10 16:57:40]INFO  server.aboutBot.Bot(line:230) -start aboutQuestion
+[2013-04-10 16:57:40]INFO  server.aboutBot.Bot(line:415) -select * from b_teacherquestion where t_question2 regexp '(-=想=-|-=飞=-){2}'
+[2013-04-10 16:57:40]INFO  server.aboutBot.Bot(line:415) -select * from b_teacherquestion where t_question2 regexp '(-=想=-|-=飞=-){1}'
+[2013-04-10 16:57:40]INFO  server.aboutBot.Bot(line:236) -start aboutUnknow
+[2013-04-10 16:57:40]INFO  server.aboutBot.Answers(line:22) -插入Unknow回答:我太笨了，竟不理解你的意思。请说的简单点吧。
+[2013-04-10 16:57:40]INFO  server.aboutBot.Bot(line:238) -aboutUnknow access
+[2013-04-10 16:57:40]INFO  server.aboutBot.Answers(line:27) -没有可回答答案，插入Unknow回答!
+[2013-04-10 16:57:40]INFO  server.aboutBot.Answers(line:30) -答案集:1 [我太笨了，竟不理解你的意思。请说的简单点吧。]
+[2013-04-10 16:57:40]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::我太笨了，竟不理解你的意思。请说的简单点吧。
+[2013-04-10 16:57:40]INFO  server.handle.Dispatcher(line:58) -使用时间为：6
+[2013-04-10 16:57:47]INFO  server.handle.Dispatcher(line:55) -/127.0.0.1:58038receive:1_你是真的很笨::::0::::0::::0
+[2013-04-10 16:57:47]INFO  server.aboutBot.Memory(line:181) -0 0 0 7
+[2013-04-10 16:57:47]INFO  server.aboutBot.Bot(line:212) -start aboutMemory
+[2013-04-10 16:57:47]INFO  server.aboutBot.Bot(line:286) -0 false
+[2013-04-10 16:57:47]INFO  server.aboutBot.Bot(line:221) -start aboutMyself
+[2013-04-10 16:57:47]INFO  server.aboutBot.Bot(line:230) -start aboutQuestion
+[2013-04-10 16:57:47]INFO  server.aboutBot.Bot(line:415) -select * from b_teacherquestion where t_question2 regexp '(-=笨=-){1}'
+[2013-04-10 16:57:47]INFO  server.aboutBot.Bot(line:236) -start aboutUnknow
+[2013-04-10 16:57:47]INFO  server.aboutBot.Answers(line:22) -插入Unknow回答:我不知道你想让我说什么呢。
+[2013-04-10 16:57:47]INFO  server.aboutBot.Bot(line:238) -aboutUnknow access
+[2013-04-10 16:57:47]INFO  server.aboutBot.Answers(line:27) -没有可回答答案，插入Unknow回答!
+[2013-04-10 16:57:47]INFO  server.aboutBot.Answers(line:30) -答案集:1 [我不知道你想让我说什么呢。]
+[2013-04-10 16:57:47]INFO  server.handle.Dispatcher(line:96) -send:1_木木::::我不知道你想让我说什么呢。
+[2013-04-10 16:57:47]INFO  server.handle.Dispatcher(line:58) -使用时间为：5

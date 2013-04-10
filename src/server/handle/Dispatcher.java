@@ -7,6 +7,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
 
+import org.apache.log4j.Logger;
+
 import server.aboutBot.Bot;
 import server.handle.message.ChatContent;
 import server.handle.message.ReceiveMessage;
@@ -15,6 +17,7 @@ import server.handle.message.UserLoginResult;
 import server.tools.Ck;
 
 public class Dispatcher {
+	private static final Logger logger = Logger.getLogger(Dispatcher.class);
 	private static ServerSocket serverSocket;
 	public Dispatcher(){
 		try {
@@ -49,12 +52,12 @@ public class Dispatcher {
 			while(true){
 				try {
 					message=receive();
-					System.out.println(socket.getRemoteSocketAddress()+"receive:"+message);
+					logger.info(socket.getRemoteSocketAddress()+"receive:"+message);
 					long i = System.currentTimeMillis();
 					handleMessage(message);
-					System.out.println("使用时间为："+(System.currentTimeMillis() - i));
+					logger.info("使用时间为："+(System.currentTimeMillis() - i));
 				} catch (SocketException e) {
-					System.out.println(socket+" "+e.getMessage());
+					logger.info(socket+" "+e.getMessage());
 					try {
 						socket.close();
 					} catch (IOException e1) {
@@ -90,7 +93,7 @@ public class Dispatcher {
 		 * @throws Exception
 		 */
 		public void sendMessage(String str) throws Exception{
-			System.out.println("send:"+str);
+			logger.info("send:"+str);
 			bot.getMemory().initReplyTime();
 			outD.writeUTF(str);
 		}

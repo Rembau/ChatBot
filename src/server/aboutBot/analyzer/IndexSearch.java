@@ -19,7 +19,7 @@ import org.apache.lucene.util.Version;
 import org.wltea.analyzer.lucene.IKAnalyzer;
 
 public class IndexSearch{
-	private static String indexPath="server/aboutBot/analyzer/file";
+	private static String indexPath="conf"+File.separator+"file";
 	private static Version version = Version.LUCENE_35; 
 	static private IKAnalyzer ik = new IKAnalyzer(true);
 	static IndexReader reader= null;

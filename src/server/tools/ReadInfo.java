@@ -1,17 +1,18 @@
 package server.tools;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 import java.util.Properties;
 
 public class ReadInfo {
 	static Properties p;
-	public static void load(URL url){
+	public static void load(File file){
 		p=new Properties();
 		  InputStream in = null;
 	      try {
-	          in = url.openStream();
+	          in = new FileInputStream(file);
 	      } catch (IOException ioe) {
 	          ioe.printStackTrace();
 	      }

@@ -8,6 +8,8 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.log4j.Logger;
+
 import server.aboutBot.analyzer.Fenci;
 import server.conn.DBoperate_;
 import server.handle.Record;
@@ -19,6 +21,7 @@ import server.tools.RepeatCompare;
  *
  */
 public class Bot {
+	private static final Logger logger = Logger.getLogger(Bot.class);
 	private static String name="木木";
 	/**
 	 * 机器人的一些固定属性
@@ -57,7 +60,7 @@ public class Bot {
 		} else if(contents[0].equals("train")){
 			String question=contents[1].substring(2);
 			String answer=contents[2].substring(2);
-			//System.out.println(question.trim()+" "+answer.trim());
+			//logger.info(question.trim()+" "+answer.trim());
 			Record.recordToDBForTrain(memory.getPeople().getUserNum(), question, answer,memory.getPeople().getIp());
 			return memory.getPeople().getName()+"我已经牢牢记住你说的话了，你可以继续训练，也可以输入end结束训练！";
 		}
@@ -154,12 +157,12 @@ public class Bot {
 				};
 			}
 			i=m.end();
-			System.out.println(m.group()+" "+m.group(1));
+			logger.info(m.group()+" "+m.group(1));
 		}
 		
 		if(!content.substring(i).trim().equals("")){		
 			handle(content.substring(i).trim(),"");  //处理
-			//System.out.println(content.substring(i).trim());
+			//logger.info(content.substring(i).trim());
 		}
 		for(String str:answers.getAnswers()){
 			reply+=str;
@@ -191,7 +194,7 @@ public class Bot {
 				isHaveNotAnwser=true;
 			}
 		}
-		System.out.println(a);
+		logger.info(a);
 		replys.add(a);
 	}*/
 	/**
@@ -206,29 +209,33 @@ public class Bot {
 		/*
 		 * 最高绝对优先级，准确度100%
 		 */
+		logger.info("start aboutMemory");
 		if(aboutMemoryHandle(content,sign)){ 
 			//isCanAnswer=true;
-			System.out.println("aboutMemory");
+			logger.info("aboutMemory access");
 			return;
 		}
 		/*
 		 * 次高绝对优先级，专家库，准确度 95%以上（待）
 		 */
+		logger.info("start aboutMyself");
 		if(aboutMyself(wordList_more,sign)){
 			//isCanAnswer=true;
-			System.out.println("aboutMyself");
+			logger.info("aboutMyself access");
 			return;
 		}
 		/*
 		 * 相似度匹配，等等
 		 */
+		logger.info("start aboutQuestion");
 		if(aboutQuestion(content)){
 			//isCanAnswer=true;
-			System.out.println("aboutQuestion");
+			logger.info("aboutQuestion access");
 			return;
 		}
+		logger.info("start aboutUnknow");
 		aboutUnknow(content);
-		System.out.println("aboutUnknow");
+		logger.info("aboutUnknow access");
 	}
 	/**
 	 * 有关记忆的处理，和强制性的回复
@@ -276,7 +283,7 @@ public class Bot {
 		}
 		memory.getNowMemory().init(content);
 		int repeatNum=memory.handleRepeatNum();
-		System.out.println(repeatNum+" "+memory.isRepeatNow());
+		logger.info(repeatNum+" "+memory.isRepeatNow());
 		if(repeatNum>Bot.endureReplyNum && memory.isRepeat()){
 			if(sign.equals("?")){
 				reply="重复问同一句话，有意思吗？";
@@ -299,7 +306,8 @@ public class Bot {
 				result=true;
 			}
 		}
-		answers.addCanAnswer(reply);
+		if(result)
+			answers.addCanAnswer(reply);
 		return result;
 	}
 	/**
@@ -322,10 +330,10 @@ public class Bot {
 		}
 		memory.setMarkAboutSelf(0);  //回复标记
 		if(sign.equals("?") || sign.equals("？") || wordList.contains("什么") || wordList.contains("怎么")){
-			//System.out.println(memory.isHaveYou() +" "+ memory.isHaveMe());
+			//logger.info(memory.isHaveYou() +" "+ memory.isHaveMe());
 			if(memory.getNowMemory().isHaveYou() && !memory.getNowMemory().isHaveMe()){
 				String spkey=specialty.findSpKey(wordList);
-				System.out.println("找到的关键字"+spkey);
+				logger.info("找到的关键字"+spkey);
 				if(!spkey.equals("none")){
 					reply=specialty.findSpReply(spkey, memory.getPeople().getRankOfPeople());
 					memory.setMarkAboutSelf(1);
@@ -404,7 +412,7 @@ public class Bot {
 		int count=0;
 		while(min>0 && count<Bot.findTime){
 			String sql="select * from b_teacherquestion where t_question2 regexp "+reg1+""+min+""+reg2+"'";
-			System.out.println(sql);
+			logger.info(sql);
 			ResultSet rs = DBoperate_.select(sql);
 			try {
 				if(!rs.next()){
@@ -426,9 +434,8 @@ public class Bot {
 							rs.getInt("t_isQuestion"),
 							rs.getInt("t_haveNo"),
 							rs.getInt("t_question2KeyNum"));
-					System.out.print(rs.getString("t_answer")+":"+rs.getString("t_questionAll")+",");
+					logger.info(rs.getString("t_answer")+":"+rs.getString("t_questionAll")+",");
 				}
-				System.out.println();
 				break;
 			} catch (SQLException e) {
 				e.printStackTrace();
