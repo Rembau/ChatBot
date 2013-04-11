@@ -53,6 +53,9 @@ public class Constants {
 	public static final String answer_oneTrainEnd[] = new String[]{
 		"我已经牢牢记住你说的话了，你可以继续训练，也可以输入end结束训练！"
 	};
+	public static final String answer_unhappy[] = new String[]{
+		"我要生气了。","你真无聊。","一点意思都没有啊。"
+	};
 	String str="";
 	private static LinkedList<String> reply_yes=new LinkedList<String>();
 	private static LinkedList<String> reply_no=new LinkedList<String>();
@@ -126,5 +129,8 @@ public class Constants {
 	}
 	public static String getAnswerOnetrainend() {
 		return answer_oneTrainEnd[random(answer_oneTrainEnd.length)];
+	}
+	public static String getAnswerUnhappy() {
+		return answer_unhappy[random(answer_unhappy.length)];
 	}
 }

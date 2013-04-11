@@ -293,7 +293,7 @@ public class Bot {
 				reply=Constants.getAnwerForrepeatSay();
 			} 
 			if(repeatNum==Bot.endureReplyNum+2){
-				reply+="我要生气了！";
+				reply+=Constants.getAnswerUnhappy();
 			}
 			if(repeatNum>Bot.endureReplyNum+2){
 				memory.anger();
