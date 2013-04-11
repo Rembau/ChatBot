@@ -9,9 +9,9 @@ import org.apache.log4j.Logger;
 
 import comm.Context;
 
-import server.aboutBot.Bot;
-import server.aboutBot.analyzer.Fenci;
 import server.conn.DBoperate;
+import server.core.Bot;
+import server.core.analyzer.Fenci;
 import server.tools.CheckQuestion;
 
 public class Record {

@@ -4,7 +4,7 @@ import org.apache.log4j.Logger;
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;
 
-import server.aboutBot.Bot;
+import server.core.Bot;
 import server.handle.message.ChatContent;
 import server.handle.message.ReceiveMessage;
 import server.handle.message.TrainMessage;

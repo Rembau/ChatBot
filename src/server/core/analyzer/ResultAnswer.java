@@ -1,4 +1,4 @@
-package server.aboutBot.analyzer;
+package server.core.analyzer;
 
 public class ResultAnswer {
 	private String question;

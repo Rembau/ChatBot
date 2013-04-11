@@ -4747,3 +4747,5 @@ A:[对应的回答]
 [2013-04-11 17:40:45]INFO  server.aboutBot.Answers(line:30) -答案集:1 [我太笨了，竟不理解你的意思。请说的简单点吧。]
 [2013-04-11 17:40:45]INFO  server.handle.ServerHandler(line:53) -send:1_Number seven.::::我太笨了，竟不理解你的意思。请说的简单点吧。
 [2013-04-11 17:40:45]INFO  server.handle.ServerHandler(line:27) -使用时间为：11
+[2013-04-11 17:46:25]INFO  server.handle.ServerHandler(line:17) -客户端退出，/127.0.0.1:56705
+[2013-04-11 17:46:27]INFO  server.handle.ServerHandler(line:17) -客户端退出，/127.0.0.1:56721

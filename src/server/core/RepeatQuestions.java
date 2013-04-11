@@ -1,4 +1,4 @@
-package server.aboutBot;
+package server.core;
 
 import java.util.LinkedList;
 import server.tools.RepeatCompare;

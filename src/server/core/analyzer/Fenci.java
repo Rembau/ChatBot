@@ -1,4 +1,4 @@
-package server.aboutBot.analyzer;
+package server.core.analyzer;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

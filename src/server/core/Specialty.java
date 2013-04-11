@@ -1,4 +1,4 @@
-package server.aboutBot;
+package server.core;
 
 import java.io.File;
 import java.util.ArrayList;

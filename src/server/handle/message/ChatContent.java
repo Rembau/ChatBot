@@ -3,7 +3,7 @@ package server.handle.message;
 import comm.Message;
 import comm.MessageCombine;
 
-import server.aboutBot.Bot;
+import server.core.Bot;
 
 public class ChatContent extends MessageCombine implements Message{
 	public ChatContent(String s[]){

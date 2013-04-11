@@ -1,4 +1,4 @@
-package server.aboutBot;
+package server.core;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,8 +10,8 @@ import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
 
-import server.aboutBot.analyzer.Fenci;
 import server.conn.DBoperate;
+import server.core.analyzer.Fenci;
 import server.handle.Record;
 import server.tools.RepeatCompare;
 

@@ -3,8 +3,8 @@ package server.handle;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import server.aboutBot.Bot;
 import server.conn.DBoperate;
+import server.core.Bot;
 
 public class LoginCheck {
 	private Bot bot;

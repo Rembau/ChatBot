@@ -1,4 +1,4 @@
-package server.aboutBot;
+package server.core;
 
 import java.util.Random;
 import java.util.TreeMap;

@@ -1,4 +1,4 @@
-package server.aboutBot;
+package server.core;
 
 import java.util.Calendar;
 import java.util.LinkedList;
@@ -6,8 +6,8 @@ import java.util.TreeSet;
 
 import org.apache.log4j.Logger;
 
-import server.aboutBot.RepeatEntity;
-import server.aboutBot.NowQuestionAnswers.NowMemory;
+import server.core.RepeatEntity;
+import server.core.NowQuestionAnswers.NowMemory;
 import server.tools.RepeatCompare;
 
 public class Memory {
