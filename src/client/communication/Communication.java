@@ -8,6 +8,7 @@ import java.nio.charset.Charset;
 import org.apache.log4j.Logger;
 import org.apache.mina.core.future.ConnectFuture;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
+import org.apache.mina.filter.codec.textline.LineDelimiter;
 import org.apache.mina.filter.codec.textline.TextLineCodecFactory;
 import org.apache.mina.transport.socket.nio.NioSocketConnector;
 
@@ -27,8 +28,8 @@ public class Communication extends Thread {
 		NioSocketConnector connector = new NioSocketConnector();
 		connector.getFilterChain().addLast(
 				"codec",
-				new ProtocolCodecFilter(new TextLineCodecFactory(Charset
-						.forName("UTF-8")))); // 设置编码过滤器
+				new ProtocolCodecFilter(new TextLineCodecFactory(Charset.forName("UTF-8"),
+						new LineDelimiter("nextLinenextLine"),new LineDelimiter("nextLinenextLine")))); // 设置编码过滤器
 		connector.setConnectTimeoutMillis(30*1000);
 		handler = new ClientHandler(cf);
 		connector.setHandler(handler);// 设置事件处理器

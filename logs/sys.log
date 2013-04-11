@@ -3739,3 +3739,92 @@ A:[对应的回答]
 [2013-04-11 14:19:00]INFO  server.aboutBot.Answers(line:30) -答案集:1 [我太笨了，竟不理解你的意思。请说的简单点吧。]
 [2013-04-11 14:19:00]INFO  server.handle.ServerHandler(line:50) -send:1_Number seven.::::我太笨了，竟不理解你的意思。请说的简单点吧。
 [2013-04-11 14:19:00]INFO  server.handle.ServerHandler(line:25) -使用时间为：7
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()名字 name
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()姓名 name
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()名称 name
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()称呼 name
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()大名 name
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()小名 name
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()昵称 name
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()叫什么 name
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()长相 appearance
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()外貌 appearance
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()相貌 appearance
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()品相 appearance
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()样子 appearance
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()长的 appearance
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()介绍 describe
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()描述自己 describe
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()描述下你 describe
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()描述你 describe
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()是什么 describe
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()性别 sex
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()男的 sex
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()女的 sex
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()男 sex
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()女 sex
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()雌 sex
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()雄 sex
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()雌的 sex
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()雄的 sex
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()公的 sex
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()母的 sex
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()喜欢 like
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()喜爱 like
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()兴趣 like
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()会高兴 like
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()会兴奋 like
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()喜 like
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()爱 like
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()乐于 like
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()出生 born
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()身世 born
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()来自 born
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()擅长 goodWork
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()特长 goodWork
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()善长 goodWork
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()善于 gookWork
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()擅于 gookWork
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()擅 gookWork
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()吃饭 hunger
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()吃过 hunger
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()吃 hunger
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()饿 hunger
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()多少岁 age
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:166) -specialty.init()多大 age
+[2013-04-11 14:49:13]INFO  server.aboutBot.Specialty(line:44) -机器人属性初始化完成！
+[2013-04-11 14:49:13]INFO  server.handle.Dispatcher(line:27) -服务器启动完成，端口：678
+[2013-04-11 14:49:19]INFO  server.handle.ServerHandler(line:20) -1_你好::::1::::1::::1
+[2013-04-11 14:49:19]INFO  server.aboutBot.Memory(line:181) -1 1 1 6
+[2013-04-11 14:49:19]INFO  server.aboutBot.Bot(line:210) -分词结果:[你, 你好, 好]
+[2013-04-11 14:49:19]INFO  server.aboutBot.Bot(line:214) -start aboutMemory
+[2013-04-11 14:49:19]INFO  server.aboutBot.Bot(line:288) -0 false
+[2013-04-11 14:49:19]INFO  server.aboutBot.Bot(line:223) -start aboutMyself
+[2013-04-11 14:49:19]INFO  server.aboutBot.Bot(line:232) -start aboutQuestion
+[2013-04-11 14:49:19]INFO  server.aboutBot.Bot(line:417) -select * from b_teacherquestion where t_question2 regexp '(-=你好=-){1}'
+[2013-04-11 14:49:19]INFO  server.conn.Conn(line:88) -127.0.0.1数据库连接成功!
+[2013-04-11 14:49:19]INFO  server.conn.ConnPool(line:17) -pool.size():1
+[2013-04-11 14:49:19]INFO  server.aboutBot.Bot(line:238) -start aboutUnknow
+[2013-04-11 14:49:19]INFO  server.aboutBot.Answers(line:22) -插入Unknow回答:我不知道你想让我说什么呢。
+[2013-04-11 14:49:19]INFO  server.aboutBot.Bot(line:240) -aboutUnknow access
+[2013-04-11 14:49:19]INFO  server.aboutBot.Answers(line:27) -没有可回答答案，插入Unknow回答!
+[2013-04-11 14:49:19]INFO  server.aboutBot.Answers(line:30) -答案集:1 [我不知道你想让我说什么呢。]
+[2013-04-11 14:49:19]INFO  server.handle.ServerHandler(line:50) -send:1_Number seven.::::我不知道你想让我说什么呢。
+[2013-04-11 14:49:19]INFO  server.handle.ServerHandler(line:25) -使用时间为：547
+[2013-04-11 14:49:26]INFO  server.handle.ServerHandler(line:20) -1_你好
+啊::::0::::0::::0
+[2013-04-11 14:49:26]INFO  server.aboutBot.Memory(line:181) -0 0 0 7
+[2013-04-11 14:49:26]INFO  server.aboutBot.Bot(line:210) -分词结果:[你, 你好, 啊, 好]
+[2013-04-11 14:49:26]INFO  server.aboutBot.Bot(line:214) -start aboutMemory
+[2013-04-11 14:49:26]INFO  server.aboutBot.Bot(line:288) -1 true
+[2013-04-11 14:49:26]INFO  server.aboutBot.Bot(line:223) -start aboutMyself
+[2013-04-11 14:49:26]INFO  server.aboutBot.Bot(line:232) -start aboutQuestion
+[2013-04-11 14:49:26]INFO  server.aboutBot.Bot(line:417) -select * from b_teacherquestion where t_question2 regexp '(-=你好=-){1}'
+[2013-04-11 14:49:26]INFO  server.conn.ConnPool(line:17) -pool.size():1
+[2013-04-11 14:49:26]INFO  server.aboutBot.Bot(line:238) -start aboutUnknow
+[2013-04-11 14:49:26]INFO  server.aboutBot.Answers(line:22) -插入Unknow回答:我不知道你想让我说什么呢。
+[2013-04-11 14:49:26]INFO  server.aboutBot.Bot(line:240) -aboutUnknow access
+[2013-04-11 14:49:26]INFO  server.aboutBot.Answers(line:27) -没有可回答答案，插入Unknow回答!
+[2013-04-11 14:49:26]INFO  server.aboutBot.Answers(line:30) -答案集:1 [我不知道你想让我说什么呢。]
+[2013-04-11 14:49:26]INFO  server.handle.ServerHandler(line:50) -send:1_Number seven.::::我不知道你想让我说什么呢。
+[2013-04-11 14:49:26]INFO  server.handle.ServerHandler(line:25) -使用时间为：12
