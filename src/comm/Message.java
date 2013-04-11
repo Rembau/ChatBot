@@ -1,4 +1,4 @@
-package server.handle.message;
+package comm;
 
 public interface Message {
 	public String getMessageContent();

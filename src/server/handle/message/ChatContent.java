@@ -1,5 +1,8 @@
 package server.handle.message;
 
+import comm.Message;
+import comm.MessageCombine;
+
 import server.aboutBot.Bot;
 
 public class ChatContent extends MessageCombine implements Message{

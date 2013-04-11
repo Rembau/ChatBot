@@ -2,6 +2,9 @@
 
 package client.communication.message;
 
+import comm.Message;
+import comm.MessageCombine;
+
 
 public class ChatContent extends MessageCombine implements Message 
 {

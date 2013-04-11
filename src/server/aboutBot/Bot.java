@@ -51,7 +51,7 @@ public class Bot {
 	public String trainModel(String contents[]){
 		String reply=null;
 		if(contents[0].equalsIgnoreCase(Constants.cmd_tra_teacher)){
-			reply=getMemory().getPeople().getName()+"" +
+			reply=getMemory().getPeople().getName()+"," +
 					Constants.answer_teachForm1;
 		} else if(contents[0].equalsIgnoreCase(Constants.cmd_tra_end)){
 			reply=getMemory().getPeople().getName()+","+Constants.getAnswerThanks();

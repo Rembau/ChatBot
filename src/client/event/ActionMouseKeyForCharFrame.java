@@ -43,7 +43,7 @@ public class ActionMouseKeyForCharFrame implements MouseListener, MouseMotionLis
 			cf.getCommunication().sendCharMessage();
 			pa.init();
 		}
-		System.out.println("keyPressed="+e.getKeyChar()+"=="+e.getKeyCode());    
+		//System.out.println("keyPressed="+e.getKeyChar()+"=="+e.getKeyCode());    
    }
    
    /**
@@ -52,7 +52,7 @@ public class ActionMouseKeyForCharFrame implements MouseListener, MouseMotionLis
     */
    public void keyReleased(KeyEvent e) 
    {
-		System.out.println("keyReleased="+e.getKeyChar()+"=="+e.getKeyCode());    
+		//System.out.println("keyReleased="+e.getKeyChar()+"=="+e.getKeyCode());    
    }
    
    /**

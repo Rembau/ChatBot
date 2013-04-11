@@ -1,5 +1,8 @@
 package server.handle.message;
 
+import comm.Message;
+import comm.MessageCombine;
+
 public class TrainMessage  extends MessageCombine implements Message{
 	/**
 	 * @param s 数组第一个为

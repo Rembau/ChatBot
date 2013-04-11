@@ -1,4 +1,4 @@
-package server.handle.message;
+package comm;
 
 public class MessageCombine {
 	public int type=0;
