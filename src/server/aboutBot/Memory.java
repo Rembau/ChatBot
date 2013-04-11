@@ -24,7 +24,7 @@ public class Memory {
 	/**
 	 * 记录重复的问题
 	 */
-	private RepestQuestions repeatQuation = new RepestQuestions();
+	private RepeatQuestions repeatQuation = new RepeatQuestions();
 	/**
 	 * 训练机器人标志
 	 * 1：验证对方是否同意训练，如果接收到Y同意，markConsult=2,否则丢弃对方的话结束

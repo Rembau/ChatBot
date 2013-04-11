@@ -134,7 +134,13 @@ public class Conn {
 		}// end if
 		return stmt;
 	}
-
+	public boolean isValid(){
+		try {
+			return con.isValid(5);
+		} catch (SQLException e) {
+			return false;
+		}
+	}
 	public PreparedStatement getPStmt(String sql) {
 		PreparedStatement pstmt = null;
 		try {

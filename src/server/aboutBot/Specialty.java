@@ -18,6 +18,7 @@ import server.tools.ReadFile;
 
 public class Specialty {
 	private static final Logger logger = Logger.getLogger(Specialty.class);
+	private static String name="Number seven.";
 	/**
 	 * 遇到不理解的话时，回答的回复
 	 */
@@ -242,5 +243,15 @@ public class Specialty {
 	}
 	public static void main(String args[]){
 		new Specialty();
+	}
+	/**
+	 * 获取机器人的名字
+	 * @return 机器人的名字
+	 */
+	public static String getName() {
+		return name;
+	}
+	public static void setName(String name) {
+		Specialty.name = name;
 	}
 }

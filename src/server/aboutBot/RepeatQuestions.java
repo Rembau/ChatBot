@@ -3,7 +3,7 @@ package server.aboutBot;
 import java.util.LinkedList;
 import server.tools.RepeatCompare;
 
-public class RepestQuestions {
+public class RepeatQuestions {
 	private LinkedList<RepeatEntity> repeatEntitys= new LinkedList<RepeatEntity>();
 	/**
 	 * 遗忘时间
@@ -54,7 +54,7 @@ class RepeatEntity{
 	/**
 	 * 遗忘度量
 	 */
-	private int repeatMemoryLevel=RepestQuestions.maxRepeatMemory;
+	private int repeatMemoryLevel=RepeatQuestions.maxRepeatMemory;
 	public RepeatEntity(String r){
 		this.repeatStr=r;
 	}
@@ -70,7 +70,7 @@ class RepeatEntity{
 	 */
 	public void setRepeatStr(String str){
 		this.repeatStr=str;
-		this.repeatMemoryLevel=RepestQuestions.maxRepeatMemory;
+		this.repeatMemoryLevel=RepeatQuestions.maxRepeatMemory;
 	}
 	public String getRepeatStr(){
 		return this.repeatStr;
@@ -79,16 +79,16 @@ class RepeatEntity{
 	 * 记录重复，重复次数加一
 	 */
 	public void recordRepeatNum(){
-		if(repeatNum<RepestQuestions.maxRepeatMemory){
+		if(repeatNum<RepeatQuestions.maxRepeatMemory){
 			repeatNum++;
 		}
 	}
 	public void recordRepeatNum(int n){
-		if(repeatNum<RepestQuestions.maxRepeatMemory){
+		if(repeatNum<RepeatQuestions.maxRepeatMemory){
 			repeatNum+=n;
 		}
-		if(repeatNum>RepestQuestions.maxRepeatMemory){
-			repeatNum=RepestQuestions.maxRepeatMemory;
+		if(repeatNum>RepeatQuestions.maxRepeatMemory){
+			repeatNum=RepeatQuestions.maxRepeatMemory;
 		}
 	}
 	/**

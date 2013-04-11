@@ -9,6 +9,9 @@ public class ConnPool {
 	private static final Logger logger = Logger.getLogger(ConnPool.class);
 	private static LinkedBlockingQueue<Conn> pool = new LinkedBlockingQueue<Conn>();
 	private static final int maxLimit =10;
+	static {
+		pool.add(new Conn());
+	}
 	public static Conn getConn() {
 		try {
 			logger.info("pool.size():"+pool.size());

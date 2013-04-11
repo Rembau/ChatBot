@@ -22,7 +22,7 @@ import server.tools.RepeatCompare;
  */
 public class Bot {
 	private static final Logger logger = Logger.getLogger(Bot.class);
-	private static String name="木木";
+	
 	/**
 	 * 机器人的一些固定属性
 	 */
@@ -50,19 +50,17 @@ public class Bot {
 	}
 	public String trainModel(String contents[]){
 		String reply=null;
-		if(contents[0].equals("teacher")){
+		if(contents[0].equalsIgnoreCase(Constants.cmd_tra_teacher)){
 			reply=getMemory().getPeople().getName()+"" +
-					"你已经进入训练模式，请按照训练规则进行训练\n" +
-					"Q:[问题]\n" +
-					"A:[对应的回答]";
-		} else if(contents[0].equals("end")){
-			reply=getMemory().getPeople().getName()+"谢谢你！";
-		} else if(contents[0].equals("train")){
+					Constants.answer_teachForm1;
+		} else if(contents[0].equalsIgnoreCase(Constants.cmd_tra_end)){
+			reply=getMemory().getPeople().getName()+","+Constants.getAnswerThanks();
+		} else if(contents[0].equalsIgnoreCase(Constants.cmd_tra_train)){
 			String question=contents[1].substring(2);
 			String answer=contents[2].substring(2);
 			//logger.info(question.trim()+" "+answer.trim());
 			Record.recordToDBForTrain(memory.getPeople().getUserNum(), question, answer,memory.getPeople().getIp());
-			return memory.getPeople().getName()+"我已经牢牢记住你说的话了，你可以继续训练，也可以输入end结束训练！";
+			return memory.getPeople().getName()+","+Constants.getAnswerOnetrainend();
 		}
 		return reply;
 	}
@@ -74,30 +72,33 @@ public class Bot {
 	public String trainRT(String content){
 		String reply="none";
 		if(memory.getMarkConsult()==1){
-			if(content.startsWith("y") || content.startsWith("Y")|| content.equals("好")){
+			if(Constants.isPositive(content)){
+				logger.info("同意进入训练模式。");
 				memory.setMarkConsult(2);
-				return "请输入我应该回答的答案！形如：answer答案 必以answer开头。";
-			} else if(content.startsWith("n") || content.startsWith("N") || content.equals("不")){
+				return Constants.answer_teachForm2;
+			} else if(Constants.isNegative(content)){
+				logger.info("不同意进入训练模式。");
 				memory.setMarkConsult(0);
 				Record.recordToDBForStudy(memory.getNowMemory().getRecordNow(),memory.getPeople().getIp());
-				return "那算了。";
+				return Constants.getAnswerDoNotteach();
 			} else{
+				logger.info("没有同意也没有不同意是否进入训练模式。");
 				Record.recordToDBForStudy(memory.getNowMemory().getRecordNow(),memory.getPeople().getIp());
 			}
 			memory.setMarkConsult(0);
 		} else if(memory.getMarkConsult()>1){
-			if(content.startsWith("answer")){
+			if(content.startsWith(Constants.cmd_tra_answer)){
 				String content_=content.substring(6);
 				Record.recordToDBForTrain(memory.getPeople().getUserNum(),memory.getNowMemory().getRecordNow(),content_,memory.getPeople().getIp());
 				memory.setMarkConsult(0);
-				return "我又学到新东西了，谢谢你。";
-			} else if(memory.getMarkConsult()<4 && !content.equals("N") && !content.equals("n")){
+				return Constants.getAnswerThankteacher();
+			} else if(memory.getMarkConsult()<4 && !Constants.isNegative(content)){
 				memory.setMarkConsult(memory.getMarkConsult()+1);
-				return "说好教我，又不教我，你不诚信。（可以继续训练,输入'n'，结束训练）";
-			} else if(content.equals("n") || content.equals("N")){
+				return Constants.getAnswerTeachnoteach();
+			} else if(Constants.isNegative(content)){
 				memory.setMarkConsult(0);
 				Record.recordToDBForStudy(memory.getNowMemory().getRecordNow(),memory.getPeople().getIp());
-				return "既然你这么不愿意教我，那就算了。";
+				return Constants.getAnswerDoNotteach();
 			}
 		}
 		return reply;
@@ -250,14 +251,14 @@ public class Bot {
 			Random rd = new Random();
 			int time = (int)memory.getPeopleStateUseTime();
 			if(time > 160){
-				reply="这么长时间才回复，跟我说老实话，你在干什么？";
+				reply=Constants.getAnwerForlongnoaction();
 				answers.addNotAnswer(reply);
 				result=true;
 				return result;
 			} else if(time > 100 ){
 				int index = rd.nextInt(10);
 				if(index<9){
-					reply="这么长时间才回复，跟我说老实话，你在干什么？";
+					reply=Constants.getAnwerForlongnoaction();
 					answers.addNotAnswer(reply);
 					result=true;
 					return result;
@@ -265,7 +266,7 @@ public class Bot {
 			} else if(time > 80){
 				int index = rd.nextInt(5);
 				if(index<4){
-					reply="这么长时间才回复，跟我说老实话，你在干什么？";
+					reply=Constants.getAnwerForlongnoaction();
 					answers.addNotAnswer(reply);
 					result=true;
 					return result;
@@ -276,7 +277,7 @@ public class Bot {
 			Random rd = new Random();
 			int index = rd.nextInt(10);
 			if(index%4==0){
-				reply="你的打字速度太慢了吧，是不是没有专心和我聊天？";
+				reply=Constants.getAnswerFortypeslow();
 				answers.addNotAnswer(reply);
 				result=true;
 				return result;
@@ -287,9 +288,9 @@ public class Bot {
 		logger.info(repeatNum+" "+memory.isRepeatNow());
 		if(repeatNum>Bot.endureReplyNum && memory.isRepeat()){
 			if(sign.equals("?")){
-				reply="重复问同一句话，有意思吗？";
+				reply=Constants.getAnwerForrepeatAsk();
 			} else{
-				reply="重复说同一句话，有意思吗？";
+				reply=Constants.getAnwerForrepeatSay();
 			} 
 			if(repeatNum==Bot.endureReplyNum+2){
 				reply+="我要生气了！";
@@ -366,9 +367,9 @@ public class Bot {
 		if(wordList.size()==0 && !memory.getNowMemory().isHaveYou() && 
 				!memory.getNowMemory().isHaveHim() && !memory.getNowMemory().isHaveMe()){
 			if(memory.getNowMemory().isQuestion()){
-				reply= "你想问什么呢？";
+				reply= Constants.getAnswerDoubtAsk();
 			} else {
-				reply="你想说什么呢？";
+				reply= Constants.getAnswerDoubtSay();
 			}
 			result=true;
 			answers.addNotAnswer(reply);
@@ -457,20 +458,20 @@ public class Bot {
 	public void aboutUnknow(String content){
 		String reply="";
 		if(memory.getNowMemory().isHaveYou()){
-			reply="我不知道你想让我说什么呢。";
+			reply=Constants.getAnswerCannot1();
 		} else{
 			//reply=specialty.getUnknowAnswer();
-			reply="我太笨了，竟不理解你的意思。请说的简单点吧。";
+			reply=Constants.getAnswerCannot2();
 		}
 		if(memory.getPeople().getName().equals("none")){
 			if(memory.isEnableRecord() && content.length()>1 && content.length()<=25 &&
 					(content.endsWith("?")||content.endsWith("？")/*||content.endsWith(".")||content.endsWith("。")*/)){
-				reply+="（如果你愿意教我怎么回答，请回复'y'）";
+				reply+=Constants.getAnswerRequestTeach();
 				memory.setMarkConsult(1);
 			}
 		} else {
 			if(memory.isEnableRecord() && content.length()>1 && content.length()<=25){
-				reply+="（如果你愿意教我怎么回答，请回复'y'）";
+				reply+=Constants.getAnswerRequestTeach();
 				memory.setMarkConsult(1);
 			}
 		}
@@ -481,7 +482,7 @@ public class Bot {
 	 * @return 机器人的名字
 	 */
 	public static String getName(){
-		return name;
+		return Specialty.getName();
 	};
 	public void init(){
 		memory = new Memory();
