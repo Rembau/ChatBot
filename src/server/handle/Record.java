@@ -5,13 +5,17 @@ import java.sql.SQLException;
 import java.util.Hashtable;
 import java.util.TreeSet;
 
+import org.apache.log4j.Logger;
+
+import comm.Context;
+
 import server.aboutBot.Bot;
 import server.aboutBot.analyzer.Fenci;
 import server.conn.DBoperate;
 import server.tools.CheckQuestion;
 
 public class Record {
-	public static int pointForSign=10;
+	private static final Logger logger = Logger.getLogger(Record.class);
 	public static Hashtable<String,Integer> userWeight= new Hashtable<String,Integer>();
 	public Record(){}
 	 static {
@@ -30,13 +34,13 @@ public class Record {
 		int length=weightHandle(answer);
 		int assess=length;
 		if(userNum!=null){
-			//System.out.println(userNum);
+			//logger.info(userNum);
 			assess += userWeight.get(userNum);
 		}
 		int flag=0;
 		if(answer.endsWith(".") || answer.endsWith("!") || answer.endsWith("?") || 
 				answer.endsWith("¡£") || answer.endsWith("£¡") || answer.endsWith("£¿")){
-			assess+=pointForSign;
+			assess+=Context.pointForSign;
 			flag=1;
 		}
 		if(answer.startsWith("Äã")){
@@ -81,7 +85,7 @@ public class Record {
 				"t_haveYou,t_haveMe,t_haveHim,t_length,t_haveNo,t_isQuestion,t_ipAddr)" +
 				"values('"+question+"','"+handledQuestion+"','"+question2+"','"+question2KeyNum+"','"+answer+"','"+userNum+"'," +
 						"'"+assess+"','"+y+"','"+m+"','"+h+"','"+length+"','"+n+"','"+q+"','"+ip+"')";
-		System.out.println(sql);
+		logger.info(sql);
 		DBoperate.insert(sql);
 	}
 	public static int weightHandle(String content){
@@ -104,7 +108,7 @@ public class Record {
 	public static void recordToDBForStudy(String question,String ip){
 		String sql = "insert into b_teacherQuestion_notAnswer(t_question,t_length,t_ipAddr) " +
 				"values('"+question+"','"+question.length()+"','"+ip+"')";
-		System.out.println(sql);
+		logger.info(sql);
 		DBoperate.insert(sql);
 	}
 	public static void main(String args[]){
@@ -116,13 +120,13 @@ public class Record {
 				int assess=0;
 				String userId=rs.getString("t_userId");
 				if(!userId.equals("null")){
-					//System.out.println(userId);
+					//logger.info(userId);
 					assess += userWeight.get(userId);
 				}
 				String answer = rs.getString("t_answer");
 				if(answer.endsWith(".") || answer.endsWith("!") || answer.endsWith("?") || 
 						answer.endsWith("¡£") || answer.endsWith("£¡") || answer.endsWith("£¿")){
-					assess+=pointForSign;
+					assess+=Context.pointForSign;
 				}
 				assess+=weightHandle(answer);
 				sql = "update b_teacherquestion set " +

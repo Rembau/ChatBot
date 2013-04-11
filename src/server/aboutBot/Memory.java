@@ -8,9 +8,7 @@ import org.apache.log4j.Logger;
 
 import server.aboutBot.RepeatEntity;
 import server.aboutBot.NowQuestionAnswers.NowMemory;
-import server.tools.Ck;
 import server.tools.RepeatCompare;
-
 
 public class Memory {
 	private static final Logger logger = Logger.getLogger(Memory.class);
@@ -105,11 +103,11 @@ public class Memory {
 			if((repeatEntity = repeatQuation.isExist(nowMemory.getRecordNow())) != null){
 				repeatEntity.setRepeatStr(nowMemory.getRecordNow());
 				repeatEntity.recordRepeatNum();  //连续重复重复次数加一
-				Ck.ck(this.getClass(),"handleRepeatNum()","重复大于2次");
+				logger.info("重复大于2次");
 			}
 			else {
 				repeatQuation.add((repeatEntity=new RepeatEntity(nowMemory.getRecordNow())));
-				Ck.ck(this.getClass(),"handleRepeatNUM()","重复");
+				logger.info("重复");
 			}
 			num=repeatEntity.getRepeatNum();
 			nowMemory.setRepeatNow(true);   //设置当前是重复的
@@ -117,7 +115,7 @@ public class Memory {
 			repeatEntity.setRepeatStr(nowMemory.getRecordNow());
 			num=repeatEntity.getRepeatNum();
 			nowMemory.setRepeatNow(false);  //当前不是重复的，就是不重复的
-			Ck.ck(this.getClass(),"handleRepeatNum()","重复大于2次");
+			logger.info("重复大于2次");
 		} else {
 			nowAnswersAndQuestion.initAnswers();  //不是重复的回答列表初始化
 			nowMemory.setRepeatNow(false);  //同上

@@ -57,18 +57,18 @@ public class Constants {
 		"我要生气了。","你真无聊。","一点意思都没有啊。"
 	};
 	String str="";
-	private static LinkedList<String> reply_yes=new LinkedList<String>();
-	private static LinkedList<String> reply_no=new LinkedList<String>();
-	static {
-		reply_yes.add("y");
-		reply_yes.add("Y");
-		reply_yes.add("好");
-		reply_yes.add("可以");
-		
-		reply_no.add("n");
-		reply_no.add("N");
-		reply_no.add("不");
-	}
+	private static LinkedList<String> reply_yes=new LinkedList<String>(){
+		private static final long serialVersionUID = 1L;
+		{
+			add("y");add("Y");add("好");add("可以");
+		}
+	};
+	private static LinkedList<String> reply_no=new LinkedList<String>(){
+		private static final long serialVersionUID = 1L;
+		{
+			add("n");add("N");add("不");
+		}
+	};
 	public static boolean isPositive(String str){
 		for (String str_ : reply_yes) {
 			if(str.startsWith(str_)){

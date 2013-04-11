@@ -64,6 +64,31 @@ public class Bot {
 		}
 		return reply;
 	}
+	
+	public String execute(String[] contentAll){
+		String content = contentAll[0];
+		
+		content=content.trim();
+		String reply="";
+		if(!(reply=trainRT(content)).equals("none")){
+			return reply;
+		}
+		answers = new Answers();
+		//isHaveNotAnwser = false;
+		String peopleState[]= new String[3];
+		peopleState[0]=contentAll[1];
+		peopleState[1]=contentAll[2];
+		peopleState[2]=contentAll[3];
+		
+		memory.initPeopleState(peopleState);
+		reply = resolve(content);
+		memory.addChatRecordSide(content);		//加入对方的聊天记录
+		memory.addChatRecordSelf(reply);		//加入自己的聊天记录
+		
+		memory.endInit();
+		return reply;
+	};
+	
 	/**
 	 * 聊天过程中触发的训练
 	 * @param content
@@ -103,29 +128,6 @@ public class Bot {
 		}
 		return reply;
 	}
-	public String execute(String[] contentAll){
-		String content = contentAll[0];
-		
-		content=content.trim();
-		String reply="";
-		if(!(reply=trainRT(content)).equals("none")){
-			return reply;
-		}
-		answers = new Answers();
-		//isHaveNotAnwser = false;
-		String peopleState[]= new String[3];
-		peopleState[0]=contentAll[1];
-		peopleState[1]=contentAll[2];
-		peopleState[2]=contentAll[3];
-		
-		memory.initPeopleState(peopleState);
-		reply =resolve(content);
-		memory.addChatRecordSide(content);		//加入对方的聊天记录
-		memory.addChatRecordSelf(reply);		//加入自己的聊天记录
-		
-		memory.endInit();
-		return reply;
-	};
 	
 	/**
 	 * 把对方的问题分解成多个子问题

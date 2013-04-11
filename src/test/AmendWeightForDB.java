@@ -3,6 +3,8 @@ package test;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import comm.Context;
+
 import server.conn.DBoperate;
 import server.handle.Record;
 
@@ -26,7 +28,7 @@ public class AmendWeightForDB {
 				String answer = rs.getString("t_answer");
 				if(answer.endsWith(".") || answer.endsWith("!") || answer.endsWith("?") || 
 						answer.endsWith("¡£") || answer.endsWith("£¡") || answer.endsWith("£¿")){
-					assess+=Record.pointForSign;
+					assess+=Context.pointForSign;
 				}
 				assess+=Record.weightHandle(answer);
 				sql = "update b_teacherquestion set " +
