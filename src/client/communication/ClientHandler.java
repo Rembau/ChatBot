@@ -19,6 +19,10 @@ public class ClientHandler extends IoHandlerAdapter {
 	public ClientHandler(ChatFrame cf){
 		this.cf = cf;
 	}
+	public void sessionClosed(IoSession session){
+		logger.info("连接关闭，客户端退出。");
+		System.exit(1);
+	}
 	public void messageReceived(IoSession session, Object message) {
 		try {
 			logger.info(message.toString());

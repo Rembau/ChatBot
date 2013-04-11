@@ -1,5 +1,6 @@
 package comm;
 
 public class Context {
-	public static final int CMD_S_PORT=678;
+	public static int server_port=678;
+	public static String servler_ip="127.0.0.1";
 }

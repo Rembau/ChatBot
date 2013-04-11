@@ -14,6 +14,10 @@ public class ServerHandler extends IoHandlerAdapter{
 	private static final Logger logger = Logger.getLogger(ServerHandler.class);
 	private Bot bot = new Bot();
 	private IoSession session;
+	
+	public void sessionClosed(IoSession session){
+		logger.info("¿Í»§¶ËÍË³ö£¬"+session.getRemoteAddress());
+	}
 	public void messageReceived(IoSession session, Object message) {
 		long i = System.currentTimeMillis();
 		try {

@@ -33,7 +33,7 @@ public class Communication extends Thread {
 		connector.setConnectTimeoutMillis(30*1000);
 		handler = new ClientHandler(cf);
 		connector.setHandler(handler);// 设置事件处理器
-		ConnectFuture cf = connector.connect(new InetSocketAddress("127.0.0.1",Context.CMD_S_PORT));// 建立连接
+		ConnectFuture cf = connector.connect(new InetSocketAddress(Context.servler_ip,Context.server_port));// 建立连接
 		cf.awaitUninterruptibly();
 		logger.info("连接服务器成功！");
 	}

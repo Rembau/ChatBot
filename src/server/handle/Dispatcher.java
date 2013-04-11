@@ -23,8 +23,8 @@ public class Dispatcher {
 		ServerHandler sh = new ServerHandler();
 		acceptor.setHandler(sh);
 		try {
-			acceptor.bind(new InetSocketAddress(Context.CMD_S_PORT));
-			logger.info("服务器启动完成，端口："+Context.CMD_S_PORT);
+			acceptor.bind(new InetSocketAddress(Context.server_port));
+			logger.info("服务器启动完成，端口："+Context.server_port);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
