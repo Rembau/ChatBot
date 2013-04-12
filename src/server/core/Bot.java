@@ -424,6 +424,8 @@ public class Bot {
 					count++;
 					continue;
 				}
+				rs.last();
+				logger.info("查找到 "+rs.getRow()+" 条记录。");
 				rs.beforeFirst();
 				while(rs.next()){
 					memory.getNowAnswers().addAnswer(
@@ -438,7 +440,8 @@ public class Bot {
 							rs.getInt("t_isQuestion"),
 							rs.getInt("t_haveNo"),
 							rs.getInt("t_question2KeyNum"));
-					logger.info(rs.getString("t_answer")+":"+rs.getString("t_questionAll")+",");
+					logger.info("问题是："+rs.getString("t_questionAll").trim()+";答案是："+rs.getString("t_answer").trim()+";" +
+							"权值为："+rs.getInt("t_assess"));
 				}
 				break;
 			} catch (SQLException e) {
