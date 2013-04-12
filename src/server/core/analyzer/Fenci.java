@@ -35,7 +35,7 @@ public class Fenci {
 		return sb;
 	}
 	public static void main(String args[]){
-		String str="ÄãÊÇË­£¿";
+		String str="±ğÂôÃÈ";
 		TreeSet<String> wordList=Fenci.IKAnalysis(str,true);
 		for(String str1:wordList){
 			System.out.println(str1);

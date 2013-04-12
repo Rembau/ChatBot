@@ -382,7 +382,7 @@ public class Bot {
 			if(reply.equals("none") && wordList.size()==1 && 
 					!memory.getNowMemory().isHaveYou() && !memory.getNowMemory().isHaveHim() &&
 					!memory.getNowMemory().isHaveMe() && memory.getNowMemory().getRecordNow().length()<4){
-				reply = "什么"+content+",说的详细点吧。";
+				reply = "什么"+content+" 说的详细点吧。";
 				answers.addNotAnswer(reply);
 				result=true;
 			} else if(!reply.equals("none")){
