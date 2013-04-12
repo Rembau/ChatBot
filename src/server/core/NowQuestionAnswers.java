@@ -34,7 +34,7 @@ public class NowQuestionAnswers {
 		while(answers.containsKey(point)){
 			point--;
 		}
-		logger.info(point);
+		logger.info("答案权值："+point+" 答案："+ans);
 		answers.put(point,qa);
 	}
 	public String getRandomAnswer(){
@@ -45,7 +45,7 @@ public class NowQuestionAnswers {
 			return getAnswer(0);
 		}
 		Random rd = new Random();
-		int index = rd.nextInt(answers.size()-1);
+		int index = rd.nextInt(answers.size());
 		//logger.info("NowQuestionAnswers.getRandowAnswer(),随机数："+index+" 共"+answers.size());
 		return getAnswer(index);
 	}

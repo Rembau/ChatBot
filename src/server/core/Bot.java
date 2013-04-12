@@ -287,7 +287,7 @@ public class Bot {
 		}
 		memory.getNowMemory().init(content);
 		int repeatNum=memory.handleRepeatNum();
-		logger.info(repeatNum+" "+memory.isRepeatNow());
+		logger.info("当前重复次数："+repeatNum+" 当前是否重复："+memory.isRepeatNow());
 		if(repeatNum>Bot.endureReplyNum && memory.isRepeat()){
 			if(sign.equals("?")){
 				reply=Constants.getAnwerForrepeatAsk();

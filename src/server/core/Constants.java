@@ -29,10 +29,10 @@ public class Constants {
 		"重复问同一句话，有意思吗？"
 	};
 	public static final String answer_forLongNOAction[] = new String[]{
-		"这么长时间才回复，跟我说老实话，你在干什么？"
+		"这么长时间才回复，我也不回复了，哈哈。","我都以为你离开了呢，不理睬你了。"
 	};
 	public static final String answer_forTypeSlow[] = new String[]{
-		"你的打字速度太慢了吧，是不是没有专心和我聊天？"
+		"你的打字速度太慢了吧，不和我专心聊天。","你回复的速度好慢，嗯……，你刚刚说什么呢。"
 	};
 	public static final String answer_thankTeacher[] = new String[]{
 		"我又学到新东西了，谢谢你。"
