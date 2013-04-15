@@ -5,10 +5,12 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 
+import comm.Context;
+
 public class ConnPool {
 	private static final Logger logger = Logger.getLogger(ConnPool.class);
 	private static LinkedBlockingQueue<Conn> pool = new LinkedBlockingQueue<Conn>();
-	private static final int maxLimit =10;
+	private static final int maxLimit =Context.connpool_num;
 	static {
 		pool.add(new Conn());
 	}
