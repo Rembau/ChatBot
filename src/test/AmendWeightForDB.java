@@ -3,10 +3,11 @@ package test;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import comm.Context;
+import bot.comm.Context;
+import bot.server.conn.DBoperate;
+import bot.server.handle.Record;
 
-import server.conn.DBoperate;
-import server.handle.Record;
+
 
 public class AmendWeightForDB {
 
