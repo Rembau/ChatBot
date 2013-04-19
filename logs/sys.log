@@ -380,3 +380,271 @@
 [2013-04-16 11:36:18]INFO  bot.server.core.Answers(line:27) -没有可回答答案，插入Unknow回答!
 [2013-04-16 11:36:18]INFO  bot.server.core.Answers(line:30) -答案集:1 [什么广泛而 说的详细点吧。]
 [2013-04-16 11:36:18]INFO  bot.server.handle.task.Excutor(line:55) -send:1_Number seven.::::什么广泛而 说的详细点吧。
+[2013-04-18 18:56:07]INFO  bot.server.handle.Dispatcher(line:28) -服务器启动完成，端口：678
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()名字 name
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()姓名 name
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()名称 name
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()称呼 name
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()大名 name
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()小名 name
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()昵称 name
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()叫什么 name
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()长相 appearance
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()外貌 appearance
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()相貌 appearance
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()品相 appearance
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()样子 appearance
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()长的 appearance
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()介绍 describe
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()描述自己 describe
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()描述下你 describe
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()描述你 describe
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()是什么 describe
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()性别 sex
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()男的 sex
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()女的 sex
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()男 sex
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()女 sex
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()雌 sex
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()雄 sex
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()雌的 sex
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()雄的 sex
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()公的 sex
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()母的 sex
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()喜欢 like
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()喜爱 like
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()兴趣 like
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()会高兴 like
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()会兴奋 like
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()喜 like
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()爱 like
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()乐于 like
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()出生 born
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()身世 born
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()来自 born
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()擅长 goodWork
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()特长 goodWork
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()善长 goodWork
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()善于 gookWork
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()擅于 gookWork
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()擅 gookWork
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()吃饭 hunger
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()吃过 hunger
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()吃 hunger
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()饿 hunger
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()多少岁 age
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:167) -specialty.init()多大 age
+[2013-04-18 18:56:26]INFO  bot.server.core.Specialty(line:45) -机器人属性初始化完成！
+[2013-04-18 18:56:26]INFO  bot.server.handle.ServerHandler(line:21) -1:1_你好::::1::::1::::1
+[2013-04-18 18:56:26]INFO  bot.server.handle.ServerHandler(line:27) -使用时间为：73
+[2013-04-18 18:56:47]INFO  bot.server.handle.ServerHandler(line:21) -1:1_nihao a::::0::::-1::::0
+[2013-04-18 18:56:47]INFO  bot.server.handle.ServerHandler(line:27) -使用时间为：0
+[2013-04-18 18:57:33]INFO  org.rembau.MainClass(line:27) -Server start
+[2013-04-18 18:57:34]INFO  org.rembau.minaCommand.CommandServer(line:27) -Server is started!
+[2013-04-18 18:57:34]INFO  bot.server.handle.Dispatcher(line:28) -服务器启动完成，端口：678
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()名字 name
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()姓名 name
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()名称 name
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()称呼 name
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()大名 name
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()小名 name
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()昵称 name
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()叫什么 name
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()长相 appearance
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()外貌 appearance
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()相貌 appearance
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()品相 appearance
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()样子 appearance
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()长的 appearance
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()介绍 describe
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()描述自己 describe
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()描述下你 describe
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()描述你 describe
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()是什么 describe
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()性别 sex
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()男的 sex
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()女的 sex
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()男 sex
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()女 sex
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()雌 sex
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()雄 sex
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()雌的 sex
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()雄的 sex
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()公的 sex
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()母的 sex
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()喜欢 like
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()喜爱 like
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()兴趣 like
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()会高兴 like
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()会兴奋 like
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()喜 like
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()爱 like
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()乐于 like
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()出生 born
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()身世 born
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()来自 born
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()擅长 goodWork
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()特长 goodWork
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()善长 goodWork
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()善于 gookWork
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()擅于 gookWork
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()擅 gookWork
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()吃饭 hunger
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()吃过 hunger
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()吃 hunger
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()饿 hunger
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()多少岁 age
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:167) -specialty.init()多大 age
+[2013-04-18 18:57:41]INFO  bot.server.core.Specialty(line:45) -机器人属性初始化完成！
+[2013-04-18 18:57:41]INFO  bot.server.handle.ServerHandler(line:21) -1:1_你好::::1::::1::::1
+[2013-04-18 18:57:41]INFO  bot.server.handle.ServerHandler(line:27) -使用时间为：1
+[2013-04-18 18:57:41]INFO  bot.server.core.Memory(line:180) -1 1 1 0
+[2013-04-18 18:57:41]INFO  bot.server.core.Bot(line:213) -分词结果:[你, 你好, 好]
+[2013-04-18 18:57:41]INFO  bot.server.core.Bot(line:217) -start aboutMemory
+[2013-04-18 18:57:41]INFO  bot.server.core.Bot(line:291) -当前重复次数：0 当前是否重复：false
+[2013-04-18 18:57:41]INFO  bot.server.core.Bot(line:226) -start aboutMyself
+[2013-04-18 18:57:41]INFO  bot.server.core.Bot(line:235) -start aboutQuestion
+[2013-04-18 18:57:41]INFO  bot.server.core.Bot(line:420) -select * from b_teacherquestion where t_question2 regexp '(-=你好=-){1}'
+[2013-04-18 18:57:43]INFO  bot.server.conn.Conn(line:89) -127.0.0.1数据库连接成功!
+[2013-04-18 18:57:43]INFO  bot.server.conn.ConnPool(line:20) -pool.size():1
+[2013-04-18 18:57:43]INFO  bot.server.core.Bot(line:429) -查找到 3 条记录。
+[2013-04-18 18:57:44]INFO  bot.server.core.NowQuestionAnswers(line:38) -答案权值：40 答案：你好，很高兴见到你。
+[2013-04-18 18:57:44]INFO  bot.server.core.Bot(line:444) -问题是：你好啊。;答案是：你好，很高兴见到你。;权值为：30
+[2013-04-18 18:57:44]INFO  bot.server.core.NowQuestionAnswers(line:38) -答案权值：34 答案：大家好才是真的好。
+[2013-04-18 18:57:44]INFO  bot.server.core.Bot(line:444) -问题是：你好？;答案是：大家好才是真的好。;权值为：29
+[2013-04-18 18:57:44]INFO  bot.server.core.NowQuestionAnswers(line:38) -答案权值：29 答案：你是谁?
+[2013-04-18 18:57:44]INFO  bot.server.core.Bot(line:444) -问题是：你好，你是谁？;答案是：你是谁?;权值为：24
+[2013-04-18 18:57:44]INFO  bot.server.core.Answers(line:15) -插入可回答答案:你好，很高兴见到你。
+[2013-04-18 18:57:44]INFO  bot.server.core.Bot(line:238) -aboutQuestion access
+[2013-04-18 18:57:44]INFO  bot.server.core.Answers(line:30) -答案集:1 [你好，很高兴见到你。]
+[2013-04-18 18:57:44]INFO  bot.server.handle.task.Excutor(line:55) -send:1_Number seven.::::你好，很高兴见到你。
+[2013-04-18 18:57:58]INFO  bot.server.handle.ServerHandler(line:21) -1:1_黄山::::1::::0::::0
+[2013-04-18 18:57:58]INFO  bot.server.handle.ServerHandler(line:27) -使用时间为：1
+[2013-04-18 18:57:58]INFO  bot.server.core.Memory(line:180) -1 0 0 14
+[2013-04-18 18:57:58]INFO  bot.server.core.Bot(line:213) -分词结果:[黄山]
+[2013-04-18 18:57:58]INFO  bot.server.core.Bot(line:217) -start aboutMemory
+[2013-04-18 18:57:59]INFO  bot.server.core.Bot(line:291) -当前重复次数：0 当前是否重复：false
+[2013-04-18 18:57:59]INFO  bot.server.core.Bot(line:226) -start aboutMyself
+[2013-04-18 18:57:59]INFO  bot.server.core.Bot(line:235) -start aboutQuestion
+[2013-04-18 18:57:59]INFO  bot.server.core.Bot(line:420) -select * from b_teacherquestion where t_question2 regexp '(-=黄山=-){1}'
+[2013-04-18 18:57:59]INFO  bot.server.conn.ConnPool(line:20) -pool.size():1
+[2013-04-18 18:57:59]INFO  bot.server.core.Bot(line:429) -查找到 3 条记录。
+[2013-04-18 18:57:59]INFO  bot.server.core.NowQuestionAnswers(line:38) -答案权值：10 答案：地址：黄山
+[2013-04-18 18:57:59]INFO  bot.server.core.Bot(line:444) -问题是：黄山学院;答案是：地址：黄山;权值为：15
+[2013-04-18 18:57:59]INFO  bot.server.core.NowQuestionAnswers(line:38) -答案权值：12 答案：一所，黄山学院
+[2013-04-18 18:57:59]INFO  bot.server.core.Bot(line:444) -问题是：黄山有几所大学？;答案是：一所，黄山学院;权值为：22
+[2013-04-18 18:57:59]INFO  bot.server.core.NowQuestionAnswers(line:38) -答案权值：-3 答案：老四川酒家~~烤鱼最好吃
+[2013-04-18 18:57:59]INFO  bot.server.core.Bot(line:444) -问题是：黄山学院南区附近有好吃的饭店么;答案是：老四川酒家~~烤鱼最好吃;权值为：22
+[2013-04-18 18:57:59]INFO  bot.server.core.Answers(line:15) -插入可回答答案:一所，黄山学院
+[2013-04-18 18:57:59]INFO  bot.server.core.Bot(line:238) -aboutQuestion access
+[2013-04-18 18:57:59]INFO  bot.server.core.Answers(line:30) -答案集:1 [一所，黄山学院]
+[2013-04-18 18:57:59]INFO  bot.server.handle.task.Excutor(line:55) -send:1_Number seven.::::一所，黄山学院
+[2013-04-18 18:58:04]INFO  bot.server.handle.ServerHandler(line:21) -1:1_你在什么地方？::::0::::-1::::0
+[2013-04-18 18:58:04]INFO  bot.server.handle.ServerHandler(line:27) -使用时间为：0
+[2013-04-18 18:58:04]INFO  bot.server.core.Memory(line:180) -0 -1 0 5
+[2013-04-18 18:58:04]INFO  bot.server.core.Bot(line:213) -分词结果:[什么, 什么地方, 你, 在, 地方]
+[2013-04-18 18:58:04]INFO  bot.server.core.Bot(line:217) -start aboutMemory
+[2013-04-18 18:58:04]INFO  bot.server.core.Bot(line:291) -当前重复次数：0 当前是否重复：false
+[2013-04-18 18:58:04]INFO  bot.server.core.Bot(line:226) -start aboutMyself
+[2013-04-18 18:58:04]INFO  bot.server.core.Bot(line:341) -找到的关键字none
+[2013-04-18 18:58:04]INFO  bot.server.core.Bot(line:235) -start aboutQuestion
+[2013-04-18 18:58:04]INFO  bot.server.core.Bot(line:420) -select * from b_teacherquestion where t_question2 regexp '(-=地方=-){1}'
+[2013-04-18 18:58:04]INFO  bot.server.conn.ConnPool(line:20) -pool.size():1
+[2013-04-18 18:58:04]INFO  bot.server.core.Bot(line:241) -start aboutUnknow
+[2013-04-18 18:58:04]INFO  bot.server.core.Answers(line:22) -插入Unknow回答:我不知道你想让我说什么呢。
+[2013-04-18 18:58:04]INFO  bot.server.core.Bot(line:243) -aboutUnknow access
+[2013-04-18 18:58:04]INFO  bot.server.core.Bot(line:164) -你在什么地方？ ？
+[2013-04-18 18:58:04]INFO  bot.server.core.Answers(line:27) -没有可回答答案，插入Unknow回答!
+[2013-04-18 18:58:04]INFO  bot.server.core.Answers(line:30) -答案集:1 [我不知道你想让我说什么呢。]
+[2013-04-18 18:58:04]INFO  bot.server.handle.task.Excutor(line:55) -send:1_Number seven.::::我不知道你想让我说什么呢。
+[2013-04-18 18:58:11]INFO  bot.server.handle.ServerHandler(line:21) -1:1_你好笨。::::0::::0::::0
+[2013-04-18 18:58:11]INFO  bot.server.handle.ServerHandler(line:27) -使用时间为：0
+[2013-04-18 18:58:11]INFO  bot.server.core.Memory(line:180) -0 0 0 7
+[2013-04-18 18:58:11]INFO  bot.server.core.Bot(line:213) -分词结果:[你, 你好, 好笨]
+[2013-04-18 18:58:11]INFO  bot.server.core.Bot(line:217) -start aboutMemory
+[2013-04-18 18:58:11]INFO  bot.server.core.Bot(line:291) -当前重复次数：0 当前是否重复：false
+[2013-04-18 18:58:11]INFO  bot.server.core.Bot(line:226) -start aboutMyself
+[2013-04-18 18:58:11]INFO  bot.server.core.Bot(line:235) -start aboutQuestion
+[2013-04-18 18:58:11]INFO  bot.server.core.Bot(line:420) -select * from b_teacherquestion where t_question2 regexp '(-=好笨=-){1}'
+[2013-04-18 18:58:11]INFO  bot.server.conn.ConnPool(line:20) -pool.size():1
+[2013-04-18 18:58:11]INFO  bot.server.core.Bot(line:429) -查找到 1 条记录。
+[2013-04-18 18:58:11]INFO  bot.server.core.NowQuestionAnswers(line:38) -答案权值：30 答案：好吧，那你可以叫我笨笨~~嘘，咱俩私底下叫叫就行~~别传出去~~影响不好，你懂得，亲~~?
+[2013-04-18 18:58:11]INFO  bot.server.core.Bot(line:444) -问题是：你真的好笨~~;答案是：好吧，那你可以叫我笨笨~~嘘，咱俩私底下叫叫就行~~别传出去~~影响不好，你懂得，亲~~?;权值为：25
+[2013-04-18 18:58:11]INFO  bot.server.core.Answers(line:15) -插入可回答答案:好吧，那你可以叫我笨笨~~嘘，咱俩私底下叫叫就行~~别传出去~~影响不好，你懂得，亲~~?
+[2013-04-18 18:58:11]INFO  bot.server.core.Bot(line:238) -aboutQuestion access
+[2013-04-18 18:58:11]INFO  bot.server.core.Bot(line:164) -你好笨。 。
+[2013-04-18 18:58:11]INFO  bot.server.core.Answers(line:30) -答案集:1 [好吧，那你可以叫我笨笨~~嘘，咱俩私底下叫叫就行~~别传出去~~影响不好，你懂得，亲~~?]
+[2013-04-18 18:58:11]INFO  bot.server.handle.task.Excutor(line:55) -send:1_Number seven.::::好吧，那你可以叫我笨笨~~嘘，咱俩私底下叫叫就行~~别传出去~~影响不好，你懂得，亲~~?
+[2013-04-18 18:58:34]INFO  bot.server.handle.ServerHandler(line:21) -1:1_亲亲::::1::::0::::0
+[2013-04-18 18:58:34]INFO  bot.server.handle.ServerHandler(line:27) -使用时间为：0
+[2013-04-18 18:58:34]INFO  bot.server.core.Memory(line:180) -1 0 0 23
+[2013-04-18 18:58:34]INFO  bot.server.core.Bot(line:213) -分词结果:[亲亲]
+[2013-04-18 18:58:34]INFO  bot.server.core.Bot(line:217) -start aboutMemory
+[2013-04-18 18:58:34]INFO  bot.server.core.Bot(line:291) -当前重复次数：0 当前是否重复：false
+[2013-04-18 18:58:34]INFO  bot.server.core.Bot(line:226) -start aboutMyself
+[2013-04-18 18:58:34]INFO  bot.server.core.Bot(line:235) -start aboutQuestion
+[2013-04-18 18:58:34]INFO  bot.server.core.Bot(line:420) -select * from b_teacherquestion where t_question2 regexp '(-=亲亲=-){1}'
+[2013-04-18 18:58:34]INFO  bot.server.conn.ConnPool(line:20) -pool.size():1
+[2013-04-18 18:58:34]INFO  bot.server.core.Answers(line:22) -插入Unknow回答:什么亲亲 说的详细点吧。
+[2013-04-18 18:58:34]INFO  bot.server.core.Bot(line:238) -aboutQuestion access
+[2013-04-18 18:58:34]INFO  bot.server.core.Answers(line:27) -没有可回答答案，插入Unknow回答!
+[2013-04-18 18:58:34]INFO  bot.server.core.Answers(line:30) -答案集:1 [什么亲亲 说的详细点吧。]
+[2013-04-18 18:58:34]INFO  bot.server.handle.task.Excutor(line:55) -send:1_Number seven.::::什么亲亲 说的详细点吧。
+[2013-04-18 18:58:37]INFO  bot.server.handle.ServerHandler(line:21) -1:1_笨蛋::::0::::-1::::0
+[2013-04-18 18:58:37]INFO  bot.server.handle.ServerHandler(line:27) -使用时间为：0
+[2013-04-18 18:58:37]INFO  bot.server.core.Memory(line:180) -0 -1 0 3
+[2013-04-18 18:58:37]INFO  bot.server.core.Bot(line:213) -分词结果:[笨蛋]
+[2013-04-18 18:58:37]INFO  bot.server.core.Bot(line:217) -start aboutMemory
+[2013-04-18 18:58:37]INFO  bot.server.core.Bot(line:291) -当前重复次数：0 当前是否重复：false
+[2013-04-18 18:58:37]INFO  bot.server.core.Bot(line:226) -start aboutMyself
+[2013-04-18 18:58:37]INFO  bot.server.core.Bot(line:235) -start aboutQuestion
+[2013-04-18 18:58:37]INFO  bot.server.core.Bot(line:420) -select * from b_teacherquestion where t_question2 regexp '(-=笨蛋=-){1}'
+[2013-04-18 18:58:37]INFO  bot.server.conn.ConnPool(line:20) -pool.size():1
+[2013-04-18 18:58:37]INFO  bot.server.core.Bot(line:429) -查找到 1 条记录。
+[2013-04-18 18:58:37]INFO  bot.server.core.NowQuestionAnswers(line:38) -答案权值：27 答案：你骂我是笨蛋？
+[2013-04-18 18:58:37]INFO  bot.server.core.Bot(line:444) -问题是：笨蛋;答案是：你骂我是笨蛋？;权值为：27
+[2013-04-18 18:58:37]INFO  bot.server.core.Answers(line:15) -插入可回答答案:你骂我是笨蛋？
+[2013-04-18 18:58:37]INFO  bot.server.core.Bot(line:238) -aboutQuestion access
+[2013-04-18 18:58:37]INFO  bot.server.core.Answers(line:30) -答案集:1 [你骂我是笨蛋？]
+[2013-04-18 18:58:37]INFO  bot.server.handle.task.Excutor(line:55) -send:1_Number seven.::::你骂我是笨蛋？
+[2013-04-18 18:58:40]INFO  bot.server.handle.ServerHandler(line:21) -1:1_是啊::::0::::-1::::0
+[2013-04-18 18:58:40]INFO  bot.server.handle.ServerHandler(line:27) -使用时间为：1
+[2013-04-18 18:58:40]INFO  bot.server.core.Memory(line:180) -0 -1 0 3
+[2013-04-18 18:58:40]INFO  bot.server.core.Bot(line:213) -分词结果:[啊, 是]
+[2013-04-18 18:58:40]INFO  bot.server.core.Bot(line:217) -start aboutMemory
+[2013-04-18 18:58:40]INFO  bot.server.core.Bot(line:291) -当前重复次数：0 当前是否重复：false
+[2013-04-18 18:58:40]INFO  bot.server.core.Bot(line:226) -start aboutMyself
+[2013-04-18 18:58:40]INFO  bot.server.core.Bot(line:235) -start aboutQuestion
+[2013-04-18 18:58:40]INFO  bot.server.core.Answers(line:22) -插入Unknow回答:你想说什么呢？
+[2013-04-18 18:58:40]INFO  bot.server.core.Bot(line:238) -aboutQuestion access
+[2013-04-18 18:58:40]INFO  bot.server.core.Answers(line:27) -没有可回答答案，插入Unknow回答!
+[2013-04-18 18:58:40]INFO  bot.server.core.Answers(line:30) -答案集:1 [你想说什么呢？]
+[2013-04-18 18:58:40]INFO  bot.server.handle.task.Excutor(line:55) -send:1_Number seven.::::你想说什么呢？
+[2013-04-18 19:20:50]INFO  bot.server.handle.ServerHandler(line:16) -客户端退出，/127.0.0.1:65150
+[2013-04-19 09:43:44]INFO  bot.server.handle.ServerHandler(line:21) -2:1_你好::::1::::1::::1
+[2013-04-19 09:43:44]INFO  bot.server.handle.ServerHandler(line:27) -使用时间为：68
+[2013-04-19 09:43:44]INFO  bot.server.core.Memory(line:180) -1 1 1 0
+[2013-04-19 09:43:45]INFO  bot.server.core.Bot(line:213) -分词结果:[你, 你好, 好]
+[2013-04-19 09:43:45]INFO  bot.server.core.Bot(line:217) -start aboutMemory
+[2013-04-19 09:43:45]INFO  bot.server.core.Bot(line:291) -当前重复次数：0 当前是否重复：false
+[2013-04-19 09:43:45]INFO  bot.server.core.Bot(line:226) -start aboutMyself
+[2013-04-19 09:43:45]INFO  bot.server.core.Bot(line:235) -start aboutQuestion
+[2013-04-19 09:43:45]INFO  bot.server.core.Bot(line:420) -select * from b_teacherquestion where t_question2 regexp '(-=你好=-){1}'
+[2013-04-19 09:43:45]INFO  bot.server.conn.ConnPool(line:20) -pool.size():1
+[2013-04-19 09:43:45]INFO  bot.server.conn.DBoperate(line:46) -sql 异常，Communications link failure
+
+The last packet successfully received from the server was 53,107,390 milliseconds ago.  The last packet sent successfully to the server was 51 milliseconds ago.
+[2013-04-19 09:43:45]INFO  bot.server.conn.DBoperate(line:48) -Connection is unValid!
+[2013-04-19 09:43:46]INFO  bot.server.conn.Conn(line:89) -127.0.0.1数据库连接成功!
+[2013-04-19 09:43:46]INFO  bot.server.core.Bot(line:429) -查找到 3 条记录。
+[2013-04-19 09:43:46]INFO  bot.server.core.NowQuestionAnswers(line:38) -答案权值：40 答案：你好，很高兴见到你。
+[2013-04-19 09:43:46]INFO  bot.server.core.Bot(line:444) -问题是：你好啊。;答案是：你好，很高兴见到你。;权值为：30
+[2013-04-19 09:43:46]INFO  bot.server.core.NowQuestionAnswers(line:38) -答案权值：34 答案：大家好才是真的好。
+[2013-04-19 09:43:46]INFO  bot.server.core.Bot(line:444) -问题是：你好？;答案是：大家好才是真的好。;权值为：29
+[2013-04-19 09:43:46]INFO  bot.server.core.NowQuestionAnswers(line:38) -答案权值：29 答案：你是谁?
+[2013-04-19 09:43:46]INFO  bot.server.core.Bot(line:444) -问题是：你好，你是谁？;答案是：你是谁?;权值为：24
+[2013-04-19 09:43:46]INFO  bot.server.core.Answers(line:15) -插入可回答答案:你好，很高兴见到你。
+[2013-04-19 09:43:46]INFO  bot.server.core.Bot(line:238) -aboutQuestion access
+[2013-04-19 09:43:46]INFO  bot.server.core.Answers(line:30) -答案集:1 [你好，很高兴见到你。]
+[2013-04-19 09:43:46]INFO  bot.server.handle.task.Excutor(line:55) -send:1_Number seven.::::你好，很高兴见到你。
+[2013-04-19 09:43:55]INFO  bot.server.handle.ServerHandler(line:16) -客户端退出，/127.0.0.1:54531
