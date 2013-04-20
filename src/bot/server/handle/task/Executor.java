@@ -11,8 +11,8 @@ import bot.server.handle.message.TrainMessage;
 import bot.server.handle.message.UserLoginResult;
 
 
-public class Excutor extends Thread{
-	private static final Logger logger = Logger.getLogger(Excutor.class);
+public class Executor extends Thread{
+	private static final Logger logger = Logger.getLogger(Executor.class);
 	public void run(){
 		while(true){
 			Job job;

@@ -2,11 +2,11 @@ package bot.server.handle.task;
 
 import bot.comm.Context;
 
-public class Exceutors {
+public class Executors {
 	public static int pool_num=Context.threadpool_num;
 	public void init(){
 		for (int i = 0; i < pool_num; i++) {
-			Excutor excu = new Excutor();
+			Executor excu = new Executor();
 			excu.start();
 		}
 	}
