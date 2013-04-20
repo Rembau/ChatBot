@@ -367,8 +367,7 @@ public class Bot {
 		specialty.removeStopWords(wordList);
 		memory.getNowMemory().setKeyNum(wordList.size());
 		
-		if(wordList.size()==0 && !memory.getNowMemory().isHaveYou() && 
-				!memory.getNowMemory().isHaveHim() && !memory.getNowMemory().isHaveMe()){
+		if(wordList.size()==0){
 			if(memory.getNowMemory().isQuestion()){
 				reply= Constants.getAnswerDoubtAsk();
 			} else {
@@ -376,7 +375,7 @@ public class Bot {
 			}
 			result=true;
 			answers.addNotAnswer(reply);
-		} else {
+		} else if(wordList.size()!=0){
 			memory.addKeyRecord(wordList);//把关键字列表加入记忆链表
 			getAnswers();
 			reply=memory.getNowAnswers().getBestAnswer();
