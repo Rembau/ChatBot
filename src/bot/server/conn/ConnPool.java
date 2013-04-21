@@ -12,6 +12,7 @@ public class ConnPool {
 	private static final Logger logger = Logger.getLogger(ConnPool.class);
 	private static LinkedBlockingQueue<Conn> pool = new LinkedBlockingQueue<Conn>();
 	private static final int maxLimit =Context.connpool_num;
+	private static volatile int nowNumOfCon=1;
 	static {
 		pool.add(new Conn());
 	}
@@ -19,8 +20,9 @@ public class ConnPool {
 		try {
 			logger.info("pool.size():"+pool.size());
 			Conn conn = pool.poll(5, TimeUnit.SECONDS);
-			if(conn==null && pool.size() < maxLimit){
+			if(conn==null && nowNumOfCon < maxLimit){
 				conn = new Conn();
+				nowNumOfCon++;
 			}
 			return conn;
 		} catch (InterruptedException e) {
