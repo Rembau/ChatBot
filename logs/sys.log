@@ -648,3 +648,7 @@ The last packet successfully received from the server was 53,107,390 millisecond
 [2013-04-19 09:43:46]INFO  bot.server.core.Answers(line:30) -答案集:1 [你好，很高兴见到你。]
 [2013-04-19 09:43:46]INFO  bot.server.handle.task.Excutor(line:55) -send:1_Number seven.::::你好，很高兴见到你。
 [2013-04-19 09:43:55]INFO  bot.server.handle.ServerHandler(line:16) -客户端退出，/127.0.0.1:54531
+[2013-04-20 20:45:43]INFO  bot.client.communication.Communication(line:39) -连接服务器成功！
+[2013-04-21 18:15:03]INFO  org.rembau.MainClass(line:27) -Server start
+[2013-04-21 18:15:04]INFO  org.rembau.minaCommand.CommandServer(line:27) -Server is started!
+[2013-04-21 18:15:04]INFO  bot.server.handle.Dispatcher(line:28) -服务器启动完成，端口：678
