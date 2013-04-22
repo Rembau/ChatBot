@@ -1,14 +1,14 @@
-package bot.server.handle;
+package bot.server.handle.task;
 
 import org.apache.log4j.Logger;
 import org.apache.mina.core.session.IoSession;
 
 import bot.server.core.Bot;
+import bot.server.handle.LoginCheck;
 import bot.server.handle.message.ChatContent;
 import bot.server.handle.message.ReceiveMessage;
 import bot.server.handle.message.TrainMessage;
 import bot.server.handle.message.UserLoginResult;
-import bot.server.handle.task.Session;
 
 public class MinaSession implements Session {
 	private static final Logger logger = Logger.getLogger(MinaSession.class);

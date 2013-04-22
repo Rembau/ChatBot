@@ -7,6 +7,7 @@ import org.apache.mina.core.session.IoSession;
 import bot.server.core.Bot;
 import bot.server.handle.task.Job;
 import bot.server.handle.task.Jobs;
+import bot.server.handle.task.MinaSession;
 
 
 public class ServerHandler extends IoHandlerAdapter{
