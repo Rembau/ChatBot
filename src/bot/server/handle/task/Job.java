@@ -1,12 +1,13 @@
 package bot.server.handle.task;
 
-import org.apache.mina.core.session.IoSession;
-
 public class Job{
-	IoSession session;
+	Session session;
 	String message;
-	public Job(IoSession session,String message){
+	public Job(Session session,String message){
 		this.session = session;
 		this.message = message;
+	}
+	public void run(){
+		session.handleMessage(message);
 	}
 }

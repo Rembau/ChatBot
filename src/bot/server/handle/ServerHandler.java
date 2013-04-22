@@ -19,7 +19,7 @@ public class ServerHandler extends IoHandlerAdapter{
 		long i = System.currentTimeMillis();
 		try {
 			logger.info(session.getId()+":"+message);
-			Jobs.putJob(new Job(session,message.toString()));
+			Jobs.putJob(new Job(new MinaSession(session),message.toString()));
 		} catch (Exception e) {
 			e.printStackTrace();
 			logger.error(e);
