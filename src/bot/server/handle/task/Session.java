@@ -1,8 +1,21 @@
 package bot.server.handle.task;
 
-import java.util.UUID;
+import bot.server.core.Bot;
 
-public interface Session {
-	UUID id= UUID.randomUUID();
-	public void handleMessage(String str);
+public abstract class Session {
+	public String id;
+	public Bot bot = new Bot();
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public Bot getBot() {
+		return bot;
+	}
+	public void setBot(Bot bot) {
+		this.bot = bot;
+	}
+	public abstract void handleMessage(String str);
 }

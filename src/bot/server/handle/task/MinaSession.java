@@ -3,6 +3,7 @@ package bot.server.handle.task;
 import org.apache.log4j.Logger;
 import org.apache.mina.core.session.IoSession;
 
+import bot.comm.BodyAndUUID;
 import bot.server.core.Bot;
 import bot.server.handle.LoginCheck;
 import bot.server.handle.message.ChatContent;
@@ -10,14 +11,13 @@ import bot.server.handle.message.ReceiveMessage;
 import bot.server.handle.message.TrainMessage;
 import bot.server.handle.message.UserLoginResult;
 
-public class MinaSession implements Session {
+public class MinaSession extends Session {
 	private static final Logger logger = Logger.getLogger(MinaSession.class);
 	private IoSession session;
 	public MinaSession(IoSession session){
 		this.session = session;
 	}
 	public void handleMessage(String message){
-		Bot bot = (Bot)session.getAttribute("bot");
 		ReceiveMessage rm = new ReceiveMessage(message);
 		String contents[] = rm.getContents();
 		if(rm.getType()==1){
@@ -40,8 +40,8 @@ public class MinaSession implements Session {
 	 */
 	public void sendMessage(String str){
 		logger.info("send:"+str);
-		Bot bot = (Bot)session.getAttribute("bot");
 		bot.getMemory().initReplyTime();
+		str = BodyAndUUID.combine(id, str);
 		session.write(str);
 	}
 }

@@ -1,5 +1,7 @@
 package bot.client.communication;
 
+import java.util.UUID;
+
 import org.apache.log4j.Logger;
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;
@@ -9,6 +11,7 @@ import bot.client.communication.message.CommandMessage;
 import bot.client.communication.message.ReceiveMessage;
 import bot.client.communication.message.UserInformation;
 import bot.client.gui.ChatFrame;
+import bot.comm.BodyAndUUID;
 import bot.comm.MessageCombine;
 
 
@@ -27,7 +30,8 @@ public class ClientHandler extends IoHandlerAdapter {
 	public void messageReceived(IoSession session, Object message) {
 		try {
 			logger.info(message.toString());
-			handleMessage(message.toString());
+			String context[] = BodyAndUUID.getContext(message.toString());
+			handleMessage(context[1]);
 		} catch (Exception e) {
 			logger.info(e.getMessage());
 		}
@@ -134,11 +138,13 @@ public class ClientHandler extends IoHandlerAdapter {
 	 * @roseuid 50187B510339
 	 */
 	public boolean sendMessage(String message) {
+		message=BodyAndUUID.combine(session.getAttribute("uuid").toString(), message);
 		session.write(message);
 		return true;
 	}
 	public void sessionCreated(IoSession session){
 		this.session=session;
+		session.setAttribute("uuid",UUID.randomUUID());
 		sendMessage(new ChatContent(new String[] { "ÄãºÃ", "1", "1", "1" }));
 	}
 }
