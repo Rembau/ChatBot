@@ -10,6 +10,7 @@ import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.geom.RoundRectangle2D;
 import java.util.Calendar;
 
 import javax.swing.BorderFactory;
@@ -28,6 +29,8 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
+
+import com.sun.awt.AWTUtilities;
 
 import bot.client.communication.Communication;
 import bot.client.event.ActionForWindow_control;
@@ -66,7 +69,6 @@ public class ChatFrame extends JApplet {
 	public ChatFrame() {
 		super();
 		// panel_people.setLayout(new GridLayout(0,1));
-
 		textarea = new JTextPane();
 		textarea.setEditable(false);
 		textarea.setOpaque(false);
@@ -380,6 +382,11 @@ public class ChatFrame extends JApplet {
 		
 		JFrame window = new JFrame("Chat bot");
 		window.setUndecorated(true);
+		AWTUtilities.setWindowOpaque(window, true);
+		AWTUtilities.setWindowShape(window,
+				new RoundRectangle2D.Double(window.getX(),window.getY(),
+						window.getWidth(),window.getHeight(),
+						20,20));
 		
 		JPanel all = new JPanel();
 		all.setLayout(new BorderLayout());
