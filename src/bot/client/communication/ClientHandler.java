@@ -95,6 +95,7 @@ public class ClientHandler extends IoHandlerAdapter {
 			sendMessage(new CommandMessage(new String[] { message }));
 		} else if (isTrainNow && message.equals(Command.endTrain)) {
 			isTrainNow = false;
+			cf.getButton_train().setText("¿ªÊ¼ÑµÁ·");
 			sendMessage(new CommandMessage(new String[] { message }));
 		} else {
 			String i = cf.getPeople().getPeopleAttributeNow().getIrascible()
