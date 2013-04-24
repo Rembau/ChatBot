@@ -20,4 +20,9 @@ public class Context {
 	 * 判断是否是重复问题算法接受的问题的最小长度。
 	 */
 	public static int minLengthAccept=1;
+	
+	public static String window_control_min="_";
+	public static String window_control_max="□";
+	public static String window_control_close="×";
+	public static String image_path="images/";
 }

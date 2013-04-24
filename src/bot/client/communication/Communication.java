@@ -5,6 +5,9 @@ package bot.client.communication;
 import java.net.InetSocketAddress;
 import java.nio.charset.Charset;
 
+import javax.swing.JOptionPane;
+import javax.swing.JTextPane;
+
 import org.apache.log4j.Logger;
 import org.apache.mina.core.future.ConnectFuture;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
@@ -20,12 +23,14 @@ public class Communication extends Thread {
 	private static final Logger logger = Logger.getLogger(Communication.class);
 	private ChatFrame cf;
 	private ClientHandler handler;
+	private JTextPane label;
 
-	public Communication(ChatFrame cf) throws Exception {
+	public Communication(ChatFrame cf,JTextPane label){
 		this.cf = cf;
+		this.label = label;
 	}
 
-	public void run() {
+	public void run(){
 		NioSocketConnector connector = new NioSocketConnector();
 		connector.getFilterChain().addLast(
 				"codec",
@@ -36,7 +41,25 @@ public class Communication extends Thread {
 		connector.setHandler(handler);// 设置事件处理器
 		ConnectFuture cf = connector.connect(new InetSocketAddress(Context.servler_ip,Context.server_port));// 建立连接
 		cf.awaitUninterruptibly();
-		logger.info("连接服务器成功！");
+		while(!cf.isDone()){
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		if(cf.isConnected()){
+			logger.info("连接服务器成功...");
+			String point = 
+					  "1：在输入字符串前面加上’%’，可以进行搜索。\n"
+					+ "2：输入teacher进入训练模式（须先登录）。\n" 
+					+ "3：输入end退出训练模式。";
+			label.setText(point);
+		} else{
+			logger.info("连接服务器失败...");
+			label.setText("连接服务器失败...");
+			JOptionPane.showMessageDialog(null, "连接服务器失败！");
+		}
 	}
 	public void sendCharMessage(){
 		handler.sendCharMessage();
