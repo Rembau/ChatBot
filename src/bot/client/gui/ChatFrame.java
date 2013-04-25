@@ -25,6 +25,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTextPane;
+import javax.swing.SwingUtilities;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
@@ -115,7 +116,7 @@ public class ChatFrame extends JApplet {
 		char_split.add(scrollpane);
 		char_split.add(input_parent);
 
-		button = new JButton("发送");
+		button = new JButton(Context.cmd_send_message);
 		button.addActionListener(amk);
 		button.addMouseListener(new Button_effect());
 		button.setBorder(new BevelBorder(BevelBorder.RAISED));
@@ -238,7 +239,7 @@ public class ChatFrame extends JApplet {
 			this.validate();
 		} else {
 			JLabel label_1 = new JLabel("游客");
-			JButton button_login = new Bot_button("登录");
+			JButton button_login = new Bot_button(Context.cmd_login);
 			button_login.addActionListener(amk);
 			panel_people.setLayout(new BorderLayout());
 			panel_people.add(label_1, BorderLayout.CENTER);
@@ -369,78 +370,74 @@ public class ChatFrame extends JApplet {
 
 	}
 	public static void main(String[] args) {
-		//JFrame frame = new JFrame("Chat bot");
-		//ChatFrame cf = new ChatFrame();
-		//frame.add(cf);
-		//frame.setVisible(true);
-		//frame.setBounds(200, 100, cf.init_frame_width, cf.init_frame_height);
-		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		try{
-		Image title_image = Toolkit.getDefaultToolkit().createImage(Context.image_path+"title.png");
-		JLabel title_label = new JLabel(new ImageIcon(title_image.getScaledInstance(32, 32, Image.SCALE_DEFAULT)));
-		title_label.setBorder(new LineBorder(Color.white,1,true));
-		
-		JPanel window_title = new JPanel();
-		ActionForWindow_title awt = new ActionForWindow_title();
-		window_title.addMouseListener(awt);
-		window_title.addMouseMotionListener(awt);
-		window_title.setOpaque(false);
-		FlowLayout flt = new FlowLayout(FlowLayout.LEFT);
-		flt.setVgap(10);
-		window_title.setLayout(flt);
-		window_title.add(title_label);
-		
-		JPanel window_control = new Window_control();
-		
-		JPanel window_control_parent = new JPanel();
-		window_control_parent.setLayout(new BorderLayout());
-		window_control_parent.add(window_control,BorderLayout.NORTH);
-		window_control_parent.setOpaque(false);
-		
-		JPanel window_top = new JPanel(){
-			private static final long serialVersionUID = 1L;
-			public void paintComponent(Graphics g) {
-			     super.paintComponent(g);
-			     Image image = Toolkit.getDefaultToolkit().createImage(Context.image_path+"window_top.jpg");
-			     int x = this.getWidth();
-			     int y = this.getHeight();
-			     ImageIcon img = new ImageIcon(image.getScaledInstance(x, y, Image.SCALE_DEFAULT));
-			     g.drawImage(img.getImage(),0,0,null);
-			 }
-		};
-		window_top.setLayout(new BorderLayout());
-		window_top.add(window_title,BorderLayout.CENTER);
-		window_top.add(window_control_parent,BorderLayout.EAST);
-		
-		ChatFrame cf = new ChatFrame();
-		
-		JPanel all = new JPanel();
-		all.setLayout(new BorderLayout());
-		all.add(window_top,BorderLayout.NORTH);
-		all.add(cf,BorderLayout.CENTER);
-		all.setBorder(new LineBorder(Color.black,1,true));
-		
-		JFrame window = new JFrame("Chat bot");
-		window.setUndecorated(true);
-		window.setIconImage(title_image);
-		Container content = window.getContentPane();
-		content.add(all);
-		window.setBounds(200, 100, cf.init_frame_width, cf.init_frame_height);
-		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		window.setVisible(true);
-		AWTUtilities.setWindowOpaque(window, false);
-		
-		RoundRectangle2D.Double rr = new RoundRectangle2D.Double(0,0,
-				window.getWidth(),window.getHeight(),
-				10,10);
-		
-		AWTUtilities.setWindowShape(window,rr);
-		//AWTUtilities.setWindowOpacity(window, 0.93f); //设置透明
-		cf.getChar_split().setDividerLocation(cf.init_chat_input_splitpane_location);
-		cf.load_complete=true;
-		} catch(Exception e){
-			e.printStackTrace();
-		}
+		SwingUtilities.invokeLater(new Runnable(){
+
+			public void run() {
+				Image title_image = Toolkit.getDefaultToolkit().createImage(Context.image_path+"title.png");
+				JLabel title_label = new JLabel(new ImageIcon(title_image.getScaledInstance(32, 32, Image.SCALE_DEFAULT)));
+				title_label.setBorder(new LineBorder(Color.white,1,true));
+				
+				JPanel window_title = new JPanel();
+				ActionForWindow_title awt = new ActionForWindow_title();
+				window_title.addMouseListener(awt);
+				window_title.addMouseMotionListener(awt);
+				window_title.setOpaque(false);
+				FlowLayout flt = new FlowLayout(FlowLayout.LEFT);
+				flt.setVgap(10);
+				window_title.setLayout(flt);
+				window_title.add(title_label);
+				
+				JPanel window_control = new Window_control();
+				
+				JPanel window_control_parent = new JPanel();
+				window_control_parent.setLayout(new BorderLayout());
+				window_control_parent.add(window_control,BorderLayout.NORTH);
+				window_control_parent.setOpaque(false);
+				
+				JPanel window_top = new JPanel(){
+					private static final long serialVersionUID = 1L;
+					public void paintComponent(Graphics g) {
+					     super.paintComponent(g);
+					     Image image = Toolkit.getDefaultToolkit().createImage(Context.image_path+"window_top.jpg");
+					     int x = this.getWidth();
+					     int y = this.getHeight();
+					     ImageIcon img = new ImageIcon(image.getScaledInstance(x, y, Image.SCALE_DEFAULT));
+					     g.drawImage(img.getImage(),0,0,null);
+					 }
+				};
+				window_top.setLayout(new BorderLayout());
+				window_top.add(window_title,BorderLayout.CENTER);
+				window_top.add(window_control_parent,BorderLayout.EAST);
+				
+				ChatFrame cf = new ChatFrame();
+				
+				JPanel all = new JPanel();
+				all.setLayout(new BorderLayout());
+				all.add(window_top,BorderLayout.NORTH);
+				all.add(cf,BorderLayout.CENTER);
+				all.setBorder(new LineBorder(Color.black,1,true));
+				
+				JFrame window = new JFrame("Chat bot");
+				window.setUndecorated(true);
+				window.setIconImage(title_image);
+				Container content = window.getContentPane();
+				content.add(all);
+				window.setBounds(200, 100, cf.init_frame_width, cf.init_frame_height);
+				window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				window.setVisible(true);
+				AWTUtilities.setWindowOpaque(window, false);
+				
+				RoundRectangle2D.Double rr = new RoundRectangle2D.Double(0,0,
+						window.getWidth(),window.getHeight(),
+						10,10);
+				
+				AWTUtilities.setWindowShape(window,rr);
+				//AWTUtilities.setWindowOpacity(window, 0.93f); //设置透明
+				cf.getChar_split().setDividerLocation(cf.init_chat_input_splitpane_location);
+				cf.load_complete=true;
+			}
+			
+		});
 	}
 	public boolean isLoad_complete() {
 		return load_complete;

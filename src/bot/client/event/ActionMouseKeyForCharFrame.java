@@ -92,7 +92,7 @@ public class ActionMouseKeyForCharFrame implements MouseListener,
 
 	}
 	public void actionPerformed(ActionEvent e) {
-		if (e.getActionCommand().trim().equals("·¢ËÍ")) {
+		if (e.getActionCommand().trim().equals(Context.cmd_send_message)) {
 			pa.handle();
 			cf.getCommunication().sendCharMessage();
 			pa.init();
@@ -102,16 +102,16 @@ public class ActionMouseKeyForCharFrame implements MouseListener,
 			if (select == JOptionPane.YES_OPTION) {
 
 			} else if (select == JOptionPane.NO_OPTION) {
-				cf.getCommunication().sendCharMessage("teacher");
+				cf.getCommunication().sendCharMessage(Context.cmd_train_start_message);
 				((JButton) (e.getSource())).setText(Context.cmd_train_end);
 			}
 		} else if (e.getActionCommand().trim().equals(Context.cmd_train_end)) {
 			int select = JOptionPane.showConfirmDialog(cf, "ÄãÈ·¶¨ÍË³öÑµÁ·Âð£¿");
 			if (select == JOptionPane.YES_OPTION) {
-				cf.getCommunication().sendCharMessage("end");
+				cf.getCommunication().sendCharMessage(Context.cmd_train_end_message);
 				((JButton) (e.getSource())).setText(Context.cmd_train_start);
 			}
-		} else if (e.getActionCommand().trim().equals("µÇÂ¼")) {
+		} else if (e.getActionCommand().trim().equals(Context.cmd_login)) {
 			new Login(cf,true);
 		}// end if
 	}

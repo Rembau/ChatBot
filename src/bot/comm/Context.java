@@ -28,4 +28,10 @@ public class Context {
 	
 	public static String cmd_train_start="ÑµÁ·";
 	public static String cmd_train_end="½áÊø";
+	
+	public static String cmd_train_start_message="teacher";
+	public static String cmd_train_end_message="end";
+	
+	public static String cmd_send_message="·¢ËÍ";
+	public static String cmd_login="µÇÂ½";
 }
