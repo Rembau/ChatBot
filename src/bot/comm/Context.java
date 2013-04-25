@@ -25,4 +25,7 @@ public class Context {
 	public static String window_control_max="¡õ";
 	public static String window_control_close="¡Á";
 	public static String image_path="images/";
+	
+	public static String cmd_train_start="ÑµÁ·";
+	public static String cmd_train_end="½áÊø";
 }

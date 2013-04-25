@@ -12,6 +12,7 @@ import bot.client.communication.message.ReceiveMessage;
 import bot.client.communication.message.UserInformation;
 import bot.client.gui.ChatFrame;
 import bot.comm.BodyAndUUID;
+import bot.comm.Context;
 import bot.comm.MessageCombine;
 
 
@@ -48,8 +49,8 @@ public class ClientHandler extends IoHandlerAdapter {
 				cf.prompt("用户名或密码错误");
 				return;
 			}
-			cf.getPeople().setName(content[0]);
-			cf.getPeople().setStatus(content[1]);
+			cf.getPeople().setName(content[1]);
+			cf.getPeople().setStatus(content[0]);
 			cf.repaintPanel_people();
 		} else if (rm.getType() == 3) {
 			cf.addChatContent(content[0], content[1]);
@@ -95,7 +96,7 @@ public class ClientHandler extends IoHandlerAdapter {
 			sendMessage(new CommandMessage(new String[] { message }));
 		} else if (isTrainNow && message.equals(Command.endTrain)) {
 			isTrainNow = false;
-			cf.getButton_train().setText("开始训练");
+			cf.getButton_train().setText(Context.cmd_train_start);
 			sendMessage(new CommandMessage(new String[] { message }));
 		} else {
 			String i = cf.getPeople().getPeopleAttributeNow().getIrascible()

@@ -17,6 +17,7 @@ import javax.swing.JOptionPane;
 import bot.client.gui.ChatFrame;
 import bot.client.gui.Login;
 import bot.client.people.PeopleAttributeNow;
+import bot.comm.Context;
 
 public class ActionMouseKeyForCharFrame implements MouseListener,
 		MouseMotionListener, MouseWheelListener, KeyListener, ActionListener {
@@ -64,7 +65,7 @@ public class ActionMouseKeyForCharFrame implements MouseListener,
 	}
 
 	public void mouseEntered(MouseEvent e) {
-
+		
 	}
 
 	public void mouseExited(MouseEvent e) {
@@ -95,23 +96,23 @@ public class ActionMouseKeyForCharFrame implements MouseListener,
 			pa.handle();
 			cf.getCommunication().sendCharMessage();
 			pa.init();
-		} else if (e.getActionCommand().trim().equals("开始训练")) {
+		} else if (e.getActionCommand().trim().equals(Context.cmd_train_start)) {
 			int select = JOptionPane.showConfirmDialog(cf,
 					"在训练之前可以进行一些小测试，测试吗？");
 			if (select == JOptionPane.YES_OPTION) {
 
 			} else if (select == JOptionPane.NO_OPTION) {
 				cf.getCommunication().sendCharMessage("teacher");
-				((JButton) (e.getSource())).setText("结束训练");
+				((JButton) (e.getSource())).setText(Context.cmd_train_end);
 			}
-		} else if (e.getActionCommand().trim().equals("结束训练")) {
+		} else if (e.getActionCommand().trim().equals(Context.cmd_train_end)) {
 			int select = JOptionPane.showConfirmDialog(cf, "你确定退出训练吗？");
 			if (select == JOptionPane.YES_OPTION) {
 				cf.getCommunication().sendCharMessage("end");
-				((JButton) (e.getSource())).setText("开始训练");
+				((JButton) (e.getSource())).setText(Context.cmd_train_start);
 			}
 		} else if (e.getActionCommand().trim().equals("登录")) {
-			new Login(cf);
+			new Login(cf,true);
 		}// end if
 	}
 }

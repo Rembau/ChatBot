@@ -6,17 +6,18 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Graphics;
-import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.geom.RoundRectangle2D;
+import java.io.IOException;
 import java.util.Calendar;
 
-import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JApplet;
 import javax.swing.JButton;
+import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -24,6 +25,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTextPane;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.LineBorder;
+import javax.swing.border.TitledBorder;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
@@ -33,30 +37,35 @@ import javax.swing.text.StyleConstants;
 import com.sun.awt.AWTUtilities;
 
 import bot.client.communication.Communication;
-import bot.client.event.ActionForWindow_control;
 import bot.client.event.ActionForWindow_title;
 import bot.client.event.ActionMouseKeyForCharFrame;
+import bot.client.event.Button_effect;
 import bot.client.people.People;
 import bot.comm.Context;
 
+/**
+ * 
+ * 
+ *
+ */
 public class ChatFrame extends JApplet {
 	private static final long serialVersionUID = 1L;
 	private Communication communication;
-	private JScrollPane scrollpane;
-	private JScrollPane scrollinput;
-	private JTextPane textarea;
-	private JTextPane textfield;
-	private JButton button;
+	private JScrollPane scrollpane;		//显示内容滚动面板
+	private JScrollPane scrollinput;	//输入框滚动面板
+	private JTextPane textarea;			//显示内容文字面板
+	private JTextPane textfield;		//输入内容文字面板
+	private JButton button;				//输入框下面 发送按钮
 	
-	private JSplitPane panel_bot_people;
-	private JSplitPane char_split;
-	private JPanel char_people;
+	private JSplitPane panel_bot_people;	//右边 显示用户和机器人分割面板
+	private JSplitPane char_split;			//左边显示内容和输入框的分割面板
+	private JPanel char_people;				//panel_bot_people和char_split的父面板
 	
-	private JPanel panel_bot = new JPanel();
-	private JPanel panel_people = new JPanel();
-	private People people = new People();
+	private JPanel panel_bot = new JPanel();	//显示提示和机器人
+	private JPanel panel_people = new JPanel();	//显示登陆用户信息和命令
+	private People people = new People();		
 
-	private JButton button_train;
+	private JButton button_train;				//开始结束训练按钮
 	private ActionMouseKeyForCharFrame amk = new ActionMouseKeyForCharFrame(
 			this);
 
@@ -65,6 +74,8 @@ public class ChatFrame extends JApplet {
 	private int init_frame_height = 500;
 	
 	private Dimension default_prompt_size = new Dimension(216,100);
+	
+	private boolean load_complete = false;
 
 	public ChatFrame() {
 		super();
@@ -87,10 +98,10 @@ public class ChatFrame extends JApplet {
 		scrollinput.setBorder(null);
 		scrollinput.setOpaque(false);
 		
-		JPanel up_input = new JPanel();
+		JPanel up_input = new JPanel();		//输入框上面的一个横条面板
 		up_input.setOpaque(false);
 		
-		JPanel input_parent = new JPanel();
+		JPanel input_parent = new JPanel();	//输入框的父面板
 		input_parent.setBorder(null);
 		input_parent.setOpaque(false);
 		input_parent.setLayout(new BorderLayout());
@@ -103,17 +114,21 @@ public class ChatFrame extends JApplet {
 		char_split.setDividerSize(3);
 		char_split.add(scrollpane);
 		char_split.add(input_parent);
-		char_split.setDividerLocation(0.6);
 
 		button = new JButton("发送");
 		button.addActionListener(amk);
+		button.addMouseListener(new Button_effect());
+		button.setBorder(new BevelBorder(BevelBorder.RAISED));
+		button.setContentAreaFilled(false);
+		button.setBorderPainted(false);
 		
-		JPanel control = new JPanel();
+		JPanel control = new JPanel();		//显示发送按钮的面板，在输入框下面
 		control.setOpaque(false);
-		control.setLayout(new BorderLayout());
+		FlowLayout flt = new FlowLayout(FlowLayout.RIGHT);
+		control.setLayout(flt);
 		control.add(button, BorderLayout.EAST);
 
-		JPanel panel_char = new JPanel(){
+		JPanel panel_char = new JPanel(){		//显示 内容框，输入框，和按钮面板
 			private static final long serialVersionUID = 1L;
 			public void paintComponent(Graphics g) {
 			     super.paintComponent(g);
@@ -128,7 +143,12 @@ public class ChatFrame extends JApplet {
 		panel_char.add(char_split, BorderLayout.CENTER);
 		panel_char.add(control, BorderLayout.SOUTH);
 
-		panel_bot_people = createShowBotPanel();
+		panel_bot_people = new JSplitPane(JSplitPane.VERTICAL_SPLIT,true);
+		panel_bot_people.setBorder(new LineBorder(Color.white,1,true));
+		panel_bot_people.setDividerSize(3);
+		panel_bot_people.setDividerLocation(60);
+		panel_bot_people.add(panel_people,JSplitPane.TOP);
+		panel_bot_people.add(panel_bot,JSplitPane.BOTTOM);
 
 		char_people = new JPanel();
 		char_people.setLayout(new BorderLayout());
@@ -136,7 +156,6 @@ public class ChatFrame extends JApplet {
 		char_people.add(panel_bot_people,BorderLayout.EAST);
 		Container content = this.getContentPane();
 		content.add(char_people);
-		// this.setTitle("机器人聊天框");
 		repaintPanel_people();
 		this.setVisible(true);
 		initBot();
@@ -147,13 +166,31 @@ public class ChatFrame extends JApplet {
 		JTextPane label = null;
 		label = new JTextPane();
 		label.setEditable(false);
+		label.setBorder(null);
 		label.setPreferredSize(default_prompt_size);
 		
 		JScrollPane js = new JScrollPane();
 		js.getViewport().add(label);
+		js.setOpaque(false);
+		js.setBorder(null);
 		label.setText("正在连接机器人。。。");
+		
+		JEditorPane ep = new JEditorPane();  
+	
+		ep.setEditable(false);
+		ep.setContentType("text/html");
+		ep.setPreferredSize(new Dimension(225,300));
+		try {
+			ep.setPage(getClass().getClassLoader().getResource("bot.html"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		panel_bot.setBorder(new TitledBorder("BOT"));
+		panel_bot.setOpaque(false);
 		panel_bot.setLayout(new BorderLayout());
 		panel_bot.add(js,BorderLayout.NORTH);
+		panel_bot.add(ep,BorderLayout.CENTER);
 		initCommunication(label);
 	}
 
@@ -176,39 +213,38 @@ public class ChatFrame extends JApplet {
 		communication.start();
 	}
 
-	/**
-	 * @return javax.swing.JPanel
-	 */
-	public JSplitPane createShowBotPanel() {
-		JSplitPane panel_showBot = new JSplitPane(JSplitPane.VERTICAL_SPLIT,true);
-		panel_showBot.setDividerSize(3);
-		panel_showBot.add(panel_people,JSplitPane.TOP);
-		panel_showBot.add(panel_bot,JSplitPane.BOTTOM);
-		//panel_showBot.setSize(200, 1000);
-		return panel_showBot;
-	}
-
 	public void repaintPanel_people() {
 		panel_people.removeAll();
+		panel_people.setPreferredSize(new Dimension(225,150));
 		if (people.getId() == 1) {
-			JLabel label_1 = new JLabel("用户");
-			JLabel label_2 = new JLabel(people.getName());
-			JLabel label_3 = new JLabel(people.getStatus());
-			button_train = new JButton("开始训练");
+			JPanel panel = new JPanel();
+			
+			JLabel label_name = new JLabel(people.getName());
+			JLabel label_weight = new JLabel(people.getStatus());
+			
+			JPanel user_info = new JPanel();
+			user_info.setLayout(new FlowLayout(FlowLayout.LEFT));
+			user_info.add(label_name);
+			user_info.add(label_weight);
+			
+			button_train = new Bot_button(Context.cmd_train_start);
 			button_train.addActionListener(amk);
-			panel_people.add(label_1);
-			panel_people.add(label_2);
-			panel_people.add(label_3);
-			panel_people.add(button_train);
+			panel.setLayout(new BorderLayout());
+			panel.add(user_info,BorderLayout.CENTER);
+			panel.add(button_train,BorderLayout.EAST);
+			
+			panel_people.setLayout(new BorderLayout());
+			panel_people.add(panel,BorderLayout.CENTER);
 			this.validate();
 		} else {
 			JLabel label_1 = new JLabel("游客");
-			JButton button_login = new JButton("登录");
+			JButton button_login = new Bot_button("登录");
 			button_login.addActionListener(amk);
 			panel_people.setLayout(new BorderLayout());
 			panel_people.add(label_1, BorderLayout.CENTER);
 			panel_people.add(button_login, BorderLayout.EAST);
-			this.validate();
+			panel_people.setBorder(new TitledBorder("USER"));
+			//this.validate();
 		}
 	}
 
@@ -228,6 +264,13 @@ public class ChatFrame extends JApplet {
 	 * @param message
 	 */
 	public void addChatContent(String name, String message) {
+		while(!this.isLoad_complete()){
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 		Calendar ca = Calendar.getInstance();
 		int h = ca.get(Calendar.HOUR_OF_DAY);
 		int m = ca.get(Calendar.MINUTE);
@@ -332,31 +375,22 @@ public class ChatFrame extends JApplet {
 		//frame.setVisible(true);
 		//frame.setBounds(200, 100, cf.init_frame_width, cf.init_frame_height);
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		ActionForWindow_control awc = new ActionForWindow_control();
-		JButton min = new JButton(Context.window_control_min);
-		min.setOpaque(false);
-		min.addActionListener(awc);
-		JButton max = new JButton(Context.window_control_max);
-		max.setOpaque(false);
-		max.addActionListener(awc);
-		JButton close = new JButton(Context.window_control_close);
-		close.setOpaque(false);
-		close.addActionListener(awc);
+		try{
+		Image title_image = Toolkit.getDefaultToolkit().createImage(Context.image_path+"title.png");
+		JLabel title_label = new JLabel(new ImageIcon(title_image.getScaledInstance(32, 32, Image.SCALE_DEFAULT)));
+		title_label.setBorder(new LineBorder(Color.white,1,true));
 		
 		JPanel window_title = new JPanel();
 		ActionForWindow_title awt = new ActionForWindow_title();
 		window_title.addMouseListener(awt);
 		window_title.addMouseMotionListener(awt);
-		window_title.setPreferredSize(new Dimension(200,50));
 		window_title.setOpaque(false);
+		FlowLayout flt = new FlowLayout(FlowLayout.LEFT);
+		flt.setVgap(10);
+		window_title.setLayout(flt);
+		window_title.add(title_label);
 		
-		JPanel window_control = new JPanel();
-		window_control.setOpaque(false);
-		window_control.setLayout(new GridLayout(0,3));
-		window_control.add(min);
-		window_control.add(max);
-		window_control.add(close);
+		JPanel window_control = new Window_control();
 		
 		JPanel window_control_parent = new JPanel();
 		window_control_parent.setLayout(new BorderLayout());
@@ -367,7 +401,7 @@ public class ChatFrame extends JApplet {
 			private static final long serialVersionUID = 1L;
 			public void paintComponent(Graphics g) {
 			     super.paintComponent(g);
-			     Image image = Toolkit.getDefaultToolkit().createImage(Context.image_path+"title.jpg");
+			     Image image = Toolkit.getDefaultToolkit().createImage(Context.image_path+"window_top.jpg");
 			     int x = this.getWidth();
 			     int y = this.getHeight();
 			     ImageIcon img = new ImageIcon(image.getScaledInstance(x, y, Image.SCALE_DEFAULT));
@@ -380,26 +414,42 @@ public class ChatFrame extends JApplet {
 		
 		ChatFrame cf = new ChatFrame();
 		
-		JFrame window = new JFrame("Chat bot");
-		window.setUndecorated(true);
-		AWTUtilities.setWindowOpaque(window, true);
-		AWTUtilities.setWindowShape(window,
-				new RoundRectangle2D.Double(window.getX(),window.getY(),
-						window.getWidth(),window.getHeight(),
-						20,20));
-		
 		JPanel all = new JPanel();
 		all.setLayout(new BorderLayout());
 		all.add(window_top,BorderLayout.NORTH);
 		all.add(cf,BorderLayout.CENTER);
-		all.setBorder(BorderFactory.createLineBorder(Color.black));
+		all.setBorder(new LineBorder(Color.black,1,true));
 		
+		JFrame window = new JFrame("Chat bot");
+		window.setUndecorated(true);
+		window.setIconImage(title_image);
 		Container content = window.getContentPane();
 		content.add(all);
 		window.setBounds(200, 100, cf.init_frame_width, cf.init_frame_height);
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setVisible(true);
+		AWTUtilities.setWindowOpaque(window, false);
+		
+		RoundRectangle2D.Double rr = new RoundRectangle2D.Double(0,0,
+				window.getWidth(),window.getHeight(),
+				10,10);
+		
+		AWTUtilities.setWindowShape(window,rr);
+		//AWTUtilities.setWindowOpacity(window, 0.93f); //设置透明
 		cf.getChar_split().setDividerLocation(cf.init_chat_input_splitpane_location);
+		cf.load_complete=true;
+		} catch(Exception e){
+			e.printStackTrace();
+		}
 	}
+	public boolean isLoad_complete() {
+		return load_complete;
+	}
+
+	public void setLoad_complete(boolean load_complete) {
+		this.load_complete = load_complete;
+	}
+
 	public JSplitPane getPanel_bot_people() {
 		return panel_bot_people;
 	}
