@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.JColorChooser;
 import javax.swing.JLabel;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
@@ -18,19 +19,27 @@ public class Font_button_effect implements MouseListener{
 
 	public void mousePressed(MouseEvent e) {
 		JLabel b = (JLabel) e.getSource();
-		b.setBorder(new BevelBorder(BevelBorder.LOWERED));
-		if(!isHaveBorder){
-			isHaveBorder=true;
-		} else {
-			isHaveBorder=false;
-		}
 		ChatFrame cf = ChatFrame.instance();
-		if(b.getText().equals(Context.font_bold)){
-			cf.getAttrset().setBold(isHaveBorder);
-		} else if(b.getText().equals(Context.font_italic)){
-			cf.getAttrset().setItalic(isHaveBorder);
-		} else if(b.getText().equals(Context.font_underline)){
-			cf.getAttrset().setUnderline(isHaveBorder);
+		if(!b.getText().equals(Context.font_color)){
+			b.setBorder(new BevelBorder(BevelBorder.LOWERED));
+			if(!isHaveBorder){
+				isHaveBorder=true;
+			} else {
+				isHaveBorder=false;
+			}
+			if(b.getText().equals(Context.font_bold)){
+				cf.getAttrset().setBold(isHaveBorder);
+			} else if(b.getText().equals(Context.font_italic)){
+				cf.getAttrset().setItalic(isHaveBorder);
+			} else if(b.getText().equals(Context.font_underline)){
+				cf.getAttrset().setUnderline(isHaveBorder);
+			}
+		} else{
+			Color color = JColorChooser.showDialog(b, "Color", b.getForeground());
+			if(color!=null){
+				b.setForeground(color);
+				cf.getAttrset().setFontColor(color);
+			}
 		}
 		cf.repaint_input_panel();
 		cf.getTextfield().setCharacterAttributes(cf.getAttrset(), true);

@@ -14,10 +14,13 @@ public class Window_control extends JPanel{
 	public Window_control(){
 		ActionForWindow_control awc = new ActionForWindow_control();
 		JButton min = new Bot_button(Context.window_control_min);
+		min.setToolTipText("最小化");
 		min.addActionListener(awc);
 		JButton max = new Bot_button(Context.window_control_max);
+		max.setToolTipText("最大化");
 		max.addActionListener(awc);
 		JButton close = new Bot_button(Context.window_control_close);
+		close.setToolTipText("关闭");
 		close.addActionListener(awc);
 		this.setOpaque(false);
 		this.setLayout(new GridLayout(0,3));

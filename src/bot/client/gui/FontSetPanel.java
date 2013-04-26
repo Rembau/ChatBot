@@ -1,5 +1,6 @@
 package bot.client.gui;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -51,6 +52,10 @@ public class FontSetPanel extends JPanel {
 		Font_button italic = new Font_button(Context.font_italic);
 		Font_button underline = new Font_button(Context.font_underline);
 		
+		//JColorChooser jcc = new JColorChooser();
+		Font_button color = new Font_button(Context.font_color);
+		color.setForeground(Color.black);
+		
 		FlowLayout flt = new FlowLayout(FlowLayout.LEFT);
 		flt.setVgap(0);
 		this.setLayout(flt);
@@ -59,6 +64,7 @@ public class FontSetPanel extends JPanel {
 		this.add(bold);
 		this.add(italic);
 		this.add(underline);
+		this.add(color);
 		this.setOpaque(false);
 		this.setBorder(null);
 	}

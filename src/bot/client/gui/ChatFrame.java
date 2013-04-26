@@ -27,7 +27,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTextPane;
 import javax.swing.SwingUtilities;
-import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.plaf.basic.BasicSplitPaneDivider;
@@ -68,6 +67,7 @@ public class ChatFrame extends JApplet {
 	private JPanel char_people;				//panel_bot_people和char_split的父面板
 	
 	private JPanel panel_bot = new JPanel();	//显示提示和机器人
+	private JEditorPane ep;
 	private JPanel panel_people = new JPanel();	//显示登陆用户信息和命令
 	private People people = new People();		
 
@@ -154,12 +154,10 @@ public class ChatFrame extends JApplet {
 		char_split.add(scrollpane);
 		char_split.add(input_parent);
 
-		button = new JButton(Context.cmd_send_message);
+		button = new Bot_button(Context.cmd_send_message);
+		button.setToolTipText("shift+enter");
 		button.addActionListener(amk);
 		button.addMouseListener(new Button_effect());
-		button.setBorder(new BevelBorder(BevelBorder.RAISED));
-		button.setContentAreaFilled(false);
-		button.setBorderPainted(false);
 		
 		JPanel control = new JPanel();		//显示发送按钮的面板，在输入框下面
 		control.setOpaque(false);
@@ -210,9 +208,9 @@ public class ChatFrame extends JApplet {
 		js.getViewport().add(label);
 		js.setOpaque(false);
 		js.setBorder(null);
-		label.setText("正在连接机器人。。。");
+		label.setText("正在连接。。。");
 		
-		JEditorPane ep = new JEditorPane();  
+		ep = new JEditorPane();
 	
 		ep.setEditable(false);
 		ep.setContentType("text/html");
@@ -250,6 +248,9 @@ public class ChatFrame extends JApplet {
 		communication.start();
 	}
 
+	public void repaint_bot(){
+		
+	}
 	public void repaint_input_panel(){
 		String str = textfield.getText();
 		textfield.setText("");

@@ -25,19 +25,17 @@ import bot.comm.Context;
 public class Login extends JDialog 
 {
    private static final long serialVersionUID = 1L;
-   private JTextField user_field = new JTextField (10);
-   private JPasswordField password_field = new JPasswordField (10);
+   private JTextField user_field = new JTextField (15);
+   private JPasswordField password_field = new JPasswordField (15);
    private JApplet frame;
    private ActionForLogin actionForLogin = new ActionForLogin (this);
    
    /**
     * @param frame
-    * @roseuid 50187B4D0147
     */
    public Login(JApplet frame,boolean m) 
    {
 		super();
-		this.setUndecorated(true);
 		this.frame=frame;
 
 		JPanel panel_top = new JPanel();
@@ -82,7 +80,7 @@ public class Login extends JDialog
 		
 		this.setLayout(new BorderLayout());
 		this.add(login,BorderLayout.CENTER);
-		this.setBounds(350, 200, 200, 170);
+		this.setBounds(350, 200, 300, 310);
 		this.setVisible(true);    
    }
    
@@ -91,7 +89,6 @@ public class Login extends JDialog
     * ((ChatFrame)frame).sendUserInfor(user_num,password);
     * }
     * @return javax.swing.JApplet
-    * @roseuid 50187B4D0149
     */
    public JApplet getCF() 
    {
@@ -100,7 +97,6 @@ public class Login extends JDialog
    
    /**
     * @return java.lang.String
-    * @roseuid 50187B4D014A
     */
    public String getUserNum() 
    {
@@ -109,7 +105,6 @@ public class Login extends JDialog
    
    /**
     * @return java.lang.String
-    * @roseuid 50187B4D014B
     */
    public String getPassword() 
    {
@@ -118,16 +113,12 @@ public class Login extends JDialog
    
    /**
     * @param message
-    * @roseuid 50187B4D014C
     */
    public void prompt(String message) 
    {
 		JOptionPane.showMessageDialog(this, message);    
    }
-   
-   /**
-    * @roseuid 50187B4D0157
-    */
+
    public void remove() 
    {
 		this.setVisible(false);    

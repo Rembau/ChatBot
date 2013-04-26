@@ -38,6 +38,8 @@ public class Context {
 	public static String font_bold = "B";
 	public static String font_italic = "I";
 	public static String font_underline ="U";
+	public static String font_color ="C";
+	
 	public static String font_name="font_name";
 	public static String font_size="font_size";
 	public static String font_name_default="ËÎÌו";

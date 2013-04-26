@@ -20,7 +20,6 @@ public class ActionForWindow_control implements ActionListener{
 		} else if(e.getActionCommand().equals(Context.window_control_max)){
 			if(window.getExtendedState()!=JFrame.MAXIMIZED_BOTH){
 				window.setExtendedState(JFrame.MAXIMIZED_BOTH);
-				
 			} else{
 				window.setExtendedState(JFrame.NORMAL);
 			}
@@ -32,6 +31,4 @@ public class ActionForWindow_control implements ActionListener{
 			System.exit(0);
 		}
 	}
-
-	
 }
