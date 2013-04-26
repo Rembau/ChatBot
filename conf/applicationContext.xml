@@ -3,4 +3,5 @@
 <beans>
 	<bean id="Server" class="bot.server.handle.Dispatcher" init-method="startup"></bean>
 	<bean id="Exceutors" class="bot.server.handle.task.Executors" init-method="init"></bean>
+	<bean id="Bot" class="bot.server.core.Bot" init-method="init"></bean>
 </beans>

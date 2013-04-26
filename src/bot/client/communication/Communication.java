@@ -25,8 +25,8 @@ public class Communication extends Thread {
 	private ClientHandler handler;
 	private JTextPane label;
 
-	public Communication(ChatFrame cf,JTextPane label){
-		this.cf = cf;
+	public Communication(JTextPane label){
+		this.cf = ChatFrame.instance();
 		this.label = label;
 	}
 

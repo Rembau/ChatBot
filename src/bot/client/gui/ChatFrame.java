@@ -17,6 +17,7 @@ import java.util.Calendar;
 import javax.swing.ImageIcon;
 import javax.swing.JApplet;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -29,11 +30,13 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
+import javax.swing.plaf.basic.BasicSplitPaneDivider;
+import javax.swing.plaf.basic.BasicSplitPaneUI;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
-import javax.swing.text.SimpleAttributeSet;
-import javax.swing.text.StyleConstants;
+
+import org.apache.log4j.Logger;
 
 import com.sun.awt.AWTUtilities;
 
@@ -51,6 +54,8 @@ import bot.comm.Context;
  */
 public class ChatFrame extends JApplet {
 	private static final long serialVersionUID = 1L;
+	private static final Logger logger = Logger.getLogger(ChatFrame.class);
+	
 	private Communication communication;
 	private JScrollPane scrollpane;		//显示内容滚动面板
 	private JScrollPane scrollinput;	//输入框滚动面板
@@ -77,10 +82,29 @@ public class ChatFrame extends JApplet {
 	private Dimension default_prompt_size = new Dimension(216,100);
 	
 	private boolean load_complete = false;
+	
+	private FontType attrset = new FontType();
+	private FontType attrset_bot = new FontType();
+	private FontType attrset_chat_content = new FontType("people");
+	
+	private static ChatFrame cf = null;
 
+	public FontType getAttrset() {
+		return attrset;
+	}
+
+	public void setAttrset(FontType attrset) {
+		this.attrset = attrset;
+	}
+	public static ChatFrame instance(){
+		if(cf==null){
+			cf = new ChatFrame();
+			cf.initBot();
+		}
+		return cf;
+	}
 	public ChatFrame() {
 		super();
-		// panel_people.setLayout(new GridLayout(0,1));
 		textarea = new JTextPane();
 		textarea.setEditable(false);
 		textarea.setOpaque(false);
@@ -98,9 +122,7 @@ public class ChatFrame extends JApplet {
 		scrollinput.getViewport().setOpaque(false);
 		scrollinput.setBorder(null);
 		scrollinput.setOpaque(false);
-		
-		JPanel up_input = new JPanel();		//输入框上面的一个横条面板
-		up_input.setOpaque(false);
+		JPanel up_input = new FontSetPanel();	//输入框上面的一个横条面板
 		
 		JPanel input_parent = new JPanel();	//输入框的父面板
 		input_parent.setBorder(null);
@@ -110,9 +132,25 @@ public class ChatFrame extends JApplet {
 		input_parent.add(scrollinput,BorderLayout.CENTER);
 
 		char_split = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
+		BasicSplitPaneUI bspu = new BasicSplitPaneUI(){
+			 public void paint(Graphics g, JComponent c) {
+				 super.paint(g, c);		   
+			 }
+			 public BasicSplitPaneDivider createDefaultDivider() {
+				 return new BasicSplitPaneDivider(this){
+					 private static final long serialVersionUID = 1L;
+					 public void paint(Graphics g){
+							
+					 }
+				 };
+			  }
+			
+		};
+		char_split.setUI(bspu);
+		
 		char_split.setBorder(null);
 		char_split.setOpaque(false);
-		char_split.setDividerSize(3);
+		
 		char_split.add(scrollpane);
 		char_split.add(input_parent);
 
@@ -159,11 +197,9 @@ public class ChatFrame extends JApplet {
 		content.add(char_people);
 		repaintPanel_people();
 		this.setVisible(true);
-		initBot();
 	}
-
 	public void initBot() {
-		
+		cf.getTextfield().setCharacterAttributes(cf.getAttrset(), true);
 		JTextPane label = null;
 		label = new JTextPane();
 		label.setEditable(false);
@@ -210,10 +246,20 @@ public class ChatFrame extends JApplet {
 	 * @throws java.lang.Exception
 	 */
 	public void initCommunication(JTextPane label) {
-		communication = new Communication(this,label);
+		communication = new Communication(label);
 		communication.start();
 	}
 
+	public void repaint_input_panel(){
+		String str = textfield.getText();
+		textfield.setText("");
+		Document docs = textfield.getDocument();
+		try {
+			docs.insertString(0, str, attrset);
+		} catch (BadLocationException ble) {
+			logger.info("BadLocationException:" + ble);
+		}
+	}
 	public void repaintPanel_people() {
 		panel_people.removeAll();
 		panel_people.setPreferredSize(new Dimension(225,150));
@@ -277,7 +323,11 @@ public class ChatFrame extends JApplet {
 		int m = ca.get(Calendar.MINUTE);
 		int s = ca.get(Calendar.SECOND);
 		addPerson(name + "   " + h + ":" + m + ":" + s + "\n");
-		addContent("" + message + "\n");
+		if(name.equals(Context.mark_me)){
+			insert(message+"\n", attrset);
+		} else{
+			insert(message+"\n", attrset_bot);
+		}
 		textarea.setCaretPosition(textarea.getDocument().getLength());
 	}
 
@@ -293,10 +343,6 @@ public class ChatFrame extends JApplet {
 	 * @param color
 	 */
 	public void addContent(String content, Color color) {
-		SimpleAttributeSet attrset = new SimpleAttributeSet();
-		StyleConstants.setFontSize(attrset, 14);
-		StyleConstants.setAlignment(attrset, StyleConstants.ALIGN_LEFT);
-		StyleConstants.setLeftIndent(attrset, 20);
 		insert(content, attrset);
 	}
 
@@ -304,10 +350,7 @@ public class ChatFrame extends JApplet {
 	 * @param name
 	 */
 	public void addPerson(String name) {
-		SimpleAttributeSet attrset = new SimpleAttributeSet();
-		StyleConstants.setForeground(attrset, Color.blue);
-		StyleConstants.setFontSize(attrset, 12);
-		insert(name, attrset);
+		insert(name, attrset_chat_content);
 	}
 
 	/**
@@ -319,7 +362,7 @@ public class ChatFrame extends JApplet {
 		try {
 			docs.insertString(docs.getLength(), str, attrset);
 		} catch (BadLocationException ble) {
-			System.out.println("BadLocationException:" + ble);
+			logger.info("BadLocationException:" + ble);
 		}
 	}
 
@@ -338,6 +381,14 @@ public class ChatFrame extends JApplet {
 	 */
 	public void setTextFieldEmpty() {
 		textfield.setText("");
+	}
+	
+	public JTextPane getTextfield() {
+		return textfield;
+	}
+
+	public void setTextfield(JTextPane textfield) {
+		this.textfield = textfield;
 	}
 
 	public JButton getButton_train() {
@@ -371,7 +422,6 @@ public class ChatFrame extends JApplet {
 	}
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable(){
-
 			public void run() {
 				Image title_image = Toolkit.getDefaultToolkit().createImage(Context.image_path+"title.png");
 				JLabel title_label = new JLabel(new ImageIcon(title_image.getScaledInstance(32, 32, Image.SCALE_DEFAULT)));
@@ -408,9 +458,7 @@ public class ChatFrame extends JApplet {
 				window_top.setLayout(new BorderLayout());
 				window_top.add(window_title,BorderLayout.CENTER);
 				window_top.add(window_control_parent,BorderLayout.EAST);
-				
-				ChatFrame cf = new ChatFrame();
-				
+				ChatFrame cf = ChatFrame.instance();
 				JPanel all = new JPanel();
 				all.setLayout(new BorderLayout());
 				all.add(window_top,BorderLayout.NORTH);

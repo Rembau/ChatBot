@@ -34,4 +34,14 @@ public class Context {
 	
 	public static String cmd_send_message="·¢ËÍ";
 	public static String cmd_login="µÇÂ½";
+	
+	public static String font_bold = "B";
+	public static String font_italic = "I";
+	public static String font_underline ="U";
+	public static String font_name="font_name";
+	public static String font_size="font_size";
+	public static String font_name_default="ËÎÌå";
+	public static String font_size_default="15";
+	
+	public static String mark_me="me";
 }
