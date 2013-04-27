@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 
 import com.sun.awt.AWTUtilities;
 
+import bot.client.gui.ChatFrame;
 import bot.comm.Context;
 
 public class ActionForWindow_control implements ActionListener{
@@ -27,8 +28,15 @@ public class ActionForWindow_control implements ActionListener{
 					window.getWidth(),window.getHeight(),
 					10,10);
 			AWTUtilities.setWindowShape(window,rr);
-		} else{
+		} else if(e.getActionCommand().equals(Context.window_control_close)){
 			System.exit(0);
+		} else if(e.getActionCommand().equals(Context.window_control_back)){
+			if(Context.back_image_name.length()==0){
+				Context.back_image_name="back.jpg";
+			} else{
+				Context.back_image_name="";
+			}
+			ChatFrame.instance().repaint_panel_chat();
 		}
 	}
 }

@@ -18,6 +18,7 @@ public class Font_button_effect implements MouseListener{
 	}
 
 	public void mousePressed(MouseEvent e) {
+		
 		JLabel b = (JLabel) e.getSource();
 		ChatFrame cf = ChatFrame.instance();
 		if(!b.getText().equals(Context.font_color)){

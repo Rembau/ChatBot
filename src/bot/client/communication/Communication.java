@@ -15,18 +15,15 @@ import org.apache.mina.filter.codec.textline.LineDelimiter;
 import org.apache.mina.filter.codec.textline.TextLineCodecFactory;
 import org.apache.mina.transport.socket.nio.NioSocketConnector;
 
-import bot.client.gui.ChatFrame;
 import bot.comm.Context;
 
 
 public class Communication extends Thread {
 	private static final Logger logger = Logger.getLogger(Communication.class);
-	private ChatFrame cf;
 	private ClientHandler handler;
 	private JTextPane label;
 
 	public Communication(JTextPane label){
-		this.cf = ChatFrame.instance();
 		this.label = label;
 	}
 
@@ -37,7 +34,7 @@ public class Communication extends Thread {
 				new ProtocolCodecFilter(new TextLineCodecFactory(Charset.forName("UTF-8"),
 						new LineDelimiter("nextLinenextLine"),new LineDelimiter("nextLinenextLine")))); // 设置编码过滤器
 		connector.setConnectTimeoutMillis(30*1000);
-		handler = new ClientHandler(cf);
+		handler = new ClientHandler();
 		connector.setHandler(handler);// 设置事件处理器
 		ConnectFuture cf = connector.connect(new InetSocketAddress(Context.servler_ip,Context.server_port));// 建立连接
 		cf.awaitUninterruptibly();

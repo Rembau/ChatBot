@@ -1,39 +1,45 @@
 package bot.comm;
-
+/**
+ * Chararter:UTF-8
+ * @author Rembau
+ *
+ */
 public class Context {
 	public static int server_port=678;
 	public static String servler_ip="127.0.0.1";
 	/**
-	 * ĞÔÄÜÅäÖÃ
+	 * æ€§èƒ½é…ç½®
 	 */
 	public static int connpool_num = 10;
 	public static int threadpool_num = 10;
 	/**
-	 * ÏûÏ¢ÅäÖÃ
+	 * æ¶ˆæ¯é…ç½®
 	 */
 	public static String uuidAndMessageSep="-=-=-=-=-=-=-=";
 	/**
-	 * ¸øÓĞ·ûºÅµÄ ´ğ°¸¼ÓÉÏµÄÈ¨Öµ¡£
+	 * ç»™æœ‰ç¬¦å·çš„ ç­”æ¡ˆåŠ ä¸Šçš„æƒå€¼ã€‚
 	 */
 	public static int pointForSign=10;
 	/**
-	 * ÅĞ¶ÏÊÇ·ñÊÇÖØ¸´ÎÊÌâËã·¨½ÓÊÜµÄÎÊÌâµÄ×îĞ¡³¤¶È¡£
+	 * åˆ¤æ–­æ˜¯å¦æ˜¯é‡å¤é—®é¢˜ç®—æ³•æ¥å—çš„é—®é¢˜çš„æœ€å°é•¿åº¦ã€‚
 	 */
 	public static int minLengthAccept=1;
 	
+	public static String window_control_back="Û©";
 	public static String window_control_min="_";
-	public static String window_control_max="¡õ";
-	public static String window_control_close="¡Á";
+	public static String window_control_max="â–¡";
+	public static String window_control_close="Ã—";
+	
 	public static String image_path="images/";
 	
-	public static String cmd_train_start="ÑµÁ·";
-	public static String cmd_train_end="½áÊø";
+	public static String cmd_train_start="è®­ç»ƒ";
+	public static String cmd_train_end="ç»“æŸ";
 	
 	public static String cmd_train_start_message="teacher";
 	public static String cmd_train_end_message="end";
 	
-	public static String cmd_send_message="·¢ËÍ";
-	public static String cmd_login="µÇÂ½";
+	public static String cmd_send_message="å‘é€";
+	public static String cmd_login="ç™»é™†";
 	
 	public static String font_bold = "B";
 	public static String font_italic = "I";
@@ -42,8 +48,10 @@ public class Context {
 	
 	public static String font_name="font_name";
 	public static String font_size="font_size";
-	public static String font_name_default="ËÎÌå";
+	public static String font_name_default="å®‹ä½“";
 	public static String font_size_default="15";
 	
 	public static String mark_me="me";
+	
+	public static String back_image_name="";
 }

@@ -21,7 +21,13 @@ public class ClientHandler extends IoHandlerAdapter {
 	private ChatFrame cf;
 	private boolean isTrainNow = false;
 	private IoSession session;
-	public ClientHandler(ChatFrame cf){
+	public ClientHandler(){
+		
+	}
+	public ChatFrame getCf() {
+		return cf;
+	}
+	public void setCf(ChatFrame cf) {
 		this.cf = cf;
 	}
 	public void sessionClosed(IoSession session){
@@ -38,6 +44,9 @@ public class ClientHandler extends IoHandlerAdapter {
 		}
 	}
 	public void handleMessage(String message) throws Exception {
+		if(cf==null){
+			cf = ChatFrame.instance();
+		}
 		cf.getSendButton().setEnabled(true);
 
 		ReceiveMessage rm = new ReceiveMessage(message);

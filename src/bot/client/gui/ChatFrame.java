@@ -62,11 +62,13 @@ public class ChatFrame extends JApplet {
 	private JTextPane textfield;		//输入内容文字面板
 	private JButton button;				//输入框下面 发送按钮
 	
+	private JPanel panel_char;
 	private JSplitPane panel_bot_people;	//右边 显示用户和机器人分割面板
 	private JSplitPane char_split;			//左边显示内容和输入框的分割面板
 	private JPanel char_people;				//panel_bot_people和char_split的父面板
 	
 	private JPanel panel_bot = new JPanel();	//显示提示和机器人
+	private JTextPane label;
 	private JEditorPane ep;
 	private JPanel panel_people = new JPanel();	//显示登陆用户信息和命令
 	private People people = new People();		
@@ -80,8 +82,6 @@ public class ChatFrame extends JApplet {
 	private int init_frame_height = 500;
 	
 	private Dimension default_prompt_size = new Dimension(216,100);
-	
-	private boolean load_complete = false;
 	
 	private FontType attrset = new FontType();
 	private FontType attrset_bot = new FontType();
@@ -98,8 +98,8 @@ public class ChatFrame extends JApplet {
 	}
 	public static ChatFrame instance(){
 		if(cf==null){
-			cf = new ChatFrame();
-			cf.initBot();
+			JOptionPane.showMessageDialog(null, "ERROR");
+			System.exit(0);
 		}
 		return cf;
 	}
@@ -165,17 +165,24 @@ public class ChatFrame extends JApplet {
 		control.setLayout(flt);
 		control.add(button, BorderLayout.EAST);
 
-		JPanel panel_char = new JPanel(){		//显示 内容框，输入框，和按钮面板
+		panel_char = new JPanel(){		//显示 内容框，输入框，和按钮面板
 			private static final long serialVersionUID = 1L;
+			Image image = Toolkit.getDefaultToolkit().createImage(Context.image_path+""+Context.back_image_name);
+			String name=Context.back_image_name;
 			public void paintComponent(Graphics g) {
 			     super.paintComponent(g);
-			     Image image = Toolkit.getDefaultToolkit().createImage(Context.image_path+"back.jpg");
+			     if(!Context.back_image_name.equals(name)){
+			    	 image = Toolkit.getDefaultToolkit().createImage(Context.image_path+""+Context.back_image_name);
+			    	 name = Context.back_image_name;  
+			     }
 			     int x = this.getWidth();
 			     int y = this.getHeight();
 			     ImageIcon img = new ImageIcon(image.getScaledInstance(x, y, Image.SCALE_DEFAULT));
 			     g.drawImage(img.getImage(),0,0,null);
 			 }
 		};
+		
+		panel_char.setBackground(Color.white);
 		panel_char.setLayout(new BorderLayout());
 		panel_char.add(char_split, BorderLayout.CENTER);
 		panel_char.add(control, BorderLayout.SOUTH);
@@ -195,10 +202,12 @@ public class ChatFrame extends JApplet {
 		content.add(char_people);
 		repaintPanel_people();
 		this.setVisible(true);
+		cf=this;
+		initBot();
 	}
 	public void initBot() {
-		cf.getTextfield().setCharacterAttributes(cf.getAttrset(), true);
-		JTextPane label = null;
+		this.getTextfield().setCharacterAttributes(this.getAttrset(), true);
+		label = null;
 		label = new JTextPane();
 		label.setEditable(false);
 		label.setBorder(null);
@@ -228,7 +237,7 @@ public class ChatFrame extends JApplet {
 		panel_bot.add(ep,BorderLayout.CENTER);
 		initCommunication(label);
 	}
-
+	
 	/**
 	 * 提示
 	 * 
@@ -248,6 +257,9 @@ public class ChatFrame extends JApplet {
 		communication.start();
 	}
 
+	public void repaint_panel_chat(){
+		panel_char.repaint();
+	}
 	public void repaint_bot(){
 		
 	}
@@ -312,13 +324,6 @@ public class ChatFrame extends JApplet {
 	 * @param message
 	 */
 	public void addChatContent(String name, String message) {
-		while(!this.isLoad_complete()){
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
 		Calendar ca = Calendar.getInstance();
 		int h = ca.get(Calendar.HOUR_OF_DAY);
 		int m = ca.get(Calendar.MINUTE);
@@ -415,8 +420,12 @@ public class ChatFrame extends JApplet {
 	public JButton getSendButton() {
 		return this.button;
 	}
+	public void paint(Graphics g){
+		super.paint(g);
+		this.getChar_split().setDividerLocation(init_chat_input_splitpane_location);
+	}
 	public void init() {
-
+		
 	}
 	public void destroy() {
 
@@ -459,7 +468,7 @@ public class ChatFrame extends JApplet {
 				window_top.setLayout(new BorderLayout());
 				window_top.add(window_title,BorderLayout.CENTER);
 				window_top.add(window_control_parent,BorderLayout.EAST);
-				ChatFrame cf = ChatFrame.instance();
+				ChatFrame cf = new ChatFrame();
 				JPanel all = new JPanel();
 				all.setLayout(new BorderLayout());
 				all.add(window_top,BorderLayout.NORTH);
@@ -481,19 +490,11 @@ public class ChatFrame extends JApplet {
 						10,10);
 				
 				AWTUtilities.setWindowShape(window,rr);
-				//AWTUtilities.setWindowOpacity(window, 0.93f); //设置透明
+				AWTUtilities.setWindowOpacity(window, 0.94f); //设置透明
 				cf.getChar_split().setDividerLocation(cf.init_chat_input_splitpane_location);
-				cf.load_complete=true;
 			}
 			
 		});
-	}
-	public boolean isLoad_complete() {
-		return load_complete;
-	}
-
-	public void setLoad_complete(boolean load_complete) {
-		this.load_complete = load_complete;
 	}
 
 	public JSplitPane getPanel_bot_people() {
