@@ -7,7 +7,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.Image;
-import java.awt.Toolkit;
 
 import javax.swing.ImageIcon;
 import javax.swing.JApplet;
@@ -66,8 +65,7 @@ public class Login extends JDialog {
 
 			public void paintComponent(Graphics g) {
 				super.paintComponent(g);
-				Image image = Toolkit.getDefaultToolkit().createImage(
-						Context.image_path + "login.png");
+				Image image = Context.getImage("login.png");
 				int x = this.getWidth();
 				int y = this.getHeight();
 				ImageIcon img = new ImageIcon(image.getScaledInstance(x, y,

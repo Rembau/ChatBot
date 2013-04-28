@@ -1,6 +1,5 @@
 package org.rembau;
 
-import java.io.File;
 import java.util.Properties;
 
 import org.rembau.tools.PropertiesTool;
@@ -15,7 +14,7 @@ public class Context {
 	public static String CMD_EXCUTE="excute";
 	public static String CMD_CLIENT="client";
 	public static void init(){
-		Properties params = PropertiesTool.getParams("conf"+File.separator+"extra.properties");
+		Properties params = PropertiesTool.getParams(Context.class.getClassLoader().getResource("extra.properties"));
 		Context.CMD_S_PORT = Integer.valueOf(params.getProperty("CMD_S_PORT"));
 		Context.CMD_EXCUTE = params.getProperty("CMD_EXCUTE").trim();
 		Context.CMD_EXIT = params.getProperty("CMD_EXIT").trim();

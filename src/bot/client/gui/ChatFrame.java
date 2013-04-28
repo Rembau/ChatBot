@@ -9,7 +9,6 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.Toolkit;
 import java.awt.geom.RoundRectangle2D;
 import java.io.IOException;
 import java.util.Calendar;
@@ -167,12 +166,12 @@ public class ChatFrame extends JApplet {
 
 		panel_char = new JPanel(){		//显示 内容框，输入框，和按钮面板
 			private static final long serialVersionUID = 1L;
-			Image image = Toolkit.getDefaultToolkit().createImage(Context.image_path+""+Context.back_image_name);
+			Image image = Context.getImage(Context.back_image_name);
 			String name=Context.back_image_name;
 			public void paintComponent(Graphics g) {
 			     super.paintComponent(g);
 			     if(!Context.back_image_name.equals(name)){
-			    	 image = Toolkit.getDefaultToolkit().createImage(Context.image_path+""+Context.back_image_name);
+			    	 image = Context.getImage(Context.back_image_name);
 			    	 name = Context.back_image_name;  
 			     }
 			     int x = this.getWidth();
@@ -201,6 +200,7 @@ public class ChatFrame extends JApplet {
 		Container content = this.getContentPane();
 		content.add(char_people);
 		repaintPanel_people();
+		
 		this.setVisible(true);
 		cf=this;
 		initBot();
@@ -425,7 +425,10 @@ public class ChatFrame extends JApplet {
 		this.getChar_split().setDividerLocation(init_chat_input_splitpane_location);
 	}
 	public void init() {
-		
+		logger.info("init()");
+	}
+	public void start(){
+		logger.info("start()");
 	}
 	public void destroy() {
 
@@ -433,7 +436,7 @@ public class ChatFrame extends JApplet {
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable(){
 			public void run() {
-				Image title_image = Toolkit.getDefaultToolkit().createImage(Context.image_path+"title.png");
+				Image title_image = Context.getImage("title.png");
 				JLabel title_label = new JLabel(new ImageIcon(title_image.getScaledInstance(32, 32, Image.SCALE_DEFAULT)));
 				title_label.setBorder(new LineBorder(Color.white,1,true));
 				
@@ -456,12 +459,13 @@ public class ChatFrame extends JApplet {
 				
 				JPanel window_top = new JPanel(){
 					private static final long serialVersionUID = 1L;
+					Image image = Context.getImage("window_top.jpg");
+					ImageIcon img;
 					public void paintComponent(Graphics g) {
 					     super.paintComponent(g);
-					     Image image = Toolkit.getDefaultToolkit().createImage(Context.image_path+"window_top.jpg");
 					     int x = this.getWidth();
-					     int y = this.getHeight();
-					     ImageIcon img = new ImageIcon(image.getScaledInstance(x, y, Image.SCALE_DEFAULT));
+						 int y = this.getHeight();
+						 img = new ImageIcon(image.getScaledInstance(x, y, Image.SCALE_DEFAULT));
 					     g.drawImage(img.getImage(),0,0,null);
 					 }
 				};

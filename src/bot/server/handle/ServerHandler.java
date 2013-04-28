@@ -5,6 +5,7 @@ import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;
 
 import bot.comm.BodyAndUUID;
+import bot.comm.Context;
 import bot.server.handle.task.Job;
 import bot.server.handle.task.Jobs;
 import bot.server.handle.task.MinaSession;
@@ -28,8 +29,10 @@ public class ServerHandler extends IoHandlerAdapter{
 			if(se == null){
 				se = new MinaSession(session);
 				se.setId(id);
+				se.setAddress(session.getRemoteAddress().toString());
 				Sessions.addSession(id, se);
 			}
+			se.setLife_time_left(Context.session_life_time_left);
 			Jobs.putJob(new Job(se,context[1]));
 		} catch (Exception e) {
 			e.printStackTrace();
