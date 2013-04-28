@@ -38,31 +38,32 @@ public class PeopleAttributeNow
     * 不平和回车使用次数限制
     */
    private static int limitIrascible = 2;
-   private long startTime = 0;
-   
    /**
     * 开始输入时间
     */
-   private long second = 0;
+   private long startTime = 0;
    
    /**
     * 输入时间
     */
-   private int mouseUseNum = 0;
+   private double second = 0;
    
    /**
     * 使用鼠标次数
     */
-   private int backKeyUseNum = 0;
+   private int mouseUseNum = 0;
    
+
    /**
     * 使用删除键的次数
     */
-   private float wordsNum = 0;
-   
+   private int backKeyUseNum = 0;
    /**
     * 输入框的输入字符数
     */
+   private float wordsNum = 0;
+   
+   
    private boolean isHandle = false;
    private State state = new State ();
    
@@ -83,7 +84,7 @@ public class PeopleAttributeNow
     * @return long
     * @roseuid 50187B5201AB
     */
-   public long getSecond() 
+   public double getSecond() 
    {
 		return this.second;    
    }
@@ -234,9 +235,9 @@ public class PeopleAttributeNow
 			if(backKeyUseNum>PeopleAttributeNow.limitIrascible){
 				this.irascible=1;
 			}
-			logger.info("速度"+second/wordsNum+"鼠标使用次数"+mouseUseNum+"回车使用次数"+backKeyUseNum);
+			logger.info("时间为"+second+" 速度"+second/wordsNum+" 鼠标使用次数"+mouseUseNum+" 回车使用次数"+backKeyUseNum);
 			if(wordsNum!=0){
-				float r = second/wordsNum;
+				double r = (second/wordsNum);
 				if(r<PeopleAttributeNow.limitProficient1 || second<1){
 					this.proficient=-1;
 				} else if(r>PeopleAttributeNow.limitProficient2 || mouseUseNum>=PeopleAttributeNow.limitMouseUseNum){
