@@ -15,6 +15,9 @@ public class DBoperate {
 	}
 	public static int update(String sql){
 		Conn conn = ConnPool.getConn();
+		if(conn.getCon()==null){
+			return -1;
+		}
 		try {
 			int i = conn.getOldStmt().executeUpdate(sql);
 			logger.info("²Ù×÷³É¹¦£¡"+sql);
@@ -40,6 +43,9 @@ public class DBoperate {
 	
 	public static ResultSet select(String sql){
 		Conn conn = ConnPool.getConn();
+		if(conn.getCon()==null){
+			return null;
+		}
 		try {
 			return conn.getNewStmt().executeQuery(sql);
 		} catch (SQLException e) {

@@ -13,9 +13,6 @@ public class ConnPool {
 	private static LinkedBlockingQueue<Conn> pool = new LinkedBlockingQueue<Conn>();
 	private static final int maxLimit =Context.connpool_num;
 	private static volatile int nowNumOfCon=1;
-	static {
-		pool.add(new Conn());
-	}
 	public static Conn getConn() {
 		try {
 			logger.info("pool.size():"+pool.size());

@@ -51,6 +51,14 @@ public class Conn {
 		password = ReadInfo.getString("password");
 	}
 
+	public Connection getCon() {
+		return con;
+	}
+
+	public void setCon(Connection con) {
+		this.con = con;
+	}
+
 	public void setIp(String ip) {
 		this.ip = ip;
 	}
